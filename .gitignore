@@ -1,3 +1,5 @@
-*.rb
-.bundle
-vendor
+/*.rb
+/.bundle
+/vendor
+/.github
+/.jekyll-cache
