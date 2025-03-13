@@ -1,5 +1,5 @@
 /*.rb
 /.bundle
 /vendor
-/.github
+# /.github
 /.jekyll-cache
