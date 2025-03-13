@@ -3,6 +3,11 @@
 
 
 * {
+  font-family: "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -40,17 +45,17 @@ a {
   color: #268bd2;
   text-decoration: none;
 
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
+  // &:hover,
+  // &:focus {
+  //   text-decoration: underline;
+  // }
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: .5rem;
   font-weight: 600;
-  font-family: Serif  ;
+  // font-family: Serif  ;
   line-height: 1.1;
   color: #000000;
   letter-spacing: -.025rem;
@@ -73,14 +78,14 @@ h4, h5, h6 {
 }
 
 p {
-  font-family: Serif  ;
+  // font-family: Serif  ;
   font-weight: 300;
   margin: 0 0 1rem;
   font-size: 0.8rem;
 }
 
 ul, ol, dl {
-  font-family: Serif  ;
+  // font-family: Serif  ;
   font-weight: 300;
   font-size: 0.8rem;
   margin-top: 0;
@@ -524,7 +529,7 @@ tbody tr:nth-child(odd) th {
 // change font for navbar
 .navbar, .navbar-nav>li>a {
   background-color: rgb(238, 238, 238);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  ;
+  // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  ;
   // font-family: Serif  ;
   text-transform: uppercase;
   font-weight: 100;
