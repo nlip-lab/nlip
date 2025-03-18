@@ -20,7 +20,7 @@ layout: profile
     <span style="display: block; margin-bottom: 0.5em"></span>
 </div>
 <div class="col-1" style="width:5px">
-    <a href="mailto:cs23resch01004@iith.ac.in" target="_blank"><samp>cs23resch11011@iith.ac.in</samp></a>
+    <a href="mailto:cs23resch01004@iith.ac.in" target="_blank"><samp>cs24resch11011@iith.ac.in</samp></a>
     <span style="display: block; margin-bottom: 0.5em"></span>
     <a href="https://github.com/devendew" target="_blank"><samp>Homepage</samp></a><br>
     <span style="display: block; margin-bottom: 0.5em"></span>
@@ -28,14 +28,15 @@ layout: profile
 </div>
 <span style="display: block; margin-bottom: 1em"></span>
 
-### Bio:
+### Bio
 
 <p style="text-align: justify">
-Devendra Kumar Dewangan is a research scholar in the Department of Computer Science and Engineering at IIT Hyderabad. Prior to joining IITH, he completed his B.E. from SSIPMT, Raipur, followed by an M.Tech from NIT Raipur. During his M.Tech, he worked on projects such as "Indoor Fire and Smoke Detection Using a Soft-Voting Based Deep Ensemble Model". Currently, he is a part of the Natural Language and Information Processing Lab where he will work in the domain of NLP.
+Devendra Kumar Dewangan is a research scholar in the Department of Computer Science and Engineering at IIT Hyderabad. Prior to joining IITH, he completed his B.E. from SSIPMT Raipur, followed by an M.Tech from NIT Raipur. During his M.Tech, he worked on projects such as "Indoor Fire and Smoke Detection Using a Soft-Voting Based Deep Ensemble Model". Currently, he is a part of the Natural Language and Information Processing Lab where he will work in the domain of NLP.
 </p>
 
-### Research Interests:
+### Research Interests
 
 - Natural Language Generation
 - Machine Learning
+- Deep Learning
 - Computer Vision
