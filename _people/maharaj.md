@@ -30,10 +30,10 @@ layout: profile
 
 ### Bio: 
 <p style="text-align: justify">
-Maharaj is a first-year Ph.D. student working in Natural Language Processing (NLP). Prior to joining the Ph.D. program, he gained experience in building data resources and processing tools for the low-resource language Bodo. Additionally, he has conducted research in machine translation and the identification of tonal words and their meanings from textual data in the Bodo language.
+Maharaj is a third-year Ph.D. student working in Natural Language Processing (NLP). Prior to joining the Ph.D. program, he gained experience in building data resources and processing tools for the low-resource language Bodo. Additionally, he has conducted research in machine translation and the identification of tonal words and their meanings from textual data in the Bodo language.
 </p>
 
 ### Research Interests:
-- Natural Language Generation
 - Multilingual NLP
+- Cultural NLP
 - Low resource NLP
