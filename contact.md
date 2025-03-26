@@ -7,22 +7,24 @@ permalink: /contact/
 <span style="display: block; margin-bottom: 3em"></span>
 
 <!-- CONTACT -->
-<div style="margin-top:50px; text-align:center; padding-left:50px">
-    <div  style="float:left; width:250px; text-align:center;">
-        <h4>Address</h4>
-        <p>{{site.address}}</p>
-    </div>
-    <div  style="float:left; width:250px; text-align:center;">
-        <h4>Email</h4>
-        <a href="mailto:{{ site.email }}">nlip[at]cse[dot]iith[dot]ac[dot]in</a>
-    </div>
-    <div  style="float:left; width:100px; text-align:center;">
-        <h4>Phone</h4>
-        <p>{{site.phone}}</p>
-    </div>
-    <div  style="float:left; width:250px; text-align:center;">
-        <h4>Office Hours</h4>
-        <p>{{site.office_hours}}</p>
+<div style="margin-top:50px; align:center; padding-left:50px">
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; text-align: center;">
+        <div style="width:250px; margin: 10px;">
+            <h4>📍 Address</h4>
+            <p>{{site.address}}</p>
+        </div>
+        <div style="width:250px; margin: 10px;">
+            <h4>✉️ Email</h4>
+            <a href="mailto:{{ site.email }}">nlip[at]cse[dot]iith[dot]ac[dot]in</a>
+        </div>
+        <div style="width:100px; margin: 10px;">
+            <h4>📞 Phone</h4>
+            <p>{{site.phone}}</p>
+        </div>
+        <div style="width:250px; margin: 10px;">
+            <h4>🕒 Office Hours</h4>
+            <p>{{site.office_hours}}</p>
+        </div>
     </div>
 </div>
 
