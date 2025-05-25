@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} - IIT Hyderabad</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <link href="/nlip/css/zoom.css" rel="stylesheet">
+  <script src="/nlip/js/zoom.js"></script>
+  <script src="/nlip/js/transition.js"></script>
+  
+  <link rel="stylesheet" href="/nlip/style.css">
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/nlip/favicon.png">
+  <link rel="shortcut icon" href="/nlip/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.css" integrity="sha512-zdX1vpRJc7+VHCUJcExqoI7yuYbSFAbSWxscAoLF0KoUPvMSAK09BaOZ47UFdP4ABSXpevKfcD0MTVxvh0jLHQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- open graph -->
+
+  
+  
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://localhost:4000/publications/{{ page.key }}/">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:site_name" content="NLIP: Natural Language and Information Processing Lab">
+  <meta property="og:description" content="NLIP Lab is a young and dynamic research group as part of the Department of Computer Science and Engineering at Indian Institute of Technology Hyderabad. We are committed to pushing the frontiers of Natural Language Processing (NLP), Information Retrieval (IR), and related domains through cutting-edge research and development. We collaborate closely with academic institutions, industry partners, and other research groups to drive innovation in these fields. Our focus is on developing efficient and effective algorithms, models, and systems that can scale to real-world applications. We also strive to make our research accessible and impactful by publishing our findings in top-tier conferences and journals, and by open-sourcing our software and datasets." />
+  <meta property="og:image" content="/nlip/images/logo/lab_logo.png">
+  <style>
+    .carousel {
+        border-radius: 10px 10px 10px 10px;
+        overflow: hidden;
+    }
+    .grid-container {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+    }
+    .grid-item {
+      padding: 10px;
+      text-align: center;
+    }
+    /* footer.sticky-bottom {
+      text-align: center;
+      font-size: 0.6rem;
+      background-color: rgb(228, 228, 228);
+      margin:0px;
+      padding:30px;
+    } */
+    footer {
+      text-align: center;
+      font-size: 0.7rem;
+      background-color: rgb(228, 228, 228);
+      margin:0px;
+      padding:30px;
+    }
+  </style>
+</head>
+
+<body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="/nlip/" style="font-family:'Open Sans'; text-transform: none;">
+      <img src="/nlip/images/logo/lab_logo_no_bg.png" height="80" width="80" class="d-inline-block">NLIP Lab
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="padding-right: 15px;">
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/">home</a>
+        </li>
+
+        
+
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/research">research</a>
+        </li>
+
+        
+
+        
+
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/publication">publications</a>
+        </li>
+
+        
+
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/people">people</a>
+        </li>
+
+        
+
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/reading-group">Reading Group</a>
+        </li>
+
+        
+
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/gallery">Gallery</a>
+        </li>
+
+        
+
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/contact">Contact</a>
+        </li>
+
+        
+
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">{{ page.title }}</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">{{ page.title }}</h1>
+    <div class="publication-authors"></div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="/publications/{{ page.key }}/" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">People</h1> -->
+  
+<!-- Skip section if there's nobody -->
+
+<div class="pos_header">
+
+<h3>Faculty</h3>
+ 
+</div>
+
+<div class="content list people">
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/maunendra/index.html"><img class="profile-thumbnail" src="/nlip/images/people/maunendra.JPG" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/maunendra/index.html">Dr. Maunendra Sankar Desarkar</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+<hr />
+
+<!-- Skip section if there's nobody -->
+
+<!-- Skip section if there's nobody -->
+
+<div class="pos_header">
+
+<h3>Ph.D. Students</h3>
+ 
+</div>
+
+<div class="content list people">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/debolena_basak/index.html"><img class="profile-thumbnail" src="/nlip/images/people/debolena.JPG" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/debolena_basak/index.html">Debolena Basak</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/aishwarya/index.html"><img class="profile-thumbnail" src="/nlip/images/people/aishwarya.JPG" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/aishwarya/index.html">M Aishwarya</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/maharaj/index.html"><img class="profile-thumbnail" src="/nlip/images/people/maharaj.JPG" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/maharaj/index.html">Maharaj Brahma</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/devendra_dewangan/index.html"><img class="profile-thumbnail" src="/nlip/images/people/devendra_dewangan.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/devendra_dewangan/index.html">Devendra Kumar Dewangan</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+  
+    
+  
+</div>
+<hr />
+
+<!-- Skip section if there's nobody -->
+
+<div class="pos_header">
+
+<h3>M.Tech. Students</h3>
+
+</div>
+
+<div class="content list people">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/shrey_satapara/index.html"><img class="profile-thumbnail" src="/nlip/images/people/shrey.JPG" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/shrey_satapara/index.html">Shrey Satapara</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/parasa/index.html"><img class="profile-thumbnail" src="/nlip/images/people/parasa.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/parasa/index.html">Parasa Naga Venkata Pavan</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/pramit/index.html"><img class="profile-thumbnail" src="/nlip/images/people/pramit.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/pramit/index.html">Pramit Sahoo</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/prerna/index.html"><img class="profile-thumbnail" src="/nlip/images/people/prerna.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/prerna/index.html">Prerna Jolly</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/shrenik/index.html"><img class="profile-thumbnail" src="/nlip/images/people/shrenik.jpeg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/shrenik/index.html">Shrenik Ganguli</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/trishita/index.html"><img class="profile-thumbnail" src="/nlip/images/people/trishita.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/trishita/index.html">Trishita Saha</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/anjana/index.html"><img class="profile-thumbnail" src="/nlip/images/people/anjana.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/anjana/index.html">S Anjana Shankar</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/anya/index.html"><img class="profile-thumbnail" src="/nlip/images/people/anya.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/anya/index.html">Anya Gupta</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/isha/index.html"><img class="profile-thumbnail" src="/nlip/images/people/isha.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/isha/index.html">Isha Kumar</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/nishat/index.html"><img class="profile-thumbnail" src="/nlip/images/people/nishat.png" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/nishat/index.html">Sk Nishat Saama</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+</div>
+<hr />
+
+<!-- Skip section if there's nobody -->
+
+<!-- Skip section if there's nobody -->
+
+<!-- Skip section if there's nobody -->
+
+<div class="pos_header">
+
+<h3>Ph.D. Alumni students</h3>
+
+</div>
+
+<div class="content list people">
+  
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/sreekanth_madishetty/index.html"><img class="profile-thumbnail" src="/nlip/images/people/sreekanth_madisetty.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/sreekanth_madishetty/index.html">Dr. Sreekanth Madisetty</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;">Research Scientist, <br /> Jio Platforms Limited</span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/samujjwal/index.html"><img class="profile-thumbnail" src="/nlip/images/people/samujjwal.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/samujjwal/index.html">Dr. Samujjwal Ghosh</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;">Machine Learning Engineer, <br />Intel</span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/manisha/index.html"><img class="profile-thumbnail" src="/nlip/images/people/manisha.png" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/manisha/index.html">Dr. Manisha Dubey</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;">Postdoctoral Associate, <br /> University of Manchester</span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/kaushal/index.html"><img class="profile-thumbnail" src="/nlip/images/people/kaushal.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/kaushal/index.html">Dr. Kaushal Kumar Maurya</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;">Postdoc at <br /> MBZUAI</span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/suvodip_dey/index.html"><img class="profile-thumbnail" src="/nlip/images/people/suvodip.JPG" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/suvodip_dey/index.html">Suvodip Dey</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;">Postdoc at University of Illinois Urbana-Champaign</span>
+        </div>
+      </div>    
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+<hr />
+
+<!-- Skip section if there's nobody -->
+
+<!-- Skip section if there's nobody -->
+
+<div class="pos_header">
+
+<h3>M.Tech. Alumni Students</h3>
+ 
+</div>
+
+<div class="content list people">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/aditi_bagora/index.html"><img class="profile-thumbnail" src="/nlip/images/people/aditi.JPG" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/aditi_bagora/index.html">Aditi Bagora</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/darshan_dobariya/index.html"><img class="profile-thumbnail" src="/nlip/images/people/darshan.JPG" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/darshan_dobariya/index.html">Darshan Dobariya</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/kamal_shrestha/index.html"><img class="profile-thumbnail" src="/nlip/images/people/kamal.JPG" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/kamal_shrestha/index.html">Kamal Shrestha</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/kaushiki_dwivedi/index.html"><img class="profile-thumbnail" src="/nlip/images/people/kaushiki.JPG" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/kaushiki_dwivedi/index.html">Kaushiki Dwivedi</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/soham_bhatt/index.html"><img class="profile-thumbnail" src="/nlip/images/people/soham.JPG" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/soham_bhatt/index.html">Soham Bhatt</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/adesh/index.html"><img class="profile-thumbnail" src="/nlip/images/people/adesh.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/adesh/index.html">Adesh Gupta</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+      <div class="list-item-people">
+        <div class="list-post-title">
+        <div class="" style="width:200px; margin:0 auto;">
+          
+            <a href="/nlip/people/dhwani/index.html"><img class="profile-thumbnail" src="/nlip/images/people/dhwani.jpg" style="border: 1px solid #e6e6e6; align:center" /></a>
+          
+         <a class="people" href="/nlip/people/dhwani/index.html">Dhwani Natvarbhai Jakhaniya</a>
+        </div>
+        <span style="width: 150px; color: #a6a6a6;"></span>
+        </div>
+      </div>    
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+<hr />
+
+<h3>Alumni</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Batch</th>
+      <th style="text-align: left">Current Affiliation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/sharan21/">Sharan Narasimhan</a></td>
+      <td style="text-align: left">Masters student (2020-2022)</td>
+      <td style="text-align: left">Data Engineer at Indeed</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/venkateshelangovan/">Venkatesh E</a></td>
+      <td style="text-align: left">Masters student (2020-2022)</td>
+      <td style="text-align: left">Machine Learning Engineer at Qualcomm</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/arkadipta-de/">Arkadipta De</a></td>
+      <td style="text-align: left">Masters student (2020-2022)</td>
+      <td style="text-align: left">Applied AI Researcher at Fujitsu Research India</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/vandita-dutt-840646141/">Vandita Dutt </a></td>
+      <td style="text-align: left">Masters student (2020-2022)</td>
+      <td style="text-align: left">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/sagarjinde/">Sagar Jinde </a></td>
+      <td style="text-align: left">Masters student (2019-2021)</td>
+      <td style="text-align: left">Machine Learning Engineer at Qualcomm</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/vikramanandsingh/">Vikram Anand Singh </a></td>
+      <td style="text-align: left">Masters student (2018-2020)</td>
+      <td style="text-align: left">Software Developer at BNY Mellon Technology</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/shounak-kundu-53977817/">Shounak Kundu</a></td>
+      <td style="text-align: left">Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td>
+      <td style="text-align: left">Machine Learning Engineer atInMobi</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/rishik-ramena-0a0b52b0/">Rishik Ramena </a></td>
+      <td style="text-align: left">Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018 )</td>
+      <td style="text-align: left">Software Engineer at Microsoft</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/priyambada-ambastha-133962119/">Priyambada Ambastha</a></td>
+      <td style="text-align: left">Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td>
+      <td style="text-align: left"><b>Gold Medalist</b> at IITH, Applied Scientist at Amazon</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/rashmi-hti-3bb52039/">Rashmi HTI </a></td>
+      <td style="text-align: left">Masters student (2016-2018)</td>
+      <td style="text-align: left">Associate at Goldman Sachs</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/priyanka-choudhary-9b0b46111/">Priyanka Choudhary</a></td>
+      <td style="text-align: left">Masters student (2016-2018)</td>
+      <td style="text-align: left">Lecturer at rpsc technical education department</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/shamikkundu/">Shamik Kundu </a></td>
+      <td style="text-align: left">Masters student (2016-2018)</td>
+      <td style="text-align: left">Data Scientist at Rakuten</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/manjela-toppo-021342154/">Manjela Toppo </a></td>
+      <td style="text-align: left">Masters student(2016-2018)</td>
+      <td style="text-align: left">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/shashank-singh-a527bb112/">Shashank Singh</a></td>
+      <td style="text-align: left">Masters Student (2015-2017)</td>
+      <td style="text-align: left">Software Developer at PayPal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/pradyumna-deshpande-72a51455/">Pradyumna Deshpande </a></td>
+      <td style="text-align: left">Masters Student (2015-2017)</td>
+      <td style="text-align: left">Platform Engineer at PayPay Corporation Tokyo, Japan</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.linkedin.com/in/swapdewalkar/">Swapnil Ashok dewalakar</a></td>
+      <td style="text-align: left">Masters student (2017-2019)</td>
+      <td style="text-align: left">SDE at Fanatics,Inc.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p></p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> </p>
+    <p><strong>Year:</strong> </p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    
+<footer class="footer mt-1">
+  <div>
+    <a href="https://nlip-lab.github.io" style="font-size: 0.8rem;">Natural Language and Information Processing Lab</a><br>
+    <a href="https://iith.ac.in" style="color: black;">Indian Institute of Technology Hyderabad (IITH)</a>, Hyderabad, India
+  </div>
+  
+  <div class="mt-3">
+    For more details visit our <a href="/nlip/contact">Contact us</a> page
+  </div>
+
+  <span style="display: block; margin-bottom: 2em"></span>
+  <div class="container">
+    <!-- &copy; Copyright 2025 NLIP Lab, All Rights Reserved.
+    <br> -->Last updated: April 04, 2025.
+    <br>
+    Website template inspired from <a href="https://kordinglab.com/">Kording Lab</a><br>
+  </div>
+
+</footer>
+
+</html> 
+
+    <!-- <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.js" integrity="sha512-f8kZwYACKF8unHuRV7j/5ILZfflRncxHp1f6y/PKuuRpCVgpORNZMne1jrghNzTVlXabUXIg1iJ5PvhuAaau6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    
+</body>
+</html>

@@ -64,6 +64,35 @@ permalink: /publication/
   color: #2c3e50;
 }
 
+.publication-title a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.publication-title a:hover {
+  color: #3498db;
+}
+
+.publication-title a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #3498db;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.publication-title a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .publication-authors {
   font-size: 0.9rem;
   color: #666;
@@ -128,36 +157,40 @@ permalink: /publication/
   -webkit-line-clamp: none;
 }
 
-.publication-links {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  margin-top: auto;
-}
-
 .publication-link {
-  padding: 0.5rem 1rem;
-  background: #2c3e50;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  color: white;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
 }
 
 .publication-link:hover {
-  background: #34495e;
+  background-color: #34495e;
   transform: translateY(-2px);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.publication-link svg {
+.publication-link .icon {
   width: 16px;
   height: 16px;
-  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
 }
 
 .year-section {
@@ -416,7 +449,7 @@ document.addEventListener('DOMContentLoaded', function() {
   tiles.forEach(tile => {
     const summary = tile.querySelector('.publication-summary');
     const abstract = tile.querySelector('.publication-abstract');
-    
+
     if (summary) {
       summary.classList.add('preview');
       summary.addEventListener('click', function(e) {
@@ -424,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
         tile.classList.toggle('expanded');
       });
     }
-    
+
     if (abstract) {
       abstract.classList.add('preview');
       abstract.addEventListener('click', function(e) {
@@ -441,12 +474,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update active state based on scroll position
   function updateActiveYear() {
     const scrollPosition = window.scrollY + 100; // Offset for better trigger point
-    
+
     yearSections.forEach(section => {
       const year = section.querySelector('.year-header').textContent;
       const sectionTop = section.offsetTop - 100;
       const sectionBottom = sectionTop + section.offsetHeight;
-      
+
       if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
         yearNavItems.forEach(item => {
           item.classList.remove('active');
@@ -532,7 +565,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const links = document.querySelectorAll('.publication-link');
   links.forEach(link => {
     const text = link.textContent.toLowerCase();
-    
+
     if (text.includes('bibtex')) {
       link.addEventListener('click', async function(e) {
         e.preventDefault();
@@ -629,7 +662,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 {% endif %}
                 <div class="publication-content">
-                    <h3 class="publication-title">{{ publi.title }}</h3>
+                    <h3 class="publication-title">
+                        <a href="/publications/{{ publi.key }}/">{{ publi.title }}</a>
+                    </h3>
                     <p class="publication-authors">{{ publi.authors }}</p>
                     <p class="publication-journal">{{ publi.journal }} ({{ month }})</p>
                     {% if publi.abstract %}
@@ -638,21 +673,37 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="publication-summary">{{ publi.summary }}</p>
                     {% endif %}
                     <div class="publication-links">
-                        {% if publi.url %}
-                        <a href="{{ publi.url }}" class="publication-link" target="_blank">URL</a>
-                        {% endif %}
                         {% if publi.pdf %}
-                        <a href="{{ publi.pdf }}" class="publication-link" target="_blank">PDF</a>
+                        <a href="{{ publi.pdf }}" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            PDF
+                        </a>
                         {% endif %}
                         {% if publi.code %}
-                        <a href="{{ publi.code }}" class="publication-link" target="_blank">Code</a>
+                        <a href="{{ publi.code }}" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            Code
+                        </a>
+                        {% endif %}
+                        {% if publi.url %}
+                        <a href="{{ publi.url }}" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            URL
+                        </a>
                         {% endif %}
                         {% if publi.video %}
-                        <a href="{{ publi.video }}" class="publication-link" target="_blank">Video</a>
+                        <a href="{{ publi.video }}" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            Video
+                        </a>
                         {% endif %}
                         {% if publi.bibtex %}
-                        <a href="/nlip/publications/references/{{ publi.bibtex }}.txt" class="publication-link" target="_blank">BibTeX</a>
+                        <a href="{{ publi.bibtex }}" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            BibTeX
+                        </a>
                         {% endif %}
+                        <a href="{{ site.baseurl }}/publications/{{ publi.key }}/" class="btn btn-sm btn-outline-primary" target="_blank">Read More</a>
                     </div>
                 </div>
             </div>

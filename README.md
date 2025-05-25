@@ -9,7 +9,8 @@ To run locally, follow instruction [here](https://jekyllrb.com/) to install Jeky
 ```bash
 sudo gem install jekyll
 sudo gem install rouge
-jekyll serve
+# jekyll serve
+bundle exec jekyll serve
 ```
 
 ## Editing the lab website

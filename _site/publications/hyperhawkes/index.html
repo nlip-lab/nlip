@@ -1,0 +1,6576 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HyperHawkes: Hypernetwork based Neural Temporal Point Process - IIT Hyderabad</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <link href="/nlip/css/zoom.css" rel="stylesheet">
+  <script src="/nlip/js/zoom.js"></script>
+  <script src="/nlip/js/transition.js"></script>
+  
+  <link rel="stylesheet" href="/nlip/style.css">
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/nlip/favicon.png">
+  <link rel="shortcut icon" href="/nlip/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.css" integrity="sha512-zdX1vpRJc7+VHCUJcExqoI7yuYbSFAbSWxscAoLF0KoUPvMSAK09BaOZ47UFdP4ABSXpevKfcD0MTVxvh0jLHQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- open graph -->
+
+  
+  
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://localhost:4000/publications/hyperhawkes/">
+  <meta property="og:title" content="HyperHawkes: Hypernetwork based Neural Temporal Point Process">
+  <meta property="og:site_name" content="NLIP: Natural Language and Information Processing Lab">
+  <meta property="og:description" content="NLIP Lab is a young and dynamic research group as part of the Department of Computer Science and Engineering at Indian Institute of Technology Hyderabad. We are committed to pushing the frontiers of Natural Language Processing (NLP), Information Retrieval (IR), and related domains through cutting-edge research and development. We collaborate closely with academic institutions, industry partners, and other research groups to drive innovation in these fields. Our focus is on developing efficient and effective algorithms, models, and systems that can scale to real-world applications. We also strive to make our research accessible and impactful by publishing our findings in top-tier conferences and journals, and by open-sourcing our software and datasets." />
+  <meta property="og:image" content="/nlip/images/logo/lab_logo.png">
+  <style>
+    .carousel {
+        border-radius: 10px 10px 10px 10px;
+        overflow: hidden;
+    }
+    .grid-container {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+    }
+    .grid-item {
+      padding: 10px;
+      text-align: center;
+    }
+    /* footer.sticky-bottom {
+      text-align: center;
+      font-size: 0.6rem;
+      background-color: rgb(228, 228, 228);
+      margin:0px;
+      padding:30px;
+    } */
+    footer {
+      text-align: center;
+      font-size: 0.7rem;
+      background-color: rgb(228, 228, 228);
+      margin:0px;
+      padding:30px;
+    }
+  </style>
+</head>
+
+<body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="/nlip/" style="font-family:'Open Sans'; text-transform: none;">
+      <img src="/nlip/images/logo/lab_logo_no_bg.png" height="80" width="80" class="d-inline-block">NLIP Lab
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="padding-right: 15px;">
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/">home</a>
+        </li>
+
+        
+
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/research">research</a>
+        </li>
+
+        
+
+        
+
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/publication">publications</a>
+        </li>
+
+        
+
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/people">people</a>
+        </li>
+
+        
+
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/reading-group">Reading Group</a>
+        </li>
+
+        
+
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/gallery">Gallery</a>
+        </li>
+
+        
+
+        
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/nlip/contact">Contact</a>
+        </li>
+
+        
+
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">HyperHawkes: Hypernetwork based Neural Temporal Point Process</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">HyperHawkes: Hypernetwork based Neural Temporal Point Process</h1>
+    <div class="publication-authors">Manisha Dubey, PK Srijith, Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://arxiv.org/abs/2210.00213" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">Coarse and Fine-Grained Hostility Detection in Hindi Posts using Fine Tuned Multilingual Embeddings</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">Coarse and Fine-Grained Hostility Detection in Hindi Posts using Fine Tuned Multilingual Embeddings</h1>
+    <div class="publication-authors">Arkadipta De, Venkatesh E, Kaushal Kumar Maurya, and Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://www.springerprofessional.de/en/coarse-and-fine-grained-hostility-detection-in-hindi-posts-using/19047892" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">Hi-DST: A Hierarchical Approach for Scalable and Extensible Dialogue State Tracking</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">Hi-DST: A Hierarchical Approach for Scalable and Extensible Dialogue State Tracking</h1>
+    <div class="publication-authors">Suvodip Dey, Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://aclanthology.org/2021.sigdial-1.23/" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">Hostility Detection in Online Hindi-English Code-Mixed Conversations</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">Hostility Detection in Online Hindi-English Code-Mixed Conversations</h1>
+    <div class="publication-authors">Aditi Bagora, Kamal Shrestha, Kaushal Maurya, Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://dl.acm.org/doi/10.1145/3501247.3531579" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">HAP-SAP: Semantic Annotation in LBSNs using Latent Spatio-Temporal Hawkes Process</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">HAP-SAP: Semantic Annotation in LBSNs using Latent Spatio-Temporal Hawkes Process</h1>
+    <div class="publication-authors">Manisha Dubey, P.K Srijith and Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://dl.acm.org/doi/10.1145/3397536.3422233" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">Effective utilization of labeled data from related tasks using graph contrastive pretraining: application to disaster related text classification</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">Effective utilization of labeled data from related tasks using graph contrastive pretraining: application to disaster related text classification</h1>
+    <div class="publication-authors">Samujjwal Ghosh, Subhadeep Maji, and Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://dl.acm.org/doi/10.1145/3477314.3507194" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">Semi-Supervised Granular Classification Framework for Resource Constrained Short-texts: Towards Retrieving Situational Information During Disaster Events</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">Semi-Supervised Granular Classification Framework for Resource Constrained Short-texts: Towards Retrieving Situational Information During Disaster Events</h1>
+    <div class="publication-authors">Samujjwal Ghosh and Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://dl.acm.org/doi/10.1145/3394231.3397892" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">GNoM: Graph Neural Network Enhanced Language Models for Disaster Related Multilingual Text Classification</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">GNoM: Graph Neural Network Enhanced Language Models for Disaster Related Multilingual Text Classification</h1>
+    <div class="publication-authors">Samujjwal Ghosh, Subhadeep Maji, Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://dl.acm.org/doi/abs/10.1145/3501247.3531561" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">Towards Fair Evaluation of Dialogue State Tracking by Flexible Incorporation of Turn-level Performances</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">Towards Fair Evaluation of Dialogue State Tracking by Flexible Incorporation of Turn-level Performances</h1>
+    <div class="publication-authors">Suvodip Dey, Ramamohan Kummara, Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://aclanthology.org/2022.acl-short.35/" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">DQAC: Detoxifying Query Auto-Completion with Adapters</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">DQAC: Detoxifying Query Auto-Completion with Adapters</h1>
+    <div class="publication-authors">Aishwarya Maheswaran, Kaushal Kumar Maurya, Manish Gupta, Maunendra Sankar Desarkar.</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">DivHSK: Diverse Headline Generation using Self-Attention based Keyword Selection</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">DivHSK: Diverse Headline Generation using Self-Attention based Keyword Selection</h1>
+    <div class="publication-authors">Venkatesh E, Kaushal Kumar Maurya, Deepak Kumar and Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://aclanthology.org/2023.findings-acl.118/" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">Dial-M: A Masking-based Framework for Dialogue Evaluation</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">Dial-M: A Masking-based Framework for Dialogue Evaluation</h1>
+    <div class="publication-authors">Suvodip Dey and Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://aclanthology.org/2023.sigdial-1.7" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">DAC: Quantized Optimal Transport Reward-based Reinforcement Learning Approach to Detoxify Query Auto-Completion</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">DAC: Quantized Optimal Transport Reward-based Reinforcement Learning Approach to Detoxify Query Auto-Completion</h1>
+    <div class="publication-authors">Aishwarya Maheswaran, Kaushal Kumar Maurya, Manish Gupta, Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">Using social media for classifying actionable insights in disaster scenario</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">Using social media for classifying actionable insights in disaster scenario</h1>
+    <div class="publication-authors">Samujjwal Ghosh, PK Srijith, Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://link.springer.com/article/10.1007/s12572-017-0197-2" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">Class Specific TF-IDF Boosting for Short-text Classification: Application to Short-texts Generated During Disasters</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">Class Specific TF-IDF Boosting for Short-text Classification: Application to Short-texts Generated During Disasters</h1>
+    <div class="publication-authors">Samujjwal Ghosh and Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://dl.acm.org/doi/10.1145/3184558.3191621" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">CharSpan: Utilizing Lexical Similarity to Enable Zero-Shot Machine Translation for Extremely Low-resource Languages</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">CharSpan: Utilizing Lexical Similarity to Enable Zero-Shot Machine Translation for Extremely Low-resource Languages</h1>
+    <div class="publication-authors">Kaushal Maurya, Rahul Kejriwal, Maunendra Desarkar, Anoop Kunchukuttan</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page">
+  <!-- <h1 class="page-title">BoK: Introducing Bag-of-Keywords Loss for Interpretable Dialogue Response Generation</h1> -->
+  <style>
+.publication-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.publication-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publication-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.publication-authors {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.publication-affiliation {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.publication-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.publication-link {
+  padding: 0.8rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publication-link:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.publication-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.publication-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.publication-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-abstract {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-abstract p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.publication-details h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.publication-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.bibtex-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-modal.active {
+  display: flex;
+}
+
+.bibtex-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bibtex-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bibtex-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bibtex-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-bibtex {
+  padding: 0.4rem 0.8rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+}
+
+.copy-bibtex svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.close-bibtex {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-bibtex:hover {
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .publication-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .publication-title {
+    font-size: 2rem;
+  }
+  
+  .publication-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publication-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="publication-container">
+  <div class="publication-header">
+    <h1 class="publication-title">BoK: Introducing Bag-of-Keywords Loss for Interpretable Dialogue Response Generation</h1>
+    <div class="publication-authors">Suvodip Dey, Maunendra Sankar Desarkar</div>
+    <div class="publication-affiliation"></div>
+    <div class="publication-links">
+      
+      <a href="https://aclanthology.org/2024.sigdial-1.48/" class="publication-link" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        URL
+      </a>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  <div class="publication-content">
+    
+    <div class="publication-text">
+      <div class="container mt-5 content page p-3">
+  <h3 class="page-title">Trishita Saha</h3>
+  <p><img width="300" src="/nlip/images/people/trishita.jpg" data-action="zoom" /></p>
+
+<h3 id="contacts">Contacts</h3>
+
+<div class="row">
+<div class="col-1" style="width:5px">
+    <b><a href="mailto:cs23mtech14016@iith.ac.in" target="_blank"><i class="fa fa-envelope-o"></i></a></b><br />
+    <span style="display: block; margin-bottom: 0.5em"></span>
+    <b><a href="" target="_blank"><i class="fa fa-globe"></i></a></b>
+    <span style="display: block; margin-bottom: 0.5em"></span>
+</div>
+<div class="col-1" style="width:5px">
+    <a href="mailto:cs23mtech14016@iith.ac.in" target="_blank"><samp>cs23mtech14016@iith.ac.in</samp></a>
+    <span style="display: block; margin-bottom: 0.5em"></span>
+    <a href="https://www.linkedin.com/in/trishita-saha-73ba69187/" target="_blank"><samp>Homepage</samp></a><br />
+    <span style="display: block; margin-bottom: 0.5em"></span>
+</div>
+</div>
+<p><span style="display: block; margin-bottom: 1em"></span></p>
+
+<h3 id="bio">Bio:</h3>
+<p>Trishita is a M.Tech scholar in the department of Computer Science and Engineering at IIT Hyderabad, focusing her research on Natural Language Processing and Large Language Model (LLM). She has completed her B.Tech degree in Computer Science and Engineering from Sikkim Manipal University. Her previous research spans developing new embedding techniques for Automatic Short Answer Grading and exploring credit risk prediction using ensemble methods. Her current research delves into the innovative application of LLM in real-life scenarios, particularly within the legal domain. She has published several research papers in reputed conferences and journals and was honoured with the Best Paper Award at IEMECON, 2023.</p>
+
+<h3 id="research-interest">Research Interest:</h3>
+<ul>
+  <li>Natural Language Generation</li>
+  <li>Large Language Models (LLMs)</li>
+  <li>Expert System</li>
+  <li>Education Technology</li>
+  <li>Machine Learning</li>
+</ul>
+
+</div>
+
+
+
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>The standard language modeling (LM) loss by itself has been shown to be inadequate for effective dialogue modeling. As a result, various training approaches, such as auxiliary loss functions and leveraging human feedback, are being adopted to enrich open-domain dialogue systems. One such auxiliary loss function is Bag-of-Words (BoW) loss, defined as the cross-entropy loss for predicting all the words/tokens of the next utterance. In this work, we propose a novel auxiliary loss named Bag-of-Keywords (BoK) loss to capture the central thought of the response through keyword prediction and leverage it to enhance the generation of meaningful and interpretable responses in open-domain dialogue systems. BoK loss upgrades the BoW loss by predicting only the keywords or critical words/tokens of the next utterance, intending to estimate the core idea rather than the entire response. We incorporate BoK loss in both encoder-decoder (T5) and decoder-only (DialoGPT) architecture and train the models to minimize the weighted sum of BoK and LM (BoK-LM) loss. We perform our experiments on two popular open-domain dialogue datasets, DailyDialog and Persona-Chat. We show that the inclusion of BoK loss improves the dialogue generation of backbone models while also enabling post-hoc interpretability. We also study the effectiveness of BoK-LM loss as a reference-free metric and observe comparable performance to the state-of-the-art metrics on various dialogue evaluation datasets.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> 25th Annual Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL 2024)</p>
+    <p><strong>Year:</strong> 2024</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>We address the task of machine translation(MT) from extremely low-resource language(ELRL) to English by leveraging cross-lingualtransfer from closely-related high-resourcelanguage (HRL). The development of an MTsystem for ELRL is challenging because theselanguages typically lack parallel corpora andmonolingual corpora, and their representationsare absent from large multilingual languagemodels. Many ELRLs share lexical similaritieswith some HRLs, which presents a novelmodeling opportunity. However, existingsubword-based neural MT models do notexplicitly harness this lexical similarity, as theyonly implicitly align HRL and ELRL latentembedding space. To overcome this limitation,we propose a novel, CHARSPAN, approachbased on character-span noise augmentationinto the training data of HRL. This serves asa regularization technique, making the modelmore robust to lexical divergences betweenthe HRL and ELRL, thus facilitating effectivecross-lingual transfer. Our method significantlyoutperformed strong baselines in zero-shotsettings on closely related HRL and ELRL pairsfrom three diverse language families, emergingas the state-of-the-art model for ELRLs.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> 18th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2024)</p>
+    <p><strong>Year:</strong> 2024</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>Proper formulation of features plays an important role in short-text classification tasks as the amount of text available is very little. In literature, Term Frequency - Inverse Document Frequency (TF-IDF) is commonly used to create feature vectors for such tasks. However, TF-IDF formulation does not utilize the class information available in supervised learning. For classification problems, if it is possible to identify terms that can strongly distinguish among classes, then more weight can be given to those terms during feature construction phase. This may result in improved classifier performance with the incorporation of extra class label related information. We propose a supervised feature construction method to classify tweets, based on the actionable information that might be present, posted during different disaster scenarios. Improved classifier performance for such classification tasks can be helpful in the rescue and relief operations. We used three benchmark datasets containing tweets posted during Nepal and Italy earthquakes in 2015 and 2016 respectively. Experimental results show that the proposed method obtains better classification performance on these benchmark datasets.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> WWW 2018: Companion Proceedings of the The Web Conference 2018</p>
+    <p><strong>Year:</strong> 2018</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>Micro-blogging sites are important source of real-time situational information during disasters such as earthquakes, hurricanes, wildfires, flood etc. Such disasters cause miseries in the lives of affected people. Timely identification of steps needed to help the affected people in such situations can mitigate those miseries to a large extent. In this paper, we focus on the problem of automated classification of disaster related tweets to a set of predefined categories. Some example categories considered are resource availability, resource requirement, infrastructure damage etc. Proper annotation of the tweets with these class information can help in timely determination of the steps needed to be taken to address the concerns of the people in the affected areas. Depending on the information category, different feature sets might be useful for proper identification of posts belonging to that category. In this work, we define multiple feature sets and use them with various supervised classification algorithms from literature to study the effectiveness of our approach in annotating the tweets with their appropriate information categories.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> International Journal of Advances in Engineering Sciences and Applied Mathematics volume 9, pages224–237</p>
+    <p><strong>Year:</strong> 2017</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>Modern Query Auto-Completion (QAC) systems utilize natural language generation (NLG) using large language models (LLM) to achieve remarkable performance. However, these systems are prone to generating biased and toxic completions due to inherent learning biases. Existing detoxification approaches exhibit two key limitations: (1) They primarily focus on mitigating toxicity for grammatically well-formed long sentences but struggle to adapt to the QAC task, where queries are short and structurally different (include spelling errors, do not follow grammatical rules and have relatively flexible word order). (2) These approaches often view detoxification through a binary lens where all text labeled as toxic is undesirable and non-toxic is considered desirable. To address these limitations, we propose DAC, an intuitive and efficient reinforcement learning-based model to detoxify QAC. With DAC, we introduce an additional perspective of considering the third query class of addressable toxicity. These queries can encompass implicit toxicity, subjective toxicity, or non-toxic queries containing toxic words. We incorporate this three-class query behavior perspective into the proposed model through quantized optimal transport to learn distinctions and generate truly non-toxic completions. We evaluate toxicity levels in the generated completions by DAC across two real-world QAC datasets (Bing and AOL) using two classifiers: a publicly available generic classifier (Detoxify) and a search query-specific classifier, which we develop (TClassify). we find that DAC consistently outperforms all existing baselines on the Bing dataset and achieves competitive performance on the AOL dataset for query detoxification. % providing high quality and low toxicity. We make the code and models publicly available.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2024)</p>
+    <p><strong>Year:</strong> 2024</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>In dialogue systems, automatically evaluating machine-generated responses is critical and challenging. Despite the tremendous progress in dialogue generation research, its evaluation heavily depends on human judgments. The standard word-overlapping based evaluation metrics are ineffective for dialogues. As a result, most of the recently proposed metrics are model-based and reference-free, which learn to score different aspects of a conversation. However, understanding each aspect requires a separate model, which makes them computationally expensive. To this end, we propose Dial-M, a Masking-based reference-free framework for Dialogue evaluation. The main idea is to mask the keywords of the current utterance and predict them, given the dialogue history and various conditions (like knowledge, persona, etc.), thereby making the evaluation framework simple and easily extensible for multiple datasets. Regardless of its simplicity, Dial-M achieves comparable performance to state-of-the-art metrics on several dialogue evaluation datasets. We also discuss the interpretability of our proposed metric along with error analysis.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> 24th Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL 2023)<br /><br /><i> Nominated for Best Paper Award</i></p>
+    <p><strong>Year:</strong> 2023</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>Diverse headline generation is an NLP task where given a news article, the goal is to generate multiple headlines that are true to the content of the article, but are different among themselves. This task aims to exhibit and exploit semantically similar one-to-many relationships between a source news article and multiple target headlines. Towards this, we propose a novel model called DIVHSK. It has two components: KEYSELECT for selecting the important keywords, and SEQGEN, for finally generating the multiple diverse headlines. In KEYSELECT, we cluster the self-attention heads of the last layer of the pre-trained encoder and select the mostattentive theme and general keywords from the source article. Then, cluster-specific keyword sets guide the SEQGEN, a pre-trained encoderdecoder model, to generate diverse yet semantically similar headlines. The proposed model consistently outperformed existing literature and our strong baselines and emerged as a stateof-the-art model. Additionally, We have also created a high-quality multi-reference headline dataset from news articles</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> 61st Annual Meeting of the Association for Computational Linguistics (ACL 2023)</p>
+    <p><strong>Year:</strong> 2023</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>Recent Query Auto-completion (QAC) systems  leverage natural language generation or pre-trained language models (PLMs) to demonstrate remarkable performance. However, these systems also suffer from biased and toxic completions. Efforts have been made to address language detoxification within PLMs using controllable text generation (CTG) techniques, involving training with non-toxic data and employing decoding time approaches. As the completions for QAC systems are usually short, these existing CTG methods based on decoding and training are not directly transferable. Towards these concerns, we propose the first public QAC detoxification model, Detoxifying Query Auto-Completion (or DQAC), which utilizes adapters in a CTG framework. DQAC operates on latent representations with no additional overhead. It leverages two adapters for toxic and non-toxic cases. During inference, we fuse these representations in a controlled manner that guides the generation of query completions towards non-toxicity. We evaluate toxicity levels in the generated completions across two real-world datasets using two classifiers: a publicly available (Detoxify) and a search query-specific classifier which we develop (QDetoxify). DQAC consistently outperforms all existing baselines and emerges as a state-of-the-art model providing high quality and low toxicity. We make the code publicly available at https://shorturl.at/zJ024</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> 28th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2024)</p>
+    <p><strong>Year:</strong> 2024</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>Dialogue State Tracking (DST) is primarily evaluated using Joint Goal Accuracy (JGA) defined as the fraction of turns where the ground-truth dialogue state exactly matches the prediction. Generally in DST, the dialogue state or belief state for a given turn contain all the intents shown by the user till that turn. Due to this cumulative nature of the belief state, it is difficult to get a correct prediction once a misprediction has occurred. Thus, although being a useful metric, it can be harsh at times and underestimate the true potential of a DST model. Moreover, an improvement in JGA can sometimes decrease the performance of turn-level or non-cumulative belief state prediction due to inconsistency in annotations. So, using JGA as the only metric for model selection may not be ideal for all scenarios. In this work, we discuss various evaluation metrics used for DST along with their shortcomings. To address the existing issues, we propose a new evaluation metric named Flexible Goal Accuracy (FGA). FGA is a generalized version of JGA. But unlike JGA, it tries to give penalized rewards to mispredictions that are locally correct i.e. the root cause of the error is an earlier turn. By doing so, FGA considers the performance of both cumulative and turn-level prediction flexibly and provides a better insight than the existing metrics. We also show that FGA is a better discriminator of DST model performance.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)</p>
+    <p><strong>Year:</strong> 2022</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>Online social media works as a source of various valuable and actionable information during disasters. These information might be available in multiple languages due to the nature of user generated content. An effective system to automatically identify and categorize these actionable information should be capable to handle multiple languages and under limited supervision. However, existing works mostly focus on English language only with the assumption that sufficient labeled data is available. To overcome these challenges, we propose a multilingual disaster related text classification system which is capable to work undervmonolingual, cross-lingual and multilingual lingual scenarios and under limited supervision. Our end-to-end trainable framework combines the versatility of graph neural networks, by applying over the corpus, with the power of transformer based large language models, over examples, with the help of cross-attention between the two. We evaluate our framework over total nine English, Non-English and monolingual datasets invmonolingual, cross-lingual and multilingual lingual classification scenarios. Our framework outperforms state-of-the-art models in disaster domain and multilingual BERT baseline in terms of Weighted F1 score. We also show the generalizability of the proposed model under limited supervision.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> WebSci 2022: 14th ACM Web Science Conference 2022</p>
+    <p><strong>Year:</strong> 2022</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>During the time of disasters, lots of short-texts are generated containing crucial situational information. Proper extraction and identification of situational information might be useful for various rescue and relief operations. Few specific types of infrequent situational information might be critical. However, obtaining labels for those resource-constrained classes is challenging as well as expensive. Supervised methods pose limited usability in such scenarios. To overcome this challenge, we propose a semi-supervised learning framework which utilizes abundantly available unlabelled data by self-learning. The proposed framework improves the performance of the classifier for resource-constrained classes by selectively incorporating highly confident samples from unlabelled data for self-learning. Incremental incorporation of unlabelled data, as and when they become available, is suitable for ongoing disaster mitigation. Experiments on three disaster-related datasets show that such improvement results in overall performance increase over standard supervised approach.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> WebSci 2020: 12th ACM Conference on Web Science</p>
+    <p><strong>Year:</strong> 2020</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>Contrastive pretraining techniques for text classification has been largely studied in an unsupervised setting. However, oftentimes labeled data from related past datasets which share label semantics with current task is available. We hypothesize that using this labeled data effectively can lead to better generalization on current task. In this paper, we propose a novel way to effectively utilize labeled data from related tasks with a graph based supervised contrastive learning approach. We formulate a token-graph by extrapolating the supervised information from examples to tokens. Our experiments with 8 disaster datasets show our method outperforms baselines and also example-level contrastive learning based formulation. In addition, we show cross-domain effectiveness of our method in a zero-shot setting.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> SAC '22: Proceedings of the 37th ACM/SIGAPP Symposium on Applied Computing</p>
+    <p><strong>Year:</strong> 2022</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>The prevalence of location-based social networks (LBSNs) has eased the understanding of human mobility patterns. However, categories which act as semantic characterization of the location, might be missing for some check-ins and can adversely affect modelling the mobility dynamics of users. At the same time, mobility patterns provide cues on the missing semantic categories. In this paper, we simultaneously address the problem of semantic annotation of locations and location adoption dynamics of users. We propose our model HAP-SAP, a latent spatio-temporal multivariate Hawkes process, which considers latent semantic category influences, and temporal and spatial mobility patterns of users. The inferred semantic categories can supplement our model on predicting the next check-in events by users. Our experiments on real datasets demonstrate the effectiveness of the proposed model for the semantic annotation and location adoption modelling tasks.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> SIGSPATIAL 2020: Proceedings of the 28th International Conference on Advances in Geographic Information Systems</p>
+    <p><strong>Year:</strong> 2020</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>With the rise in accessibility and popularity of various social media platforms, people have started expressing and communicating their ideas, opinions, and interests online. While these platforms are active sources of entertainment and idea-sharing, they also attract hostile and offensive content equally. Identification of hostile posts is an essential and challenging task. In particular, Hindi-English Code-Mixed online posts of conversational nature (which have a hierarchy of posts, comments, and replies) have escalated the challenges. There are two major challenges: (1) the complex structure of Code-Mixed text and (2) filtering the relevant previous context for a given utterance. To overcome these challenges, in this paper, we propose a novel hierarchical neural network architecture to identify hostile posts/comments/replies in online Hindi-English Code-Mixed conversations. We leverage large multilingual pre-trained (mLPT) models like mBERT, XLMR, and MuRIL. The mLPT models provide a rich representation of code-mix text and hierarchical modeling leads to a natural abstraction and selection of the relevant context. The propose model consistently outperformed all the baselines and emerged as a state-of-the-art performing model. We conducted multiple analyses and ablation studies to prove the robustness of the proposed model.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> WebSci 2022: 14th ACM Web Science Conference 2022</p>
+    <p><strong>Year:</strong> 2022</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>Dialogue State Tracking (DST) is a sub-task of task-based dialogue systems where the user intention is tracked through a set of (domain, slot, slot-value) triplets. Existing DST models can be difficult to extend for new datasets with larger domains/slots mainly due to either of the two reasons- i) prediction of domain-slot as a pair, and ii) dependency of model parameters on the number of slots and domains. In this work, we propose to address these issues using a Hierarchical DST (Hi-DST) model. At a given turn, the model first detects a change in domain followed by domain prediction if required. Then it decides suitable action for each slot in the predicted domains and finds their value accordingly. The model parameters of Hi-DST are independent of the number of domains/slots. Due to the hierarchical modeling, it achieves O(|M|+|N|) belief state prediction for a single turn where M and N are the set of unique domains and slots respectively. We argue that the hierarchical structure helps in the model explainability and makes it easily extensible to new datasets. Experiments on the MultiWOZ dataset show that our proposed model achieves comparable joint accuracy performance to state-of-the-art DST models.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> Proceedings of the 22nd Annual Meeting of the Special Interest Group on Discourse and Dialogue</p>
+    <p><strong>Year:</strong> 2021</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>Due to the wide adoption of social media platforms like Facebook, Twitter, etc., there is an emerging need of detecting online posts that can go against the community acceptance standards. The hostility detection task has been well explored for resource-rich languages like English, but is unexplored for resource-constrained languages like Hindi due to the unavailability of large suitable data. We view this hostility detection as a multi-label multi-class classification problem. We propose an effective neural network-based technique for hostility detection in Hindi posts. We leverage pre-trained multilingual Bidirectional Encoder Representations of Transformer (mBERT) to obtain the contextual representations of Hindi posts. We have performed extensive experiments including different pre-processing techniques, pre-trained models, neural architectures, hybrid strategies, etc. Our best performing neural classifier model includes One-vs-the-Rest approach where we obtained 92.60%, 81.14%, 69.59%, 75.29% and 73.01% F1 scores for hostile, fake, hate, offensive, and defamation labels respectively. The proposed model (https://​github.​com/​Arko98/​Hostility-Detection-in-Hindi-Constraint-2021) outperformed the existing baseline models and emerged as the state-of-the-art model for detecting hostility in the Hindi posts.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> CONSTRAIN 2021 (Workshop on Combating Online Hostile Posts in Regional Languages during Emergency Situation)</p>
+    <p><strong>Year:</strong> 2021</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>Temporal point process serves as an essential tool for modeling time-to-event data in continuous time space. Despite having massive amounts of event sequence data from various domains like social media, healthcare etc., real world application of temporal point process faces two major challenges: 1) it is not generalizable to predict events from unseen sequences in dynamic environment 2) they are not capable of thriving in continually evolving environment with minimal supervision while retaining previously learnt knowledge. To tackle these issues, we propose 	extit{HyperHawkes}, a hypernetwork based temporal point process framework which is capable of modeling time of occurrence of events for unseen sequences. Thereby, we solve the problem of zero-shot learning for time-to-event modeling. We also develop a hypernetwork based continually learning temporal point process for continuous modeling of time-to-event sequences with minimal forgetting. In this way, 	extit{HyperHawkes} augments the temporal point process with zero-shot modeling and continual learning capabilities. We demonstrate the application of the proposed framework through our experiments on two real-world datasets. Our results show the efficacy of the proposed approach in terms of predicting future events under zero-shot regime for unseen event sequences. We also show that the proposed model is able to predict sequences continually while retaining information from previous event sequences, hence mitigating catastrophic forgetting for time-to-event data.</p>
+  </div>
+
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> arXiv preprint arXiv:2205.02309</p>
+    <p><strong>Year:</strong> 2022</p>
+    
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create BibTeX modal
+  const modal = document.createElement('div');
+  modal.className = 'bibtex-modal';
+  modal.innerHTML = `
+    <div class="bibtex-content">
+      <div class="bibtex-header">
+        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-actions">
+          <button class="copy-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+          </button>
+          <div class="close-bibtex">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Handle BibTeX links
+  const bibtexLink = document.querySelector('a[href*="bibtex"]');
+  if (bibtexLink) {
+    bibtexLink.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const bibtexUrl = this.getAttribute('href');
+      try {
+        const response = await fetch(bibtexUrl);
+        const bibtexContent = await response.text();
+        const preElement = modal.querySelector('pre');
+        preElement.textContent = bibtexContent;
+        modal.classList.add('active');
+      } catch (error) {
+        console.error('Error loading BibTeX:', error);
+      }
+    });
+  }
+
+  // Copy BibTeX content
+  const copyButton = modal.querySelector('.copy-bibtex');
+  copyButton.addEventListener('click', () => {
+    const bibtexContent = modal.querySelector('pre').textContent;
+    navigator.clipboard.writeText(bibtexContent).then(() => {
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+        Copied!
+      `;
+      setTimeout(() => {
+        copyButton.innerHTML = originalText;
+      }, 2000);
+    });
+  });
+
+  // Close modal when clicking close button or outside
+  modal.querySelector('.close-bibtex').addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+</div>
+
+    
+<footer class="footer mt-1">
+  <div>
+    <a href="https://nlip-lab.github.io" style="font-size: 0.8rem;">Natural Language and Information Processing Lab</a><br>
+    <a href="https://iith.ac.in" style="color: black;">Indian Institute of Technology Hyderabad (IITH)</a>, Hyderabad, India
+  </div>
+  
+  <div class="mt-3">
+    For more details visit our <a href="/nlip/contact">Contact us</a> page
+  </div>
+
+  <span style="display: block; margin-bottom: 2em"></span>
+  <div class="container">
+    <!-- &copy; Copyright 2025 NLIP Lab, All Rights Reserved.
+    <br> -->Last updated: April 04, 2025.
+    <br>
+    Website template inspired from <a href="https://kordinglab.com/">Kording Lab</a><br>
+  </div>
+
+</footer>
+
+</html> 
+
+    <!-- <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.js" integrity="sha512-f8kZwYACKF8unHuRV7j/5ILZfflRncxHp1f6y/PKuuRpCVgpORNZMne1jrghNzTVlXabUXIg1iJ5PvhuAaau6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    
+</body>
+</html>

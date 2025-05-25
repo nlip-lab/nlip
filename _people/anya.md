@@ -35,5 +35,5 @@ Anya Gupta is an M.Tech student in Computer Science and Engineering at IIT Hyder
 
 ### Research Interests:
 - Machine Learning
-- Deep Learning
+<!-- - Deep Learning -->
 - Natural Language Processing
