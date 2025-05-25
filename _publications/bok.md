@@ -1,0 +1,19 @@
+---
+layout: publication_spotlight # Use the new layout
+title: "BoK: Introducing Bag-of-Keywords Loss for Interpretable Dialogue Response Generation" # Escape quotes in title
+collection: publications
+key: bok
+authors: "Suvodip Dey, Maunendra Sankar Desarkar"
+affiliation: ""
+journal: "25th Annual Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL 2024)"
+year: 2024
+month: "September" # Use the converted month name
+tldr: ""
+abstract: "The standard language modeling (LM) loss by itself has been shown to be inadequate for effective dialogue modeling. As a result, various training approaches, such as auxiliary loss functions and leveraging human feedback, are being adopted to enrich open-domain dialogue systems. One such auxiliary loss function is Bag-of-Words (BoW) loss, defined as the cross-entropy loss for predicting all the words/tokens of the next utterance. In this work, we propose a novel auxiliary loss named Bag-of-Keywords (BoK) loss to capture the central thought of the response through keyword prediction and leverage it to enhance the generation of meaningful and interpretable responses in open-domain dialogue systems. BoK loss upgrades the BoW loss by predicting only the keywords or critical words/tokens of the next utterance, intending to estimate the core idea rather than the entire response. We incorporate BoK loss in both encoder-decoder (T5) and decoder-only (DialoGPT) architecture and train the models to minimize the weighted sum of BoK and LM (BoK-LM) loss. We perform our experiments on two popular open-domain dialogue datasets, DailyDialog and Persona-Chat. We show that the inclusion of BoK loss improves the dialogue generation of backbone models while also enabling post-hoc interpretability. We also study the effectiveness of BoK-LM loss as a reference-free metric and observe comparable performance to the state-of-the-art metrics on various dialogue evaluation datasets."
+img: "bok.png"
+url: "https://aclanthology.org/2024.sigdial-1.48/"
+pdf: "https://aclanthology.org/2024.sigdial-1.48.pdf"
+code: "https://github.com/SuvodipDey/BoK"
+video: ""
+bibtex: "0"
+---

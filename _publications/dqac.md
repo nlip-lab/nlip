@@ -1,0 +1,19 @@
+---
+layout: publication_spotlight # Use the new layout
+title: "DQAC: Detoxifying Query Auto-Completion with Adapters" # Escape quotes in title
+collection: publications
+key: dqac
+authors: "Aishwarya Maheswaran, Kaushal Kumar Maurya, Manish Gupta, Maunendra Sankar Desarkar."
+affiliation: ""
+journal: "28th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2024)"
+year: 2024
+month: "May" # Use the converted month name
+tldr: ""
+abstract: "Recent Query Auto-completion (QAC) systems  leverage natural language generation or pre-trained language models (PLMs) to demonstrate remarkable performance. However, these systems also suffer from biased and toxic completions. Efforts have been made to address language detoxification within PLMs using controllable text generation (CTG) techniques, involving training with non-toxic data and employing decoding time approaches. As the completions for QAC systems are usually short, these existing CTG methods based on decoding and training are not directly transferable. Towards these concerns, we propose the first public QAC detoxification model, Detoxifying Query Auto-Completion (or DQAC), which utilizes adapters in a CTG framework. DQAC operates on latent representations with no additional overhead. It leverages two adapters for toxic and non-toxic cases. During inference, we fuse these representations in a controlled manner that guides the generation of query completions towards non-toxicity. We evaluate toxicity levels in the generated completions across two real-world datasets using two classifiers: a publicly available (Detoxify) and a search query-specific classifier which we develop (QDetoxify). DQAC consistently outperforms all existing baselines and emerges as a state-of-the-art model providing high quality and low toxicity. We make the code publicly available at https://shorturl.at/zJ024"
+img: "DQAC-PAKDD-2024.png"
+url: ""
+pdf: ""
+code: ""
+video: ""
+bibtex: "0"
+---
