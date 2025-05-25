@@ -65,6 +65,9 @@ permalink: /publication/
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d3b243c (Work under progress.)
 .publication-title a {
   color: #2c3e50;
   text-decoration: none;
@@ -94,8 +97,11 @@ permalink: /publication/
   transform-origin: bottom left;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> ad289bd (Refactor publications layout and styles for improved presentation and interactivity.)
+=======
+>>>>>>> d3b243c (Work under progress.)
 .publication-authors {
   font-size: 0.9rem;
   color: #666;
@@ -161,6 +167,7 @@ permalink: /publication/
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .publication-link {
   display: inline-flex;
   align-items: center;
@@ -203,30 +210,47 @@ permalink: /publication/
   margin-top: auto;
 }
 
+=======
+>>>>>>> d3b243c (Work under progress.)
 .publication-link {
-  padding: 0.5rem 1rem;
-  background: #2c3e50;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  color: white;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
 }
 
 .publication-link:hover {
-  background: #34495e;
+  background-color: #34495e;
   transform: translateY(-2px);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.publication-link svg {
+.publication-link .icon {
   width: 16px;
   height: 16px;
+<<<<<<< HEAD
   fill: currentColor;
 >>>>>>> ad289bd (Refactor publications layout and styles for improved presentation and interactivity.)
+=======
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+>>>>>>> d3b243c (Work under progress.)
 }
 
 .year-section {
@@ -486,10 +510,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const summary = tile.querySelector('.publication-summary');
     const abstract = tile.querySelector('.publication-abstract');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> ad289bd (Refactor publications layout and styles for improved presentation and interactivity.)
+=======
+
+>>>>>>> d3b243c (Work under progress.)
     if (summary) {
       summary.classList.add('preview');
       summary.addEventListener('click', function(e) {
@@ -498,10 +526,14 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> ad289bd (Refactor publications layout and styles for improved presentation and interactivity.)
+=======
+
+>>>>>>> d3b243c (Work under progress.)
     if (abstract) {
       abstract.classList.add('preview');
       abstract.addEventListener('click', function(e) {
@@ -519,19 +551,27 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateActiveYear() {
     const scrollPosition = window.scrollY + 100; // Offset for better trigger point
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> ad289bd (Refactor publications layout and styles for improved presentation and interactivity.)
+=======
+
+>>>>>>> d3b243c (Work under progress.)
     yearSections.forEach(section => {
       const year = section.querySelector('.year-header').textContent;
       const sectionTop = section.offsetTop - 100;
       const sectionBottom = sectionTop + section.offsetHeight;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
       
 >>>>>>> ad289bd (Refactor publications layout and styles for improved presentation and interactivity.)
+=======
+
+>>>>>>> d3b243c (Work under progress.)
       if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
         yearNavItems.forEach(item => {
           item.classList.remove('active');
@@ -618,10 +658,14 @@ document.addEventListener('DOMContentLoaded', function() {
   links.forEach(link => {
     const text = link.textContent.toLowerCase();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> ad289bd (Refactor publications layout and styles for improved presentation and interactivity.)
+=======
+
+>>>>>>> d3b243c (Work under progress.)
     if (text.includes('bibtex')) {
       link.addEventListener('click', async function(e) {
         e.preventDefault();
@@ -719,12 +763,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 {% endif %}
                 <div class="publication-content">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <h3 class="publication-title">
                         <a href="/publications/{{ publi.key }}/">{{ publi.title }}</a>
                     </h3>
 =======
                     <h3 class="publication-title">{{ publi.title }}</h3>
 >>>>>>> ad289bd (Refactor publications layout and styles for improved presentation and interactivity.)
+=======
+                    <h3 class="publication-title">
+                        <a href="/publications/{{ publi.key }}/">{{ publi.title }}</a>
+                    </h3>
+>>>>>>> d3b243c (Work under progress.)
                     <p class="publication-authors">{{ publi.authors }}</p>
                     <p class="publication-journal">{{ publi.journal }} ({{ month }})</p>
                     {% if publi.abstract %}
@@ -733,6 +783,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="publication-summary">{{ publi.summary }}</p>
                     {% endif %}
                     <div class="publication-links">
+<<<<<<< HEAD
 <<<<<<< HEAD
                         {% if publi.pdf %}
                         <a href="{{ publi.pdf }}" class="publication-link" target="_blank">
@@ -769,19 +820,43 @@ document.addEventListener('DOMContentLoaded', function() {
                         {% if publi.url %}
                         <a href="{{ publi.url }}" class="publication-link" target="_blank">URL</a>
                         {% endif %}
+=======
+>>>>>>> d3b243c (Work under progress.)
                         {% if publi.pdf %}
-                        <a href="{{ publi.pdf }}" class="publication-link" target="_blank">PDF</a>
+                        <a href="{{ publi.pdf }}" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            PDF
+                        </a>
                         {% endif %}
                         {% if publi.code %}
-                        <a href="{{ publi.code }}" class="publication-link" target="_blank">Code</a>
+                        <a href="{{ publi.code }}" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            Code
+                        </a>
+                        {% endif %}
+                        {% if publi.url %}
+                        <a href="{{ publi.url }}" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            URL
+                        </a>
                         {% endif %}
                         {% if publi.video %}
-                        <a href="{{ publi.video }}" class="publication-link" target="_blank">Video</a>
+                        <a href="{{ publi.video }}" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            Video
+                        </a>
                         {% endif %}
                         {% if publi.bibtex %}
-                        <a href="/nlip/publications/references/{{ publi.bibtex }}.txt" class="publication-link" target="_blank">BibTeX</a>
+                        <a href="{{ publi.bibtex }}" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            BibTeX
+                        </a>
                         {% endif %}
+<<<<<<< HEAD
 >>>>>>> ad289bd (Refactor publications layout and styles for improved presentation and interactivity.)
+=======
+                        <a href="{{ site.baseurl }}/publications/{{ publi.key }}/" class="btn btn-sm btn-outline-primary" target="_blank">Read More</a>
+>>>>>>> d3b243c (Work under progress.)
                     </div>
                 </div>
             </div>
