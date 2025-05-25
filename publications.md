@@ -786,7 +786,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </h3>
 
                     <p class="publication-authors">{{ publi.authors }}</p>
-                    <p class="publication-journal">{{ publi.journal }} {{ publi.year }})</p>
+                    <p class="publication-journal">{{ publi.journal }} ({{ month }} {{ publi.year }})</p>
                     {% if publi.abstract %}
                     <p class="publication-abstract">{{ publi.abstract }}</p>
                     {% elsif publi.summary %}
