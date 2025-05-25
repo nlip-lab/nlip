@@ -2,6 +2,18 @@
 
 This is repository for [NLIP](https://nlip-lab.github.io/). We use Jekyll to run our Github page. We are welcome for other people to contribute to our site not just lab members. Feel free to fork and pull-request!
 
+[![CI](https://github.com/nlip-lab/nlip/actions/workflows/jekyll-gh-pages.yml/badge.svg)](https://github.com/devendra/myproject/actions)
+[![License](https://img.shields.io/github/license/nlip-lab/nlip)](LICENSE)
+![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blue?logo=github)
+![Jekyll](https://img.shields.io/badge/Built%20with-Jekyll-blueviolet?logo=jekyll)
+[![Last Commit](https://img.shields.io/github/last-commit/nlip-lab/nlip)](https://github.com/nlip-lab/nlip/commits/main)
+[![GitHub Stars](https://img.shields.io/github/stars/nlip-lab/nlip?style=social)](https://github.com/nlip-lab/nlip/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/nlip-lab/nlip?style=social)](https://github.com/nlip-lab/nlip/forks)
+[![Top Lang](https://img.shields.io/github/languages/top/nlip-lab/nlip)]()
+[![Contributors](https://img.shields.io/github/contributors/nlip-lab/nlip)]()
+<!-- [![GitHub Issues](https://img.shields.io/github/issues/nlip-lab/nlip)](https://github.com/nlip-lab/nlip/issues) -->
+
+
 ## Run the page locally using Jekyll
 
 To run locally, follow instruction [here](https://jekyllrb.com/) to install Jekyll then run `jekyll serve` to see in `localhost:4000`. Here is a brief install guidelines.
