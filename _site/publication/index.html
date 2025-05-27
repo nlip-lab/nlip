@@ -176,6 +176,45 @@
   .publication-content {
     padding: 1rem 0.5rem;
   }
+  .year-nav {
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+  }
+  .year-nav-container {
+    gap: 0.2rem;
+    padding: 0 0.2rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-width: 100vw;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    touch-action: pan-x;
+    display: block !important; /* Override flex for mobile */
+    justify-content: unset !important;
+  }
+  .year-nav-container::-webkit-scrollbar {
+    display: none;
+  }
+  .year-nav-item {
+    display: inline-block !important; /* Make items inline for scroll */
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 16px;
+    min-width: 60px;
+    text-align: center;
+    margin: 0 0.1rem;
+    white-space: nowrap;
+    flex: none;
+  }
 }
 
 .publication-container {
@@ -3923,7 +3962,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <span style="display: block; margin-bottom: 2em"></span>
   <div class="container">
     <!-- &copy; Copyright 2025 NLIP Lab, All Rights Reserved.
-    <br> -->Last updated: May 26, 2025.
+    <br> -->Last updated: May 27, 2025.
     <br>
     Website template inspired from <a href="https://kordinglab.com/">Kording Lab</a><br>
   </div>
