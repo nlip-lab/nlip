@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
   modal.innerHTML = `
     <div class="bibtex-content">
       <div class="bibtex-header">
-        <div class="bibtex-title">BibTeX Entry</div>
+        <div class="bibtex-title">BibTeX</div>
         <div class="bibtex-actions">
           <button class="copy-bibtex">
             <svg viewBox="0 0 24 24">

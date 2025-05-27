@@ -1,0 +1,9 @@
+@misc{maurya2024charspanutilizinglexicalsimilarity,
+      title={CharSpan: Utilizing Lexical Similarity to Enable Zero-Shot Machine Translation for Extremely Low-resource Languages}, 
+      author={Kaushal Kumar Maurya and Rahul Kejriwal and Maunendra Sankar Desarkar and Anoop Kunchukuttan},
+      year={2024},
+      eprint={2305.05214},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2305.05214}, 
+}
