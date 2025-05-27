@@ -287,6 +287,7 @@
     
     <p class="spotlight-affiliation"></p>
     
+
     <div class="spotlight-links">
       
       <a href="https://aclanthology.org/2022.naacl-main.34.pdf" class="spotlight-link" target="_blank">
@@ -349,39 +350,46 @@
     </div>
   </header>
 
+  <section class="spotlight-section spotlight-details">
+    <h2 class="spotlight-section-title">Publication Details</h2>
+    <p><strong>Journal/Conference:</strong> Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</p>
+    <p>
+      <strong>Year:</strong> 2022 (May)
+    </p>
+    <!-- Add other details as needed -->
+  </section>
+
   <div class="spotlight-content">
-    
+    <!-- 
     <section class="spotlight-section spotlight-tldr">
       <h2 class="spotlight-section-title">TL;DR</h2>
       <p></p>
     </section>
-     
+      -->
+    
     <section class="spotlight-section spotlight-abstract">
       <h2 class="spotlight-section-title">Abstract</h2>
       <p>Recent studies show that auto-encoder based approaches successfully perform language generation, smooth sentence interpolation, and style transfer over unseen attributes using unlabelled datasets in a zero-shot manner. The latent space geometry of such models is organised well enough to perform on datasets where the style is 'coarse-grained' i.e. a small fraction of words alone in a sentence are enough to determine the overall style label. A recent study uses a discrete token-based perturbation approach to map 'similar' sentences ('similar' defined by low Levenshtein distance/ high word overlap) close by in latent space. This definition of 'similarity' does not look into the underlying nuances of the constituent words while mapping latent space neighbourhoods and therefore fails to recognise sentences with different style-based semantics while mapping latent neighbourhoods. We introduce EPAAEs (Embedding Perturbed Adversarial AutoEncoders) which completes this perturbation model, by adding a finely adjustable noise component on the continuous embeddings space. We empirically show that this (a) produces a better organised latent space that clusters stylistically similar sentences together, (b) performs best on a diverse set of text style transfer tasks than similar denoising-inspired baselines, and (c) is capable of fine-grained control of Style Transfer strength. We also extend the text style transfer tasks to NLI datasets and show that these more complex definitions of style are learned best by EPAAE. To the best of our knowledge, extending style transfer to NLI tasks has not been explored before.</p>
     </section>
+     
+    <div
+      class="spotlight-image-wrapper"
+      style="margin: 1.5rem 0; text-align: center"
+    >
+      <img
+        src="/nlip/publications/images/unsupervised-text-style-transfer.png"
+        alt="Towards Robust and Semantically Organised Latent Representations for Unsupervised Text Style Transfer image"
+        style="
+          max-width: 100%;
+          max-height: 340px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        "
+      />
+    </div>
     
-
-    <section class="spotlight-section spotlight-details">
-      <h2 class="spotlight-section-title">Publication Details</h2>
-      <p><strong>Journal/Conference:</strong> Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</p>
-      <p>
-        <strong>Year:</strong> 2022 (May)
-      </p>
-      <!-- Add other details as needed -->
-    </section>
-
-    <!-- You can add 
- here if you plan to add extra markdown content below the front matter -->
-    <!-- 
- -->
   </div>
 </div>
-
-<!-- Optional: Include BibTeX modal script if needed -->
-<script>
-  // Add BibTeX modal handling script if required for this layout
-</script>
 
     
 <footer class="footer mt-1">

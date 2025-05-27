@@ -287,6 +287,7 @@
     
     <p class="spotlight-affiliation"></p>
     
+
     <div class="spotlight-links">
       
       <a href="https://aclanthology.org/2021.sigdial-1.23.pdf" class="spotlight-link" target="_blank">
@@ -349,39 +350,46 @@
     </div>
   </header>
 
+  <section class="spotlight-section spotlight-details">
+    <h2 class="spotlight-section-title">Publication Details</h2>
+    <p><strong>Journal/Conference:</strong> Proceedings of the 22nd Annual Meeting of the Special Interest Group on Discourse and Dialogue</p>
+    <p>
+      <strong>Year:</strong> 2021 (July)
+    </p>
+    <!-- Add other details as needed -->
+  </section>
+
   <div class="spotlight-content">
-    
+    <!-- 
     <section class="spotlight-section spotlight-tldr">
       <h2 class="spotlight-section-title">TL;DR</h2>
       <p></p>
     </section>
-     
+      -->
+    
     <section class="spotlight-section spotlight-abstract">
       <h2 class="spotlight-section-title">Abstract</h2>
       <p>Dialogue State Tracking (DST) is a sub-task of task-based dialogue systems where the user intention is tracked through a set of (domain, slot, slot-value) triplets. Existing DST models can be difficult to extend for new datasets with larger domains/slots mainly due to either of the two reasons- i) prediction of domain-slot as a pair, and ii) dependency of model parameters on the number of slots and domains. In this work, we propose to address these issues using a Hierarchical DST (Hi-DST) model. At a given turn, the model first detects a change in domain followed by domain prediction if required. Then it decides suitable action for each slot in the predicted domains and finds their value accordingly. The model parameters of Hi-DST are independent of the number of domains/slots. Due to the hierarchical modeling, it achieves O(|M|+|N|) belief state prediction for a single turn where M and N are the set of unique domains and slots respectively. We argue that the hierarchical structure helps in the model explainability and makes it easily extensible to new datasets. Experiments on the MultiWOZ dataset show that our proposed model achieves comparable joint accuracy performance to state-of-the-art DST models.</p>
     </section>
+     
+    <div
+      class="spotlight-image-wrapper"
+      style="margin: 1.5rem 0; text-align: center"
+    >
+      <img
+        src="/nlip/publications/images/hidst.png"
+        alt="Hi-DST: A Hierarchical Approach for Scalable and Extensible Dialogue State Tracking image"
+        style="
+          max-width: 100%;
+          max-height: 340px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        "
+      />
+    </div>
     
-
-    <section class="spotlight-section spotlight-details">
-      <h2 class="spotlight-section-title">Publication Details</h2>
-      <p><strong>Journal/Conference:</strong> Proceedings of the 22nd Annual Meeting of the Special Interest Group on Discourse and Dialogue</p>
-      <p>
-        <strong>Year:</strong> 2021 (July)
-      </p>
-      <!-- Add other details as needed -->
-    </section>
-
-    <!-- You can add 
- here if you plan to add extra markdown content below the front matter -->
-    <!-- 
- -->
   </div>
 </div>
-
-<!-- Optional: Include BibTeX modal script if needed -->
-<script>
-  // Add BibTeX modal handling script if required for this layout
-</script>
 
     
 <footer class="footer mt-1">

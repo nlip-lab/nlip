@@ -287,6 +287,7 @@
     
     <p class="spotlight-affiliation"></p>
     
+
     <div class="spotlight-links">
       
       <a href="" class="spotlight-link" target="_blank">
@@ -349,39 +350,46 @@
     </div>
   </header>
 
+  <section class="spotlight-section spotlight-details">
+    <h2 class="spotlight-section-title">Publication Details</h2>
+    <p><strong>Journal/Conference:</strong> 18th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2024)</p>
+    <p>
+      <strong>Year:</strong> 2024 (March)
+    </p>
+    <!-- Add other details as needed -->
+  </section>
+
   <div class="spotlight-content">
-    
+    <!-- 
     <section class="spotlight-section spotlight-tldr">
       <h2 class="spotlight-section-title">TL;DR</h2>
       <p></p>
     </section>
-     
+      -->
+    
     <section class="spotlight-section spotlight-abstract">
       <h2 class="spotlight-section-title">Abstract</h2>
       <p>We address the task of machine translation(MT) from extremely low-resource language(ELRL) to English by leveraging cross-lingualtransfer from closely-related high-resourcelanguage (HRL). The development of an MTsystem for ELRL is challenging because theselanguages typically lack parallel corpora andmonolingual corpora, and their representationsare absent from large multilingual languagemodels. Many ELRLs share lexical similaritieswith some HRLs, which presents a novelmodeling opportunity. However, existingsubword-based neural MT models do notexplicitly harness this lexical similarity, as theyonly implicitly align HRL and ELRL latentembedding space. To overcome this limitation,we propose a novel, CHARSPAN, approachbased on character-span noise augmentationinto the training data of HRL. This serves asa regularization technique, making the modelmore robust to lexical divergences betweenthe HRL and ELRL, thus facilitating effectivecross-lingual transfer. Our method significantlyoutperformed strong baselines in zero-shotsettings on closely related HRL and ELRL pairsfrom three diverse language families, emergingas the state-of-the-art model for ELRLs.</p>
     </section>
+     
+    <div
+      class="spotlight-image-wrapper"
+      style="margin: 1.5rem 0; text-align: center"
+    >
+      <img
+        src="/nlip/publications/images/CharSpan-EACL-2024.png"
+        alt="CharSpan: Utilizing Lexical Similarity to Enable Zero-Shot Machine Translation for Extremely Low-resource Languages image"
+        style="
+          max-width: 100%;
+          max-height: 340px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        "
+      />
+    </div>
     
-
-    <section class="spotlight-section spotlight-details">
-      <h2 class="spotlight-section-title">Publication Details</h2>
-      <p><strong>Journal/Conference:</strong> 18th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2024)</p>
-      <p>
-        <strong>Year:</strong> 2024 (March)
-      </p>
-      <!-- Add other details as needed -->
-    </section>
-
-    <!-- You can add 
- here if you plan to add extra markdown content below the front matter -->
-    <!-- 
- -->
   </div>
 </div>
-
-<!-- Optional: Include BibTeX modal script if needed -->
-<script>
-  // Add BibTeX modal handling script if required for this layout
-</script>
 
     
 <footer class="footer mt-1">

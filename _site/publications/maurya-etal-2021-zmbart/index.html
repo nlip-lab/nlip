@@ -287,6 +287,7 @@
     
     <p class="spotlight-affiliation"></p>
     
+
     <div class="spotlight-links">
       
       <a href="https://aclanthology.org/2021.findings-acl.248.pdf" class="spotlight-link" target="_blank">
@@ -349,39 +350,46 @@
     </div>
   </header>
 
+  <section class="spotlight-section spotlight-details">
+    <h2 class="spotlight-section-title">Publication Details</h2>
+    <p><strong>Journal/Conference:</strong> Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021</p>
+    <p>
+      <strong>Year:</strong> 2021 (August)
+    </p>
+    <!-- Add other details as needed -->
+  </section>
+
   <div class="spotlight-content">
-    
+    <!-- 
     <section class="spotlight-section spotlight-tldr">
       <h2 class="spotlight-section-title">TL;DR</h2>
       <p></p>
     </section>
-     
+      -->
+    
     <section class="spotlight-section spotlight-abstract">
       <h2 class="spotlight-section-title">Abstract</h2>
       <p>Despite the recent advancement in NLP research, cross-lingual transfer for natural language generation is relatively understudied. In this work, we transfer supervision from high resource language (HRL) to multiple lowresource languages (LRLs) for natural language generation (NLG). We consider four NLG tasks (text summarization, question generation, news headline generation, and distractor generation) and three syntactically diverse languages, i.e., English, Hindi, and Japanese. We propose an unsupervised crosslingual language generation framework (called ZmBART) that does not use any parallel or pseudo-parallel/back-translated data. In this framework, we further pre-train mBART sequence-to-sequence denoising auto-encoder model with an auxiliary task using monolingual data of three languages. The objective function of the auxiliary task is close to the target tasks which enriches the multi-lingual latent representation of mBART and provides good initialization for target tasks. Then, this model is fine-tuned with task-specific supervised English data and directly evaluated with low-resource languages in the Zero-shot setting. To overcome catastrophic forgetting and spurious correlation issues, we applied freezing model component and data argumentation approaches respectively. This simple modeling approach gave us promising results. We experimented with few-shot training (with 1000 supervised data-points) which boosted the model performance further. We performed several ablations and cross-lingual transferability analysis to demonstrate the robustness of ZmBART.</p>
     </section>
+     
+    <div
+      class="spotlight-image-wrapper"
+      style="margin: 1.5rem 0; text-align: center"
+    >
+      <img
+        src="/nlip/publications/images/maurya-etal-2021-zmbart.png"
+        alt="ZmBART: An Unsupervised Cross-lingual Transfer Framework for Language Generation image"
+        style="
+          max-width: 100%;
+          max-height: 340px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        "
+      />
+    </div>
     
-
-    <section class="spotlight-section spotlight-details">
-      <h2 class="spotlight-section-title">Publication Details</h2>
-      <p><strong>Journal/Conference:</strong> Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021</p>
-      <p>
-        <strong>Year:</strong> 2021 (August)
-      </p>
-      <!-- Add other details as needed -->
-    </section>
-
-    <!-- You can add 
- here if you plan to add extra markdown content below the front matter -->
-    <!-- 
- -->
   </div>
 </div>
-
-<!-- Optional: Include BibTeX modal script if needed -->
-<script>
-  // Add BibTeX modal handling script if required for this layout
-</script>
 
     
 <footer class="footer mt-1">

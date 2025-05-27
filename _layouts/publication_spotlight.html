@@ -131,6 +131,7 @@ layout: default # Assuming you have a default layout
     {% if page.affiliation %}
     <p class="spotlight-affiliation">{{ page.affiliation }}</p>
     {% endif %}
+
     <div class="spotlight-links">
       {% if page.pdf %}
       <a href="{{ page.pdf }}" class="spotlight-link" target="_blank">
@@ -193,35 +194,44 @@ layout: default # Assuming you have a default layout
     </div>
   </header>
 
+  <section class="spotlight-section spotlight-details">
+    <h2 class="spotlight-section-title">Publication Details</h2>
+    <p><strong>Journal/Conference:</strong> {{ page.journal }}</p>
+    <p>
+      <strong>Year:</strong> {{ page.year }} {% if page.month %}({{ page.month
+      }}){% endif %}
+    </p>
+    <!-- Add other details as needed -->
+  </section>
+
   <div class="spotlight-content">
-    {% if page.tldr %}
+    <!-- {% if page.tldr %}
     <section class="spotlight-section spotlight-tldr">
       <h2 class="spotlight-section-title">TL;DR</h2>
       <p>{{ page.tldr }}</p>
     </section>
-    {% endif %} {% if page.abstract %}
+    {% endif %}  -->
+    {% if page.abstract %}
     <section class="spotlight-section spotlight-abstract">
       <h2 class="spotlight-section-title">Abstract</h2>
       <p>{{ page.abstract }}</p>
     </section>
+    {% endif %} {% if page.img %}
+    <div
+      class="spotlight-image-wrapper"
+      style="margin: 1.5rem 0; text-align: center"
+    >
+      <img
+        src="{{ site.baseurl }}/publications/images/{{ page.img }}"
+        alt="{{ page.title }} image"
+        style="
+          max-width: 100%;
+          max-height: 340px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        "
+      />
+    </div>
     {% endif %}
-
-    <section class="spotlight-section spotlight-details">
-      <h2 class="spotlight-section-title">Publication Details</h2>
-      <p><strong>Journal/Conference:</strong> {{ page.journal }}</p>
-      <p>
-        <strong>Year:</strong> {{ page.year }} {% if page.month %}({{ page.month
-        }}){% endif %}
-      </p>
-      <!-- Add other details as needed -->
-    </section>
-
-    <!-- You can add {{ content }} here if you plan to add extra markdown content below the front matter -->
-    <!-- {{ content }} -->
   </div>
 </div>
-
-<!-- Optional: Include BibTeX modal script if needed -->
-<script>
-  // Add BibTeX modal handling script if required for this layout
-</script>

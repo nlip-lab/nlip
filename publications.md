@@ -240,6 +240,14 @@ permalink: /publication/
   transition: all 0.2s ease;
 }
 
+/* Center align Read More button content vertically */
+.btn, .btn.btn-sm.btn-outline-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .publication-link:hover {
   background-color: #34495e;
   transform: translateY(-2px);
@@ -869,7 +877,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             BibTeX
                         </a>
                         {% endif %}
-                        <!-- <a href="{{ site.baseurl }}/publications/{{ publi.key }}/" class="btn btn-sm btn-outline-primary" target="_blank">Read More</a> -->
+                        <a href="{{ site.baseurl }}/publications/{{ publi.key }}/" class="btn btn-sm btn-outline-primary" target="_blank">Read More</a>
 
                     </div>
                 </div>

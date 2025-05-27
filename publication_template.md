@@ -295,10 +295,19 @@ permalink: /publications/{{ page.key }}/
     </div>
   </div>
 
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> {{ page.journal }}</p>
+    <p><strong>Year:</strong> {{ page.year }}</p>
+    {% if page.month %}
+    <p><strong>Month:</strong> {{ page.month }}</p>
+    {% endif %}
+  </div>
+
   <div class="publication-content">
     {% if page.img %}
     <div class="publication-image-container">
-      <img src="/nlip/publications/images/{{ page.img }}" class="publication-image" alt="{{ page.title }}">
+      <img src="{{ site.baseurl }}/publications/images/{{ page.img }}" class="publication-image" alt="{{ page.title }}">
     </div>
     {% endif %}
     <div class="publication-text">
@@ -311,14 +320,7 @@ permalink: /publications/{{ page.key }}/
     <p>{{ page.abstract }}</p>
   </div>
 
-  <div class="publication-details">
-    <h2>Publication Details</h2>
-    <p><strong>Journal:</strong> {{ page.journal }}</p>
-    <p><strong>Year:</strong> {{ page.year }}</p>
-    {% if page.month %}
-    <p><strong>Month:</strong> {{ page.month }}</p>
-    {% endif %}
-  </div>
+  
 </div>
 
 <script>
@@ -405,4 +407,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-</script> 
+</script>

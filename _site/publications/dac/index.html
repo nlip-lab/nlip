@@ -287,6 +287,7 @@
     
     <p class="spotlight-affiliation"></p>
     
+
     <div class="spotlight-links">
       
       <a href="" class="spotlight-link" target="_blank">
@@ -349,39 +350,46 @@
     </div>
   </header>
 
+  <section class="spotlight-section spotlight-details">
+    <h2 class="spotlight-section-title">Publication Details</h2>
+    <p><strong>Journal/Conference:</strong> 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2024)</p>
+    <p>
+      <strong>Year:</strong> 2024 (July)
+    </p>
+    <!-- Add other details as needed -->
+  </section>
+
   <div class="spotlight-content">
-    
+    <!-- 
     <section class="spotlight-section spotlight-tldr">
       <h2 class="spotlight-section-title">TL;DR</h2>
       <p></p>
     </section>
-     
+      -->
+    
     <section class="spotlight-section spotlight-abstract">
       <h2 class="spotlight-section-title">Abstract</h2>
       <p>Modern Query Auto-Completion (QAC) systems utilize natural language generation (NLG) using large language models (LLM) to achieve remarkable performance. However, these systems are prone to generating biased and toxic completions due to inherent learning biases. Existing detoxification approaches exhibit two key limitations: (1) They primarily focus on mitigating toxicity for grammatically well-formed long sentences but struggle to adapt to the QAC task, where queries are short and structurally different (include spelling errors, do not follow grammatical rules and have relatively flexible word order). (2) These approaches often view detoxification through a binary lens where all text labeled as toxic is undesirable and non-toxic is considered desirable. To address these limitations, we propose DAC, an intuitive and efficient reinforcement learning-based model to detoxify QAC. With DAC, we introduce an additional perspective of considering the third query class of addressable toxicity. These queries can encompass implicit toxicity, subjective toxicity, or non-toxic queries containing toxic words. We incorporate this three-class query behavior perspective into the proposed model through quantized optimal transport to learn distinctions and generate truly non-toxic completions. We evaluate toxicity levels in the generated completions by DAC across two real-world QAC datasets (Bing and AOL) using two classifiers: a publicly available generic classifier (Detoxify) and a search query-specific classifier, which we develop (TClassify). we find that DAC consistently outperforms all existing baselines on the Bing dataset and achieves competitive performance on the AOL dataset for query detoxification. % providing high quality and low toxicity. We make the code and models publicly available.</p>
     </section>
+     
+    <div
+      class="spotlight-image-wrapper"
+      style="margin: 1.5rem 0; text-align: center"
+    >
+      <img
+        src="/nlip/publications/images/DAC-SIGIR-2024.png"
+        alt="DAC: Quantized Optimal Transport Reward-based Reinforcement Learning Approach to Detoxify Query Auto-Completion image"
+        style="
+          max-width: 100%;
+          max-height: 340px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        "
+      />
+    </div>
     
-
-    <section class="spotlight-section spotlight-details">
-      <h2 class="spotlight-section-title">Publication Details</h2>
-      <p><strong>Journal/Conference:</strong> 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2024)</p>
-      <p>
-        <strong>Year:</strong> 2024 (July)
-      </p>
-      <!-- Add other details as needed -->
-    </section>
-
-    <!-- You can add 
- here if you plan to add extra markdown content below the front matter -->
-    <!-- 
- -->
   </div>
 </div>
-
-<!-- Optional: Include BibTeX modal script if needed -->
-<script>
-  // Add BibTeX modal handling script if required for this layout
-</script>
 
     
 <footer class="footer mt-1">
