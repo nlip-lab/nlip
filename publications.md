@@ -171,7 +171,7 @@ permalink: /publication/
 
 .publication-journal {
   font-size: 0.85rem;
-  color: #888;
+  color: #5281cb;
   margin-bottom: 1rem;
 }
 
