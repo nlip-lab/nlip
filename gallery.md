@@ -165,7 +165,7 @@ var totalImages = {{site.image_count}}
 // };
 
 
-for (var i = 0; i <= totalImages; i++) {
+for (var i = totalImages; i >= 0; i--) {
   images.push({
     source: "/nlip/images/gallery/"+i+".jpg"
   });    
