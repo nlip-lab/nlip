@@ -15,5 +15,24 @@ url: "https://aclanthology.org/2024.sigdial-1.48/"
 pdf: "https://aclanthology.org/2024.sigdial-1.48.pdf"
 code: "https://github.com/SuvodipDey/BoK"
 video: ""
-bibtex: "0"
+bibtex: |
+    @inproceedings{dey-desarkar-2024-bok,
+        title = "{B}o{K}: Introducing Bag-of-Keywords Loss for Interpretable Dialogue Response Generation",
+        author = "Dey, Suvodip  and Desarkar, Maunendra Sankar",
+        editor = "Kawahara, Tatsuya  and
+        Demberg, Vera  and
+        Ultes, Stefan  and
+        Inoue, Koji  and
+        Mehri, Shikib  and
+        Howcroft, David  and
+        Komatani, Kazunori",
+        booktitle = "Proceedings of the 25th Annual Meeting of the Special Interest Group on Discourse and Dialogue",
+        month = sep,
+        year = "2024",
+        address = "Kyoto, Japan",
+        publisher = "Association for Computational Linguistics",
+        url = "https://aclanthology.org/2024.sigdial-1.48",
+        doi = "10.18653/v1/2024.sigdial-1.48",
+        pages = "566--578"
+    }
 ---

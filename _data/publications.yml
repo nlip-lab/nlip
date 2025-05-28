@@ -157,14 +157,7 @@
   authors: "Venkatesh E, Kaushal Kumar Maurya, Deepak Kumar and Maunendra Sankar Desarkar"
   title: "DivHSK: Diverse Headline Generation using Self-Attention based Keyword Selection"
   journal: "61st Annual Meeting of the Association for Computational Linguistics (ACL 2023)"
-  abstract: "Diverse headline generation is an NLP task where given a news article, the goal is to generate multiple headlines that are true to the content of the article, but are different among themselves. This task aims to exhibit and exploit semantically similar one-to-many relationships
-between a source news article and multiple target headlines. Towards this, we propose a novel
-model called DIVHSK. It has two components: KEYSELECT for selecting the important keywords, and SEQGEN, for finally generating the
-multiple diverse headlines. In KEYSELECT, we cluster the self-attention heads of the last layer
-of the pre-trained encoder and select the mostattentive theme and general keywords from the
-source article. Then, cluster-specific keyword sets guide the SEQGEN, a pre-trained encoderdecoder model, to generate diverse yet semantically similar headlines. The proposed model
-consistently outperformed existing literature and our strong baselines and emerged as a stateof-the-art model. Additionally, We have also
-created a high-quality multi-reference headline dataset from news articles"
+  abstract: "Diverse headline generation is an NLP task where given a news article, the goal is to generate multiple headlines that are true to the content of the article, but are different among themselves. This task aims to exhibit and exploit semantically similar one-to-many relationships between a source news article and multiple target headlines. Towards this, we propose a novel model called DIVHSK. It has two components: KEYSELECT for selecting the important keywords, and SEQGEN, for finally generating the multiple diverse headlines. In KEYSELECT, we cluster the self-attention heads of the last layer of the pre-trained encoder and select the mostattentive theme and general keywords from the source article. Then, cluster-specific keyword sets guide the SEQGEN, a pre-trained encoderdecoder model, to generate diverse yet semantically similar headlines. The proposed model consistently outperformed existing literature and our strong baselines and emerged as a stateof-the-art model. Additionally, We have also created a high-quality multi-reference headline dataset from news articles"
   year: 2023
   month: 07
   url: "https://aclanthology.org/2023.findings-acl.118/"
@@ -241,8 +234,7 @@ created a high-quality multi-reference headline dataset from news articles"
   highlight: 1
   img: "eval-dst-performance-new.png"
   video: 
-  summary: "Dialogue State Tracking (DST) is primarily
-evaluated using Joint Goal Accuracy (JGA) defined as the fraction of turns where the groundtruth dialogue state exactly matches the prediction. We propose a new evaluation metric named Flexible Goal Accuracy (FGA). FGA is a generalized version of JGA. But unlike JGA, it tries to give penalized rewards to mispredictions that are locally correct i.e. the root cause of the error is an earlier turn. By doing so, FGA considers the performance of both cumulative and turn-level prediction flexibly and provides a better insight than the existing metrics. We also show that FGA is a better discriminator of DST model performance."
+  summary: "Dialogue State Tracking (DST) is primarily evaluated using Joint Goal Accuracy (JGA) defined as the fraction of turns where the groundtruth dialogue state exactly matches the prediction. We propose a new evaluation metric named Flexible Goal Accuracy (FGA). FGA is a generalized version of JGA. But unlike JGA, it tries to give penalized rewards to mispredictions that are locally correct i.e. the root cause of the error is an earlier turn. By doing so, FGA considers the performance of both cumulative and turn-level prediction flexibly and provides a better insight than the existing metrics. We also show that FGA is a better discriminator of DST model performance."
   bibtex: 1
 
 - key: "time-event-modeling"

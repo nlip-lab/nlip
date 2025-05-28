@@ -171,7 +171,7 @@ permalink: /publication/
 
 .publication-journal {
   font-size: 0.85rem;
-  color: #5281cb;
+  color: #0d6efd;
   margin-bottom: 1rem;
 }
 
@@ -877,7 +877,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             BibTeX
                         </a>
                         {% endif %}
-                        <a href="{{ site.baseurl }}/publications/{{ publi.key }}/" class="btn btn-sm btn-outline-primary" target="_blank">Read More</a>
+                        <a href="{{ site.baseurl }}/publications/{{ publi.key }}/" class="btn btn-sm btn-outline-primary" target="_blank" style="font-size: 0.95rem; padding: 0.45rem 1.1rem; min-width: unset; min-height: unset; height: auto; line-height: 1.2; border-radius: 6px; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center;">
+                          Read More
+                        </a>
 
                     </div>
                 </div>

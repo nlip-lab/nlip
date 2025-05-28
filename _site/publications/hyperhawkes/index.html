@@ -186,8 +186,8 @@
 </head>
 <body>
   <section class="hero">
-    <div class="hero-body" style="padding-top: 2.5rem;"> <!-- Add space above title -->
-      <div class="container is-max-desktop">
+    <!-- <div class="hero-body" style="padding-top: 2.5rem;"> Add space above title -->
+      <div class="container is-max-desktop" style="padding: 2rem;">
         <div class="columns is-centered">
           <div class="column has-text-centered" style="text-align: center;"> <!-- Center align everything before abstract -->
             <h1 class="title is-1 publication-title" style="text-align: center;">HyperHawkes: Hypernetwork based Neural Temporal Point Process</h1>
@@ -201,7 +201,7 @@
               <br><span style="font-size:1.3rem; font-weight:700; color:#2c3e50;">arXiv preprint arXiv:2205.02309</span>
             </div>
             <div class="column has-text-centered" style="text-align: center;"></div>
-              <div class="publication-links" style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.2rem;">
+              <div class="publication-links" style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap;">
                 
                 <a href="https://arxiv.org/pdf/2210.00213.pdf" target="_blank" class="button is-rounded is-medium" style="background: linear-gradient(90deg, #ff9800 0%, #ff5722 100%); color: #fff; border: none; box-shadow: 0 4px 12px rgba(255,152,0,0.15); display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-weight: 600; min-width: 120px; min-height: 48px; border-radius: 18px;">
                   <span class="icon" style="display: flex; align-items: center; justify-content: center; background: #fff3e0; border-radius: 50%; width: 2.2em; height: 2.2em;">
@@ -227,6 +227,19 @@
                   </span>
                   <span style="display: flex; align-items: center; justify-content: center;">Code</span>
                 </a>
+                
+                
+                <a href="/publications/hyperhawkes/" target="_blank" class="button is-rounded is-medium" style="background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%); color: #fff; border: none; box-shadow: 0 4px 12px rgba(67,206,162,0.15); display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-weight: 600; min-width: 120px; min-height: 48px; border-radius: 18px;">
+                  <span class="icon" style="display: flex; align-items: center; justify-content: center; background: #e0f7fa; border-radius: 50%; width: 2.2em; height: 2.2em;">
+                    <svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="10" stroke="#185a9d" stroke-width="2" fill="#fff"/>
+                      <path d="M8 12a4 4 0 0 1 8 0c0 2.21-1.79 4-4 4s-4-1.79-4-4z" stroke="#43cea2" stroke-width="2" fill="none"/>
+                      <path d="M12 2v2m0 16v2m10-10h-2M4 12H2" stroke="#43cea2" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <span style="display: flex; align-items: center; justify-content: center;">URL</span>
+                </a>
+                
                 
                 
                 
@@ -261,14 +274,15 @@
   
   
   <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content" style="position: relative;">
+    <div class="container is-max-desktop content" style="position: relative; padding: 1rem;">
       <h2 class="title">BibTeX</h2>
       <div style="position: relative;">
-        <pre id="bibtex-block" style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 0.2em 1.2em 0.2em 1.2em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; overflow-x: auto; position: relative; margin: 0; min-height: 0; height: auto; display: block;">
-        <code style="font-family: inherit; font-size: inherit; background: none; border: none; color: inherit; display: block; white-space: pre; padding: 0; margin: 0; min-height: 0; height: auto;">
-           
-        </code>
-        </pre>
+        
+        <div style="overflow-x: auto; width: 100%;">
+          <pre id="bibtex-block" style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;">
+            
+          </pre>
+        </div>
       </div>
     </div>
   </section>

@@ -1,7 +1,6 @@
 @inproceedings{dey-desarkar-2024-bok,
     title = "{B}o{K}: Introducing Bag-of-Keywords Loss for Interpretable Dialogue Response Generation",
-    author = "Dey, Suvodip  and
-      Desarkar, Maunendra Sankar",
+    author = "Dey, Suvodip  and Desarkar, Maunendra Sankar",
     editor = "Kawahara, Tatsuya  and
       Demberg, Vera  and
       Ultes, Stefan  and
