@@ -1,19 +1,19 @@
 ---
-layout: publication_spotlight # Use the new layout
-title: "Towards Improvement of Grounded Cross-Lingual Natural Language Inference with VisioTextual Attention" # Escape quotes in title
+layout: publication_spotlight
 collection: publications
 key: vta
+title: "Towards Improvement of Grounded Cross-Lingual Natural Language Inference with VisioTextual Attention"
 authors: "Arkadipta De, Maunendra Sankar Desarkar, and Asif Ekbal"
-affiliation: ""
 journal: "Natural Language Processing (Elsevier)"
-year: 2023
-month: "08" # Use the converted month name
-tldr: ""
 abstract: ""
-img: "vta-ex.png"
+year: 2023
+month: 8
 url: ""
 pdf: ""
+cite: ""
 code: ""
+highlight: 0
+img: "vta-ex.png"
 video: ""
-bibtex: ""
+summary: ""
 ---
