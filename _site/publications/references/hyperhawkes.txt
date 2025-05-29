@@ -1,8 +1,0 @@
-@misc{dubey2022hyperhawkes,
-      title={HyperHawkes: Hypernetwork based Neural Temporal Point Process}, 
-      author={Manisha Dubey and P. K. Srijith and Maunendra Sankar Desarkar},
-      year={2022},
-      eprint={2210.00213},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
-}

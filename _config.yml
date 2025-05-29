@@ -14,11 +14,11 @@ markdown:           kramdown
 # Highlighter
 highlighter:        rouge
 
-news_years: [2024, 2023, 2022, 2021, 2020, 2019]
+news_years: [2025, 2024, 2023, 2022, 2021, 2020, 2019]
 publications_years: [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017]
-image_count: 36
+image_count: 37
 
-number_of_news_in_homepage: 7
+number_of_news_in_homepage: 6
 
 last_updated: true
 
@@ -32,16 +32,16 @@ research_dropdown: true
 
 # Navigation
 nav:
-  - name:           "home"
+  - name:           "Home"
     href:           "/nlip/"
 
-  - name:           "research"
+  - name:           "Research"
     href:           "/nlip/research"
 
-  - name:           "publications"
+  - name:           "Publications"
     href:           "/nlip/publication"
 
-  - name:           "people"
+  - name:           "People"
     href:           "/nlip/people"
 
   - name:           "Reading Group"
@@ -94,7 +94,7 @@ collections:
     permalink: /publications/:title/
 
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+  # Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 
 
 plugins:
