@@ -8,7 +8,7 @@ journal: "29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (SIG
 abstract: ""
 year: 2023
 month: 8
-url: ""
+link: ""
 pdf: ""
 cite: ""
 code: ""

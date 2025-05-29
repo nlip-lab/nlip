@@ -8,7 +8,7 @@ journal: "SAC '22: Proceedings of the 37th ACM/SIGAPP Symposium on Applied Compu
 year: 2022
 month: 6
 highlight: 0
-url: "https://dl.acm.org/doi/10.1145/3477314.3507194"
+link: "https://dl.acm.org/doi/10.1145/3477314.3507194"
 pdf: "https://dl.acm.org/doi/pdf/10.1145/3477314.3507194"
 img: "graph-contrastive-pretraining.png"
 bibtex: 0

@@ -8,7 +8,7 @@ journal: "IEEE Transactions on Computational Social Systems (Volume: 10, Issue: 
 year: 2022
 month: 3
 highlight: 1
-url: "https://ieeexplore.ieee.org/document/9744724"
+link: "https://ieeexplore.ieee.org/document/9744724"
 pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9744724"
 img: "unspuervised-domain-gnn.png"
 bibtex: 1

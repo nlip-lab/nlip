@@ -23,7 +23,7 @@
   <!-- OG Meta Tags: Combine and prioritize page-specific from spotlight -->
   <meta name="description" content="Learning to Distract: A Hierarchical Multi-Decoder Network for Automated Generation of Long Distractors for Multiple-Choice Questions for Reading Comprehension"> <!-- From original spotlight.html -->
   <meta property="og:title" content="Learning to Distract: A Hierarchical Multi-Decoder Network for Automated Generation of Long Distractors for Multiple-Choice Questions for Reading Comprehension"/> <!-- From original spotlight.html -->
-  <meta property="og:description" content=""/> <!-- From original spotlight.html -->
+  <meta property="og:description" content="The task of generating incorrect options for multiple-choice questions is termed as distractor generation problem. The task requires high cognitive skills an..."/> <!-- From original spotlight.html -->
   <meta property="og:url" content="http://localhost:4000/nlip/publications/learningtodistract/"/> <!-- From original spotlight.html -->
   <meta property="og:image" content="/nlip/publications/images/learningtodistract.png" /> <!-- From original spotlight.html -->
   <meta property="og:image:width" content="1200"/> <!-- From original spotlight.html -->
@@ -103,17 +103,6 @@
                 </a>
                 
                 
-                <a href="/publications/learningtodistract/" target="_blank" class="button is-rounded is-medium" style="background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%); color: #fff; border: none; box-shadow: 0 4px 12px rgba(67,206,162,0.15); display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-weight: 600; min-width: 120px; min-height: 48px; border-radius: 18px;">
-                  <span class="icon" style="display: flex; align-items: center; justify-content: center; background: #e0f7fa; border-radius: 50%; width: 2.2em; height: 2.2em;">
-                    <svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="12" cy="12" r="10" stroke="#185a9d" stroke-width="2" fill="#fff"/>
-                      <path d="M8 12a4 4 0 0 1 8 0c0 2.21-1.79 4-4 4s-4-1.79-4-4z" stroke="#43cea2" stroke-width="2" fill="none"/>
-                      <path d="M12 2v2m0 16v2m10-10h-2M4 12H2" stroke="#43cea2" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                  </span>
-                  <span style="display: flex; align-items: center; justify-content: center;">URL</span>
-                </a>
-                
                 
                 
                 
@@ -133,7 +122,7 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <p></p>
+            <p>The task of generating incorrect options for multiple-choice questions is termed as distractor generation problem. The task requires high cognitive skills and is extremely challenging to automate. Existing neural approaches for the task leverage encoder-decoder architecture to generate long distractors. However, in this process two critical points are ignored - firstly, many methods use Jaccard similarity over a pool of candidate distractors to sample the distractors. This often makes the generated distractors too obvious or not relevant to the question context. Secondly, some approaches did not consider the answer in the model, which caused the generated distractors to be either answer-revealing or semantically equivalent to the answer. In this paper, we propose a novel Hierarchical Multi-Decoder Network (HMD-Net) consisting of one encoder and three decoders, where each decoder generates a single distractor. To overcome the first problem mentioned above, we include multiple decoders with a dis-similarity loss in the loss function. To address the second problem, we exploit richer interaction between the article, question, and answer with a SoftSel operation and a Gated Mechanism. This enables the generation of distractors that are in context with questions but semantically not equivalent to the answers. The proposed model outperformed all the previous approaches significantly in both automatic and manual evaluations. In addition, we also consider linguistic features and BERT contextual embedding with our base model which further push the model performance.</p>
           </div>
         </div>
       </div>
@@ -150,13 +139,8 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content" style="position: relative; padding: 1rem;">
       <h2 class="title">BibTeX</h2>
-      <div style="position: relative;">
-        
-        <div style="overflow-x: auto; width: 100%;">
-          <pre id="bibtex-block" style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;">
-            0
-            
-          </pre>
+      <div style="position: relative;"><div style="overflow-x: auto; width: 100%;">
+          <pre id="bibtex-block" style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;"></pre>
         </div>
       </div>
     </div>

@@ -103,7 +103,7 @@
                 </a>
                 
                 
-                <a href="/publications/bok/" target="_blank" class="button is-rounded is-medium" style="background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%); color: #fff; border: none; box-shadow: 0 4px 12px rgba(67,206,162,0.15); display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-weight: 600; min-width: 120px; min-height: 48px; border-radius: 18px;">
+                <a href="https://aclanthology.org/2024.sigdial-1.48/" target="_blank" class="button is-rounded is-medium" style="background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%); color: #fff; border: none; box-shadow: 0 4px 12px rgba(67,206,162,0.15); display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-weight: 600; min-width: 120px; min-height: 48px; border-radius: 18px;">
                   <span class="icon" style="display: flex; align-items: center; justify-content: center; background: #e0f7fa; border-radius: 50%; width: 2.2em; height: 2.2em;">
                     <svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="12" cy="12" r="10" stroke="#185a9d" stroke-width="2" fill="#fff"/>
@@ -150,13 +150,27 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content" style="position: relative; padding: 1rem;">
       <h2 class="title">BibTeX</h2>
-      <div style="position: relative;">
-        
-        <div style="overflow-x: auto; width: 100%;">
-          <pre id="bibtex-block" style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;">
-            bok
-            
-          </pre>
+      <div style="position: relative;"><div style="overflow-x: auto; width: 100%;">
+          <pre id="bibtex-block" style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;">@inproceedings{dey-desarkar-2024-bok,
+    title = &quot;{B}o{K}: Introducing Bag-of-Keywords Loss for Interpretable Dialogue Response Generation&quot;,
+    author = &quot;Dey, Suvodip  and Desarkar, Maunendra Sankar&quot;,
+    editor = &quot;Kawahara, Tatsuya  and
+    Demberg, Vera  and
+    Ultes, Stefan  and
+    Inoue, Koji  and
+    Mehri, Shikib  and
+    Howcroft, David  and
+    Komatani, Kazunori&quot;,
+    booktitle = &quot;Proceedings of the 25th Annual Meeting of the Special Interest Group on Discourse and Dialogue&quot;,
+    month = sep,
+    year = &quot;2024&quot;,
+    address = &quot;Kyoto, Japan&quot;,
+    publisher = &quot;Association for Computational Linguistics&quot;,
+    url = &quot;https://aclanthology.org/2024.sigdial-1.48&quot;,
+    doi = &quot;10.18653/v1/2024.sigdial-1.48&quot;,
+    pages = &quot;566--578&quot;,
+    abstract = &quot;The standard language modeling (LM) loss by itself has been shown to be inadequate for effective dialogue modeling. As a result, various training approaches, such as auxiliary loss functions and leveraging human feedback, are being adopted to enrich open-domain dialogue systems. One such auxiliary loss function is Bag-of-Words (BoW) loss, defined as the cross-entropy loss for predicting all the words/tokens of the next utterance. In this work, we propose a novel auxiliary loss named Bag-of-Keywords (BoK) loss to capture the central thought of the response through keyword prediction and leverage it to enhance the generation of meaningful and interpretable responses in open-domain dialogue systems. BoK loss upgrades the BoW loss by predicting only the keywords or critical words/tokens of the next utterance, intending to estimate the core idea rather than the entire response. We incorporate BoK loss in both encoder-decoder (T5) and decoder-only (DialoGPT) architecture and train the models to minimize the weighted sum of BoK and LM (BoK-LM) loss. We perform our experiments on two popular open-domain dialogue datasets, DailyDialog and Persona-Chat. We show that the inclusion of BoK loss improves the dialogue generation of backbone models while also enabling post-hoc interpretability. We also study the effectiveness of BoK-LM loss as a reference-free metric and observe comparable performance to the state-of-the-art metrics on various dialogue evaluation datasets.&quot;,
+}</pre>
         </div>
       </div>
     </div>

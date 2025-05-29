@@ -8,7 +8,7 @@ journal: "ASONAM 2021: Proceedings of the 2021 IEEE/ACM International Conference
 year: 2021
 month: 11
 highlight: 0
-url: "https://dl.acm.org/doi/10.1145/3487351.3488341"
+link: "https://dl.acm.org/doi/10.1145/3487351.3488341"
 pdf: "https://dl.acm.org/doi/pdf/10.1145/3487351.3488341"
 img: "multi-view-hypergraph.png"
 bibtex: 0

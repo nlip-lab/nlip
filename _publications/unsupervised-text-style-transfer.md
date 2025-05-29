@@ -8,7 +8,7 @@ journal: "Proceedings of the 2022 Conference of the North American Chapter of th
 year: 2022
 month: 5
 highlight: 1
-url: "https://aclanthology.org/2022.naacl-main.34/"
+link: "https://aclanthology.org/2022.naacl-main.34/"
 pdf: "https://aclanthology.org/2022.naacl-main.34.pdf"
 code: "https://github.com/sharan21/EPAAE"
 img: "unsupervised-text-style-transfer.png"

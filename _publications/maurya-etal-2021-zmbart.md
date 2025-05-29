@@ -8,7 +8,7 @@ journal: "Findings of the Association for Computational Linguistics: ACL-IJCNLP 
 year: 2021
 month: 8
 highlight: 1
-url: "https://aclanthology.org/2021.findings-acl.248/"
+link: "https://aclanthology.org/2021.findings-acl.248/"
 pdf: "https://aclanthology.org/2021.findings-acl.248.pdf"
 code: "https://github.com/kaushal0494/ZmBART"
 img: "maurya-etal-2021-zmbart.png"

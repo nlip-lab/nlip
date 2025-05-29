@@ -8,7 +8,7 @@ journal: "RecSys 2018: Proceedings of the 12th ACM Conference on Recommender Sys
 year: 2018
 month: 9
 highlight: 0
-url: "https://dl.acm.org/doi/10.1145/3240323.3240346"
+link: "https://dl.acm.org/doi/10.1145/3240323.3240346"
 pdf: "https://dl.acm.org/doi/pdf/10.1145/3240323.3240346"
 img: "recsys18.png"
 bibtex: 0

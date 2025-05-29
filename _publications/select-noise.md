@@ -8,7 +8,7 @@ journal: "Findings of the Association for Computational Linguistics: EMNLP 2023"
 year: 2023
 month: 10
 highlight: 1
-url: "https://aclanthology.org/2023.findings-emnlp.109/"
+link: "https://aclanthology.org/2023.findings-emnlp.109/"
 pdf: "https://aclanthology.org/2023.findings-emnlp.109.pdf"
 code: "https://github.com/maharajbrahma/selectnoise/"
 img: "select-noise-2023.png"

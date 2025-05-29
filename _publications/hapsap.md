@@ -8,7 +8,7 @@ journal: "SIGSPATIAL 2020: Proceedings of the 28th International Conference on A
 year: 2020
 month: 11
 highlight: 0
-url: "https://dl.acm.org/doi/10.1145/3397536.3422233"
+link: "https://dl.acm.org/doi/10.1145/3397536.3422233"
 pdf: "https://dl.acm.org/doi/pdf/10.1145/3397536.3422233"
 img: "hapsap.png"
 bibtex: 0

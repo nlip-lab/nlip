@@ -8,7 +8,7 @@ journal: "Proceedings of the 22nd Annual Meeting of the Special Interest Group o
 year: 2021
 month: 7
 highlight: 1
-url: "https://aclanthology.org/2021.sigdial-1.23/"
+link: "https://aclanthology.org/2021.sigdial-1.23/"
 pdf: "https://aclanthology.org/2021.sigdial-1.23.pdf"
 code: "https://github.com/suvodipdey/hi-dst"
 img: "hidst.png"

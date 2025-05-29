@@ -8,7 +8,7 @@ journal: "Natural Language Processing (Elsevier)"
 abstract: ""
 year: 2023
 month: 8
-url: ""
+link: ""
 pdf: ""
 cite: ""
 code: ""

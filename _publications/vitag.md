@@ -8,7 +8,7 @@ journal: "2019 IEEE Fifth International Conference on Multimedia Big Data (BigMM
 year: 2019
 month: 9
 highlight: 0
-url: "https://ieeexplore.ieee.org/document/8919469"
+link: "https://ieeexplore.ieee.org/document/8919469"
 pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8919469"
 img: "vitag.png"
 bibtex: 0

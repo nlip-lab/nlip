@@ -9,7 +9,7 @@ abstract: "In dialogue systems, automatically evaluating machine-generated respo
 year: 2023
 month: 7
 highlight: 1
-url: "https://aclanthology.org/2023.sigdial-1.7"
+link: "https://aclanthology.org/2023.sigdial-1.7"
 pdf: "https://aclanthology.org/2023.sigdial-1.7.pdf"
 code: "https://github.com/SuvodipDey/Dial-M"
 img: "dial-m_pic.png"

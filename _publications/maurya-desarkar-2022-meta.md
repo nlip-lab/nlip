@@ -8,7 +8,7 @@ journal: "Findings of the Association for Computational Linguistics, ACL 2022"
 year: 2022
 month: 5
 highlight: 1
-url: "https://aclanthology.org/2022.findings-acl.24"
+link: "https://aclanthology.org/2022.findings-acl.24"
 pdf: "https://aclanthology.org/2022.findings-acl.24.pdf"
 code: "https://github.com/kaushal0494/Meta_XNLG"
 img: "maurya-desarkar-2022-meta.png"

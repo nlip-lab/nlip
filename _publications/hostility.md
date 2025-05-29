@@ -8,7 +8,7 @@ journal: "CONSTRAIN 2021 (Workshop on Combating Online Hostile Posts in Regional
 year: 2021
 month: 
 highlight: 0
-url: "https://www.springerprofessional.de/en/coarse-and-fine-grained-hostility-detection-in-hindi-posts-using/19047892"
+link: "https://www.springerprofessional.de/en/coarse-and-fine-grained-hostility-detection-in-hindi-posts-using/19047892"
 pdf: "https://arxiv.org/pdf/2101.04998.pdf"
 code: "https://github.com/Arko98/Hostility-Detection-in-Hindi-Constraint-2021"
 img: "hostility.png"

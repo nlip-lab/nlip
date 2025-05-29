@@ -8,7 +8,7 @@ journal: "DocEng 2019: Proceedings of the ACM Symposium on Document Engineering 
 year: 2019
 month: 9
 highlight: 0
-url: "https://dl.acm.org/doi/10.1145/3342558.3345418"
+link: "https://dl.acm.org/doi/10.1145/3342558.3345418"
 pdf: "https://dl.acm.org/doi/pdf/10.1145/3342558.3345418"
 img: "multi-context-info.png"
 bibtex: 0
