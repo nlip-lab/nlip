@@ -1,19 +1,38 @@
----
-layout: default
----
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="{{ page.title }}">
-  <meta property="og:title" content="{{ page.title }}"/>
-  <meta property="og:description" content="{{ page.abstract | strip_html | truncate: 160 }}"/>
-  <meta property="og:url" content="{{ page.external_url | default: page.url | absolute_url }}"/>
-  <meta property="og:image" content="{{ site.baseurl }}/publications/images/{{ page.img }}" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <title>{{ page.title }}</title>
-  <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/static/images/ns.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.name }} - IIT Hyderabad</title>
+
+  <!-- CSS from default.html -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="{{ site.baseurl }}/css/zoom.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.css" integrity="sha512-zdX1vpRJcExqoI7yuYbSFAbSWxscAoLF0KoUPvMSAK09BaOZ47UFdP4ABSXpevKfcD0MTVxvh0jLHQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Favicons: Prioritize spotlight's, then default's -->
+  <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/static/images/ns.png"> <!-- From original spotlight.html -->
+  <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.png"> <!-- From default.html -->
+
+  <!-- OG Meta Tags: Combine and prioritize page-specific from spotlight -->
+  <meta name="description" content="{{ page.description | default: page.title }}"> <!-- From original spotlight.html -->
+  <meta property="og:title" content="{{ page.title }}"/> <!-- From original spotlight.html -->
+  <meta property="og:description" content="{{ page.abstract | strip_html | truncate: 160 }}"/> <!-- From original spotlight.html -->
+  <meta property="og:url" content="{{ page.external_url | default: page.url | absolute_url }}"/> <!-- From original spotlight.html -->
+  <meta property="og:image" content="{{ site.baseurl }}/publications/images/{{ page.img }}" /> <!-- From original spotlight.html -->
+  <meta property="og:image:width" content="1200"/> <!-- From original spotlight.html -->
+  <meta property="og:image:height" content="630"/> <!-- From original spotlight.html -->
+  <meta property="og:locale" content="en_US"> <!-- From default.html -->
+  <meta property="og:type" content="article"> <!-- From default.html -->
+  <meta property="og:site_name" content="{{ site.title }}"> <!-- From default.html -->
+
+  <!-- CSS from original spotlight.html -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="{{ site.baseurl }}/static/css/bulma.min.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/static/css/bulma-carousel.min.css">
@@ -21,13 +40,25 @@ layout: default
   <link rel="stylesheet" href="{{ site.baseurl }}/static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/static/css/index.css">
+
+  <!-- Scripts for head from default.html -->
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="{{ site.baseurl }}/js/zoom.js"></script>
+  <script src="{{ site.baseurl }}/js/transition.js"></script>
+
   <style>
+    /* Styles from default.html (general site styles) */
+    .carousel { border-radius: 10px; overflow: hidden; }
+    .grid-container { display: grid; gap: 5px; grid-template-columns: auto auto auto auto; padding: 10px; }
+    .grid-item { padding: 10px; text-align: center; }
+    /* Styles from original spotlight.html (specific to spotlight pages) */
     .image-card { box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; transition: transform 0.2s ease-in-out; }
     .image-card:hover { transform: scale(1.05); }
     .image-table { margin: 30px auto; text-align: center; }
   </style>
 </head>
-<body>
+<body id="page-top">
   <section class="hero">
     <!-- <div class="hero-body" style="padding-top: 2.5rem;"> Add space above title -->
       <div class="container is-max-desktop" style="padding: 2rem;">
@@ -182,7 +213,7 @@ layout: default
     <div class="container is-max-desktop content" style="position: relative; padding: 1rem;">
       <h2 class="title">BibTeX</h2>
       <div style="position: relative;">
-        {% assign lines = page.bibtex | split: '\n' %}
+        {% assign lines = page.bibtex | split: '\\n' %}
         <div style="overflow-x: auto; width: 100%;">
           <pre id="bibtex-block" style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;">
             {% for line in lines %}{{ line | lstrip | escape }}
@@ -193,5 +224,10 @@ layout: default
     </div>
   </section>
   {% endif %}
+
+  <!-- Scripts from default.html's body (to be placed before closing </body>) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.js" integrity="sha512-f8kZwYACKF8unHuRV7j/5ILZfflRncxHp1f6y/PKuuRpCVgpORNZMne1jrghNzTVlXabUXIg1iJ5PvhuAaau6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

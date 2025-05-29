@@ -1,176 +1,38 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Supervised Graph Contrastive Pretraining for Text Classification - IIT Hyderabad</title>
+
+  <!-- CSS from default.html -->
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <link href="/nlip/css/zoom.css" rel="stylesheet">
-  <script src="/nlip/js/zoom.js"></script>
-  <script src="/nlip/js/transition.js"></script>
-  
   <link rel="stylesheet" href="/nlip/style.css">
-  <!-- favicon -->
-  <link rel="shortcut icon" href="/nlip/favicon.png">
-  <link rel="shortcut icon" href="/nlip/favicon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.css" integrity="sha512-zdX1vpRJc7+VHCUJcExqoI7yuYbSFAbSWxscAoLF0KoUPvMSAK09BaOZ47UFdP4ABSXpevKfcD0MTVxvh0jLHQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- open graph -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.css" integrity="sha512-zdX1vpRJcExqoI7yuYbSFAbSWxscAoLF0KoUPvMSAK09BaOZ47UFdP4ABSXpevKfcD0MTVxvh0jLHQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  
-  
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="http://localhost:4000/publications/supervised-graph-contrastive/">
-  <meta property="og:title" content="Supervised Graph Contrastive Pretraining for Text Classification">
-  <meta property="og:site_name" content="NLIP: Natural Language and Information Processing Lab">
-  <meta property="og:description" content="NLIP Lab is a young and dynamic research group as part of the Department of Computer Science and Engineering at Indian Institute of Technology Hyderabad. We are committed to pushing the frontiers of Natural Language Processing (NLP), Information Retrieval (IR), and related domains through cutting-edge research and development. We collaborate closely with academic institutions, industry partners, and other research groups to drive innovation in these fields. Our focus is on developing efficient and effective algorithms, models, and systems that can scale to real-world applications. We also strive to make our research accessible and impactful by publishing our findings in top-tier conferences and journals, and by open-sourcing our software and datasets." />
-  <meta property="og:image" content="/nlip/images/logo/lab_logo.png">
-  <style>
-    .carousel {
-        border-radius: 10px 10px 10px 10px;
-        overflow: hidden;
-    }
-    .grid-container {
-    display: grid;
-    gap: 5px;
-    grid-template-columns: auto auto auto auto;
-    padding: 10px;
-    }
-    .grid-item {
-      padding: 10px;
-      text-align: center;
-    }
-    /* footer.sticky-bottom {
-      text-align: center;
-      font-size: 0.6rem;
-      background-color: rgb(228, 228, 228);
-      margin:0px;
-      padding:30px;
-    } */
-    footer {
-      text-align: center;
-      font-size: 0.7rem;
-      background-color: rgb(228, 228, 228);
-      margin:0px;
-      padding:30px;
-    }
-  </style>
-</head>
+  <!-- Favicons: Prioritize spotlight's, then default's -->
+  <link rel="icon" type="image/x-icon" href="/nlip/static/images/ns.png"> <!-- From original spotlight.html -->
+  <link rel="shortcut icon" href="/nlip/favicon.png"> <!-- From default.html -->
 
-<body id="page-top">
+  <!-- OG Meta Tags: Combine and prioritize page-specific from spotlight -->
+  <meta name="description" content="Supervised Graph Contrastive Pretraining for Text Classification"> <!-- From original spotlight.html -->
+  <meta property="og:title" content="Supervised Graph Contrastive Pretraining for Text Classification"/> <!-- From original spotlight.html -->
+  <meta property="og:description" content="Contrastive pretraining techniques for text classification has been largely studied in an unsupervised setting. However, oftentimes labeled data from related..."/> <!-- From original spotlight.html -->
+  <meta property="og:url" content="http://localhost:4000/nlip/publications/supervised-graph-contrastive/"/> <!-- From original spotlight.html -->
+  <meta property="og:image" content="/nlip/publications/images/supervised-graph-contrastive.png" /> <!-- From original spotlight.html -->
+  <meta property="og:image:width" content="1200"/> <!-- From original spotlight.html -->
+  <meta property="og:image:height" content="630"/> <!-- From original spotlight.html -->
+  <meta property="og:locale" content="en_US"> <!-- From default.html -->
+  <meta property="og:type" content="article"> <!-- From default.html -->
+  <meta property="og:site_name" content="NLIP: Natural Language and Information Processing Lab"> <!-- From default.html -->
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container">
-    <a class="navbar-brand" href="/nlip/" style="font-family:'Open Sans'; text-transform: none;">
-      <img src="/nlip/images/logo/lab_logo_no_bg.png" height="80" width="80" class="d-inline-block">NLIP Lab
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="padding-right: 15px;">
-        
-
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/nlip/">home</a>
-        </li>
-
-        
-
-        
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link" href="/nlip/research">research</a>
-        </li>
-
-        
-
-        
-
-        
-
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/nlip/publication">publications</a>
-        </li>
-
-        
-
-        
-
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/nlip/people">people</a>
-        </li>
-
-        
-
-        
-
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/nlip/reading-group">Reading Group</a>
-        </li>
-
-        
-
-        
-
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/nlip/gallery">Gallery</a>
-        </li>
-
-        
-
-        
-
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/nlip/contact">Contact</a>
-        </li>
-
-        
-
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-    <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="Supervised Graph Contrastive Pretraining for Text Classification">
-  <meta property="og:title" content="Supervised Graph Contrastive Pretraining for Text Classification"/>
-  <meta property="og:description" content="Contrastive pretraining techniques for text classification has been largely studied in an unsupervised setting. However, oftentimes labeled data from related..."/>
-  <meta property="og:url" content="http://localhost:4000/nlip/publications/supervised-graph-contrastive/"/>
-  <meta property="og:image" content="/nlip/publications/images/supervised-graph-contrastive.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <title>Supervised Graph Contrastive Pretraining for Text Classification</title>
-  <link rel="icon" type="image/x-icon" href="/nlip/static/images/ns.png">
+  <!-- CSS from original spotlight.html -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="/nlip/static/css/bulma.min.css">
   <link rel="stylesheet" href="/nlip/static/css/bulma-carousel.min.css">
@@ -178,13 +40,25 @@
   <link rel="stylesheet" href="/nlip/static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="/nlip/static/css/index.css">
+
+  <!-- Scripts for head from default.html -->
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="/nlip/js/zoom.js"></script>
+  <script src="/nlip/js/transition.js"></script>
+
   <style>
+    /* Styles from default.html (general site styles) */
+    .carousel { border-radius: 10px; overflow: hidden; }
+    .grid-container { display: grid; gap: 5px; grid-template-columns: auto auto auto auto; padding: 10px; }
+    .grid-item { padding: 10px; text-align: center; }
+    /* Styles from original spotlight.html (specific to spotlight pages) */
     .image-card { box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; transition: transform 0.2s ease-in-out; }
     .image-card:hover { transform: scale(1.05); }
     .image-table { margin: 30px auto; text-align: center; }
   </style>
 </head>
-<body>
+<body id="page-top">
   <section class="hero">
     <!-- <div class="hero-body" style="padding-top: 2.5rem;"> Add space above title -->
       <div class="container is-max-desktop" style="padding: 2rem;">
@@ -273,42 +147,10 @@
   </div>
   
   
-</body>
-</html>
 
-    
-<footer class="footer mt-1">
-  <div>
-    <a href="https://nlip-lab.github.io" style="font-size: 0.8rem;">Natural Language and Information Processing Lab</a><br>
-    <a href="https://iith.ac.in" style="color: black;">Indian Institute of Technology Hyderabad (IITH)</a>, Hyderabad, India
-  </div>
-  
-  <div class="mt-3">
-    For more details visit our <a href="/nlip/contact">Contact us</a> page
-  </div>
-
-  <span style="display: block; margin-bottom: 2em"></span>
-  <div class="container">
-    <!-- &copy; Copyright 2025 NLIP Lab, All Rights Reserved.
-    <br> -->Last updated: May 29, 2025.
-    <br>
-    Website template inspired from <a href="https://kordinglab.com/">Kording Lab</a><br>
-  </div>
-
-</footer>
-
-</html> 
-
-    <!-- <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.js" integrity="sha512-f8kZwYACKF8unHuRV7j/5ILZfflRncxHp1f6y/PKuuRpCVgpORNZMne1jrghNzTVlXabUXIg1iJ5PvhuAaau6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-    
+  <!-- Scripts from default.html's body (to be placed before closing </body>) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.js" integrity="sha512-f8kZwYACKF8unHuRV7j/5ILZfflRncxHp1f6y/PKuuRpCVgpORNZMne1jrghNzTVlXabUXIg1iJ5PvhuAaau6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
