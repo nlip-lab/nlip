@@ -70,19 +70,30 @@ permalink: /publications/{{ page.key }}/
 }
 
 .publication-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   gap: 2rem;
   margin-bottom: 3rem;
 }
 
-.publication-image {
+.publication-image-container {
   width: 100%;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.publication-image {
+  max-width: 100%;
+  max-height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .publication-text {
+  flex: 1 1 0;
   font-size: 1.1rem;
   line-height: 1.6;
   color: #444;
@@ -227,7 +238,7 @@ permalink: /publications/{{ page.key }}/
 
 @media (max-width: 768px) {
   .publication-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
   
   .publication-title {
@@ -295,12 +306,16 @@ permalink: /publications/{{ page.key }}/
     </div>
   </div>
 
-  <div class="publication-content">
-    {% if page.img %}
-    <div class="publication-image-container">
-      <img src="/nlip/publications/images/{{ page.img }}" class="publication-image" alt="{{ page.title }}">
-    </div>
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> {{ page.journal }}</p>
+    <p><strong>Year:</strong> {{ page.year }}</p>
+    {% if page.month %}
+    <p><strong>Month:</strong> {{ page.month }}</p>
     {% endif %}
+  </div>
+
+  <div class="publication-content">
     <div class="publication-text">
       {{ content }}
     </div>
@@ -311,14 +326,12 @@ permalink: /publications/{{ page.key }}/
     <p>{{ page.abstract }}</p>
   </div>
 
-  <div class="publication-details">
-    <h2>Publication Details</h2>
-    <p><strong>Journal:</strong> {{ page.journal }}</p>
-    <p><strong>Year:</strong> {{ page.year }}</p>
-    {% if page.month %}
-    <p><strong>Month:</strong> {{ page.month }}</p>
-    {% endif %}
+  {% if page.img %}
+  <div class="publication-image-container">
+    <img src="{{ site.baseurl }}/publications/images/{{ page.img }}" class="publication-image" alt="{{ page.title }}">
   </div>
+  {% endif %}
+
 </div>
 
 <script>
@@ -405,4 +418,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-</script> 
+</script>

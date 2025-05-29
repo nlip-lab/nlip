@@ -226,19 +226,30 @@
 }
 
 .publication-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   gap: 2rem;
   margin-bottom: 3rem;
 }
 
-.publication-image {
+.publication-image-container {
   width: 100%;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.publication-image {
+  max-width: 100%;
+  max-height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .publication-text {
+  flex: 1 1 0;
   font-size: 1.1rem;
   line-height: 1.6;
   color: #444;
@@ -383,7 +394,7 @@
 
 @media (max-width: 768px) {
   .publication-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
   
   .publication-title {
@@ -423,8 +434,14 @@
     </div>
   </div>
 
-  <div class="publication-content">
+  <div class="publication-details">
+    <h2>Publication Details</h2>
+    <p><strong>Journal:</strong> </p>
+    <p><strong>Year:</strong> </p>
     
+  </div>
+
+  <div class="publication-content">
     <div class="publication-text">
       <div class="container mt-5 content page">
   <!-- <h1 class="page-title">People</h1> -->
@@ -1201,12 +1218,8 @@
     <p></p>
   </div>
 
-  <div class="publication-details">
-    <h2>Publication Details</h2>
-    <p><strong>Journal:</strong> </p>
-    <p><strong>Year:</strong> </p>
-    
-  </div>
+  
+
 </div>
 
 <script>
@@ -1312,7 +1325,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <span style="display: block; margin-bottom: 2em"></span>
   <div class="container">
     <!-- &copy; Copyright 2025 NLIP Lab, All Rights Reserved.
-    <br> -->Last updated: May 27, 2025.
+    <br> -->Last updated: May 29, 2025.
     <br>
     Website template inspired from <a href="https://kordinglab.com/">Kording Lab</a><br>
   </div>
