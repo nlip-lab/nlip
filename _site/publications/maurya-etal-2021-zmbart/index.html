@@ -28,7 +28,7 @@
   <!-- OG Meta Tags: Combine and prioritize page-specific from spotlight -->
   <meta name="description" content="ZmBART: An Unsupervised Cross-lingual Transfer Framework for Language Generation"> <!-- From original spotlight.html -->
   <meta property="og:title" content="ZmBART: An Unsupervised Cross-lingual Transfer Framework for Language Generation" /> <!-- From original spotlight.html -->
-  <meta property="og:description" content="" />
+  <meta property="og:description" content="Despite the recent advancement in NLP research, cross-lingual transfer for natural language generation is relatively understudied. In this work, we transfer ..." />
   <!-- From original spotlight.html -->
   <meta property="og:url" content="http://localhost:4000/nlip/publications/maurya-etal-2021-zmbart/" />
   <!-- From original spotlight.html -->
@@ -192,7 +192,7 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <p></p>
+            <p>Despite the recent advancement in NLP research, cross-lingual transfer for natural language generation is relatively understudied. In this work, we transfer supervision from high resource language (HRL) to multiple lowresource languages (LRLs) for natural language generation (NLG). We consider four NLG tasks (text summarization, question generation, news headline generation, and distractor generation) and three syntactically diverse languages, i.e., English, Hindi, and Japanese. We propose an unsupervised crosslingual language generation framework (called ZmBART) that does not use any parallel or pseudo-parallel/back-translated data. In this framework, we further pre-train mBART sequence-to-sequence denoising auto-encoder model with an auxiliary task using monolingual data of three languages. The objective function of the auxiliary task is close to the target tasks which enriches the multi-lingual latent representation of mBART and provides good initialization for target tasks. Then, this model is fine-tuned with task-specific supervised English data and directly evaluated with low-resource languages in the Zero-shot setting. To overcome catastrophic forgetting and spurious correlation issues, we applied freezing model component and data argumentation approaches respectively. This simple modeling approach gave us promising results. We experimented with few-shot training (with 1000 supervised data-points) which boosted the model performance further. We performed several ablations and cross-lingual transferability analysis to demonstrate the robustness of ZmBART.</p>
           </div>
         </div>
       </div>
@@ -212,7 +212,21 @@
       <h2 class="title">BibTeX</h2>
       <div style="position: relative;"><div style="overflow-x: auto; width: 100%;">
           <pre id="bibtex-block"
-            style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;">1</pre>
+            style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;">@inproceedings{maurya-etal-2021-zmbart,
+    title     = {{Z}m{BART}: An Unsupervised Cross-lingual Transfer Framework for Language Generation},
+    author    = {Maurya, Kaushal Kumar  and
+                Desarkar, Maunendra Sankar  and
+                Kano, Yoshinobu  and
+                Deepshikha, Kumari},
+    booktitle = {Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021},
+    month     = aug,
+    year      = {2021},
+    address   = {Online},
+    publisher = {Association for Computational Linguistics},
+    url       = {https://aclanthology.org/2021.findings-acl.248},
+    doi       = {10.18653/v1/2021.findings-acl.248},
+    pages     = {2804--2818}
+}</pre>
         </div>
       </div>
     </div>

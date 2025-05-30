@@ -13,7 +13,12 @@ abstract: "Temporal point process serves as an essential tool for modeling time-
 img: "time-event-modeling.png"
 url: "https://openreview.net/forum?id=1OHWaKZOub"
 pdf: "https://openreview.net/pdf?id=1OHWaKZOub"
-code: ""
-video: ""
-bibtex: ""
+bibtex: |
+  @inproceedings{dubey2022continual,
+      title     = {Continual Learning for Time-to-Event Modeling},
+      author    = {Manisha Dubey and P. K. Srijith and Maunendra Sankar Desarkar},
+      booktitle = {Continual Lifelong Learning Workshop at ACML 2022},
+      year      = {2022},
+      url       = {https://openreview.net/forum?id=1OHWaKZOub}
+  }
 ---

@@ -11,6 +11,24 @@ highlight: 0
 link: "https://dl.acm.org/doi/10.1145/3477314.3507194"
 pdf: "https://dl.acm.org/doi/pdf/10.1145/3477314.3507194"
 img: "graph-contrastive-pretraining.png"
-bibtex: 0
+bibtex: |
+  @inproceedings{10.1145/3477314.3507194,
+      author    = {Ghosh, Samujjwal and Maji, Subhadeep and Desarkar, Maunendra Sankar},
+      title     = {Effective utilization of labeled data from related tasks using graph contrastive pretraining: application to disaster related text classification},
+      year      = {2022},
+      isbn      = {9781450387132},
+      publisher = {Association for Computing Machinery},
+      address   = {New York, NY, USA},
+      url       = {https://doi.org/10.1145/3477314.3507194},
+      doi       = {10.1145/3477314.3507194},
+      abstract  = {Contrastive pretraining techniques for text classification has been largely studied in an unsupervised setting. However, oftentimes labeled data from related past datasets which share label semantics with current task is available. We hypothesize that using this labeled data effectively can lead to better generalization on current task. In this paper, we propose a novel way to effectively utilize labeled data from related tasks with a graph based supervised contrastive learning approach. We formulate a token-graph by extrapolating the supervised information from examples to tokens. Our experiments with 8 disaster datasets show our method outperforms baselines and also example-level contrastive learning based formulation. In addition, we show cross-domain effectiveness of our method in a zero-shot setting.},
+      booktitle = {Proceedings of the 37th ACM/SIGAPP Symposium on Applied Computing},
+      pages     = {875–878},
+      numpages  = {4},
+      keywords  = {contrastive learning, disaster response, graph neural network, text classification, text representation, zero-shot classification},
+      location  = {Virtual Event},
+      series    = {SAC '22}
+  }
+abstract: "Contrastive pretraining techniques for text classification has been largely studied in an unsupervised setting. However, oftentimes labeled data from related past datasets which share label semantics with current task is available. We hypothesize that using this labeled data effectively can lead to better generalization on current task. In this paper, we propose a novel way to effectively utilize labeled data from related tasks with a graph based supervised contrastive learning approach. We formulate a token-graph by extrapolating the supervised information from examples to tokens. Our experiments with 8 disaster datasets show our method outperforms baselines and also example-level contrastive learning based formulation. In addition, we show cross-domain effectiveness of our method in a zero-shot setting."
 summary: "In this paper, we propose a novel way to effectively utilize labeled data from related tasks with a graph based supervised contrastive learning approach. We formulate a token-graph by extrapolating the supervised information from examples to tokens. Our experiments with 8 disaster datasets show our method outperforms baselines and also example-level contrastive learning based formulation."
 ---

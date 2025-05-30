@@ -343,8 +343,6 @@
   summary: "We propose a novel meta-learning framework (called Meta-XNLG) to learn shareable structures from typologically diverse languages based on meta-learning and language clustering. This is a step towards uniform cross-lingual transfer for unseen languages. We first cluster the languages based on language representations and identify the centroid language of each cluster. Then, a meta-learning algorithm is trained with all centroid languages and evaluated on the other languages in the zero-shot setting."
   bibtex: maurya-desarkar-2022-meta
 
-
-
 - key: "unspuervised-domain-gnn"
   authors: "Sammujwal Ghosh, Subhadeep Maji and Maunendra Sankar Desarkar"
   title: "Unsupervised Domain Adaptation With Global and Local Graph Neural Networks Under Limited Supervision and Its Application to Disaster Response"
@@ -361,8 +359,6 @@
   video: 
   summary: "In our experiments, we show that the proposed method outperforms state-of-the-art techniques by 2.74% weighted F1 score on average on two standard public datasets in the area of disaster management. We also report experimental results for granular actionable multilabel classification datasets in disaster domain for the first time, on which we outperform BERT by 3.00% on average w.r.t. weighted F1."
   bibtex: unspuervised-domain-gnn
-
-
 
 - key: "hostility"
   authors: "Arkadipta De, Venkatesh E, Kaushal Kumar Maurya, and Maunendra Sankar Desarkar"
@@ -437,6 +433,7 @@
   summary: "In this work, we propose to address these issues using a Hierarchical DST (Hi-DST) model. At a given turn, the model first detects a change in domain followed by domain prediction if required. Then it decides suitable action for each slot in the predicted domains and finds their value accordingly. The model parameters of Hi-DST are independent of the number of domains/slots. Due to the hierarchical modeling, it achieves O(|M|+|N|) belief state prediction for a single turn where M and N are the set of unique domains and slots respectively."
   bibtex: hidst
 
+# Year 2020
 
 - key: "granular-classification-framework"
   authors: "Samujjwal Ghosh and Maunendra Sankar Desarkar"
@@ -508,6 +505,7 @@
   bibtex: learningtodistract
   summary: "In this paper, we propose a novel Hierarchical Multi-Decoder Network (HMD-Net) consisting of one encoder and three decoders, where each decoder generates a single distractor. To overcome the first problem mentioned above, we include multiple decoders with a dis-similarity loss in the loss function. To address the second problem, we exploit richer interaction between the article, question, and answer with a SoftSel operation and a Gated Mechanism."
 
+# Year 2019
 
 - key: "multi-context-info"
   authors: "Swapnil Dewalkar and Maunendra Sankar Desarkar"
@@ -526,7 +524,6 @@
   video: 
   summary: 
 
-
 - key: "vitag"
   authors: "Abhishek A. Patwardhan, Santanu Das, Sakshi Varshney, Maunendra Sankar Desarkar, Debi Prosad Dogra"
   title: "ViTag: Automatic Video Tagging Using Segmentation and Conceptual Inference"
@@ -544,6 +541,7 @@
   summary: 
   bibtex: vitag
 
+# Year 2018
 
 - key: "recsys18"
   authors: "Rohan Tondulkar, Manisha Dubey and Maunendra Sankar Desarkar"
@@ -562,8 +560,6 @@
   bibtex: recsys18
   summary: "In this paper, we propose an approach that considers a comprehensive set of features including but not limited to text representation, tag based similarity as well as multiple user-based features that target users' availability, agility as well as expertise for predicting the best answerer for a given question. We also include features that give incentives to users who answer less but more important questions over those who answer a lot of questions of less importance." 
 
-
-
 - key: "class-specific-tfidf"
   authors: "Samujjwal Ghosh and Maunendra Sankar Desarkar"
   title: "Class Specific TF-IDF Boosting for Short-text Classification: Application to Short-texts Generated During Disasters"
@@ -581,7 +577,7 @@
   bibtex: class-specific-tfidf
   summary: "We propose a supervised feature construction method to classify tweets, based on the actionable information that might be present, posted during different disaster scenarios. Improved classifier performance for such classification tasks can be helpful in the rescue and relief operations. We used three benchmark datasets containing tweets posted during Nepal and Italy earthquakes in 2015 and 2016 respectively. "
 
-
+# Year 2017
 
 - key: "classifying-actionable-insights"
   authors: "Samujjwal Ghosh, PK Srijith, Maunendra Sankar Desarkar"
