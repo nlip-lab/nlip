@@ -3,13 +3,32 @@ layout: publication_spotlight
 collection: publications
 key: class-specific-tfidf
 title: "Class Specific TF-IDF Boosting for Short-text Classification: Application to Short-texts Generated During Disasters"
+abstract: "Proper formulation of features plays an important role in short-text classification tasks as the amount of text available is very little. In literature, Term Frequency - Inverse Document Frequency (TF-IDF) is commonly used to create feature vectors for such tasks. However, TF-IDF formulation does not utilize the class information available in supervised learning. For classification problems, if it is possible to identify terms that can strongly distinguish among classes, then more weight can be given to those terms during feature construction phase. This may result in improved classifier performance with the incorporation of extra class label related information. We propose a supervised feature construction method to classify tweets, based on the actionable information that might be present, posted during different disaster scenarios. Improved classifier performance for such classification tasks can be helpful in the rescue and relief operations. We used three benchmark datasets containing tweets posted during Nepal and Italy earthquakes in 2015 and 2016 respectively. Experimental results show that the proposed method obtains better classification performance on these benchmark datasets."
 authors: "Samujjwal Ghosh and Maunendra Sankar Desarkar"
 journal: "WWW 2018: Companion Proceedings of the The Web Conference 2018"
 year: 2018
 month: 4
 highlight: 0
 link: "https://dl.acm.org/doi/10.1145/3184558.3191621"
+pdf: https://dl.acm.org/doi/pdf/10.1145/3184558.3191621
 img: "class-specific-tfidf.png"
-bibtex: 0
+bibtex: |
+  @inproceedings{10.1145/3184558.3191621,
+      author    = {Ghosh, Samujjwal and Desarkar, Maunendra Sankar},
+      title     = {Class Specific TF-IDF Boosting for Short-Text Classification: Application to Short-Texts Generated During Disasters},
+      year      = {2018},
+      isbn      = {9781450356404},
+      publisher = {International World Wide Web Conferences Steering Committee},
+      address   = {Republic and Canton of Geneva, CHE},
+      url       = {https://doi.org/10.1145/3184558.3191621},
+      doi       = {10.1145/3184558.3191621},
+      abstract  = {Proper formulation of features plays an important role in short-text classification tasks as the amount of text available is very little. In literature, Term Frequency - Inverse Document Frequency (TF-IDF) is commonly used to create feature vectors for such tasks. However, TF-IDF formulation does not utilize the class information available in supervised learning. For classification problems, if it is possible to identify terms that can strongly distinguish among classes, then more weight can be given to those terms during feature construction phase. This may result in improved classifier performance with the incorporation of extra class label related information. We propose a supervised feature construction method to classify tweets, based on the actionable information that might be present, posted during different disaster scenarios. Improved classifier performance for such classification tasks can be helpful in the rescue and relief operations. We used three benchmark datasets containing tweets posted during Nepal and Italy earthquakes in 2015 and 2016 respectively. Experimental results show that the proposed method obtains better classification performance on these benchmark datasets.},
+      booktitle = {Companion Proceedings of the The Web Conference 2018},
+      pages     = {1629–1637},
+      numpages  = {9},
+      keywords  = {information retrieval, short-text classification, entropy-based feature generation, feature engineering},
+      location  = {Lyon, France},
+      series    = {WWW '18}
+  }
 summary: "We propose a supervised feature construction method to classify tweets, based on the actionable information that might be present, posted during different disaster scenarios. Improved classifier performance for such classification tasks can be helpful in the rescue and relief operations. We used three benchmark datasets containing tweets posted during Nepal and Italy earthquakes in 2015 and 2016 respectively. Experimental results show that the proposed method obtains better classification performance on these benchmark datasets."
 ---

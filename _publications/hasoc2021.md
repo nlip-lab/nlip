@@ -16,5 +16,16 @@ highlight: 0
 img: "hasoc2021.png"
 video: "https://dl.acm.org/action/downloadSupplement?doi=10.1145%2F3501247.3531579&file=WS22_S7_114.mp4"
 summary: "We propose a novel hierarchical neural network architecture to identify hostile posts/comments/replies in online Hindi-English Code-Mixed conversations. We leverage large multilingual pretrained (mLPT) models like mBERT, XLMR, and MuRIL. The mLPT models provide a rich representation of code-mix text and hierarchical modeling leads to a natural abstraction and selection of the relevant context. The propose model consistently outperformed all the baselines and emerged as a state-of-the-art performing model. We conducted multiple analyses and ablation studies to prove the robustness of the proposed model."
-bibtex: 0
+bibtex: |
+  @inproceedings{bagora2022hostility,
+      title = {Hostility Detection in Online Hindi-English Code-Mixed Conversations},
+      author = {Bagora, Aditi and Shrestha, Kamal and Maurya, Kaushal and Desarkar, Maunendra Sankar},
+      booktitle = {14th ACM Web Science Conference 2022},
+      pages = {390--400},
+      year = {2022},
+      publisher = {Association for Computing Machinery},
+      address = {New York, NY, USA},
+      doi = {10.1145/3501247.3531579},
+      url = {https://doi.org/10.1145/3501247.3531579}
+  }
 ---

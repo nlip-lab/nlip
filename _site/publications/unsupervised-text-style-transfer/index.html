@@ -28,7 +28,7 @@
   <!-- OG Meta Tags: Combine and prioritize page-specific from spotlight -->
   <meta name="description" content="Towards Robust and Semantically Organised Latent Representations for Unsupervised Text Style Transfer"> <!-- From original spotlight.html -->
   <meta property="og:title" content="Towards Robust and Semantically Organised Latent Representations for Unsupervised Text Style Transfer" /> <!-- From original spotlight.html -->
-  <meta property="og:description" content="" />
+  <meta property="og:description" content="Recent studies show that auto-encoder based approaches successfully perform language generation, smooth sentence interpolation, and style transfer over unsee..." />
   <!-- From original spotlight.html -->
   <meta property="og:url" content="http://localhost:4000/nlip/publications/unsupervised-text-style-transfer/" />
   <!-- From original spotlight.html -->
@@ -162,6 +162,18 @@
             </a>
             
             
+            <a href="https://aclanthology.org/2022.naacl-main.34.mp4" target="_blank" class="button is-rounded is-medium"
+              style="background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%); color: #fff; border: none; box-shadow: 0 4px 12px rgba(221,36,118,0.15); display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-weight: 600; min-width: 120px; min-height: 48px; border-radius: 18px;">
+              <span class="icon"
+                style="display: flex; align-items: center; justify-content: center; background: #ffe0ef; border-radius: 50%; width: 2.2em; height: 2.2em;">
+                <svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="#dd2476" stroke-width="2" fill="#fff" />
+                  <polygon points="10,8 16,12 10,16" fill="#ff512f" />
+                </svg>
+              </span>
+              <span style="display: flex; align-items: center; justify-content: center;">Video</span>
+            </a>
+            
             
             
             
@@ -180,7 +192,7 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <p></p>
+            <p>Recent studies show that auto-encoder based approaches successfully perform language generation, smooth sentence interpolation, and style transfer over unseen attributes using unlabelled datasets in a zero-shot manner. The latent space geometry of such models is organised well enough to perform on datasets where the style is 'coarse-grained' i.e. a small fraction of words alone in a sentence are enough to determine the overall style label. A recent study uses a discrete token-based perturbation approach to map 'similar' sentences ('similar' defined by low Levenshtein distance/ high word overlap) close by in latent space. This definition of 'similarity' does not look into the underlying nuances of the constituent words while mapping latent space neighbourhoods and therefore fails to recognise sentences with different style-based semantics while mapping latent neighbourhoods. We introduce EPAAEs (Embedding Perturbed Adversarial AutoEncoders) which completes this perturbation model, by adding a finely adjustable noise component on the continuous embeddings space. We empirically show that this (a) produces a better organised latent space that clusters stylistically similar sentences together, (b) performs best on a diverse set of text style transfer tasks than similar denoising-inspired baselines, and (c) is capable of fine-grained control of Style Transfer strength. We also extend the text style transfer tasks to NLI datasets and show that these more complex definitions of style are learned best by EPAAE. To the best of our knowledge, extending style transfer to NLI tasks has not been explored before.</p>
           </div>
         </div>
       </div>
@@ -200,7 +212,19 @@
       <h2 class="title">BibTeX</h2>
       <div style="position: relative;"><div style="overflow-x: auto; width: 100%;">
           <pre id="bibtex-block"
-            style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;">1</pre>
+            style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;">@inproceedings{narasimhan-etal-2022-towards,
+    title     = {Towards Robust and Semantically Organised Latent Representations for Unsupervised Text Style Transfer},
+    author    = {Narasimhan, Sharan  and Dey, Suvodip  and Desarkar, Maunendra},
+    booktitle = {Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
+    month     = jul,
+    year      = {2022},
+    address   = {Seattle, United States},
+    publisher = {Association for Computational Linguistics},
+    url       = {https://aclanthology.org/2022.naacl-main.34},
+    doi       = {10.18653/v1/2022.naacl-main.34},
+    pages     = {456--474},
+    abstract  = {Recent studies show that auto-encoder based approaches successfully perform language generation, smooth sentence interpolation, and style transfer over unseen attributes using unlabelled datasets in a zero-shot manner. The latent space geometry of such models is organised well enough to perform on datasets where the style is {``}coarse-grained{&#39;&#39;} i.e. a small fraction of words alone in a sentence are enough to determine the overall style label. A recent study uses a discrete token-based perturbation approach to map {``}similar{&#39;&#39;} sentences ({``}similar{&#39;&#39;} defined by low Levenshtein distance/ high word overlap) close by in latent space. This definition of {``}similarity{&#39;&#39;} does not look into the underlying nuances of the constituent words while mapping latent space neighbourhoods and therefore fails to recognise sentences with different style-based semantics while mapping latent neighbourhoods. We introduce EPAAEs (Embedding Perturbed Adversarial AutoEncoders) which completes this perturbation model, by adding a finely adjustable noise component on the continuous embeddings space. We empirically show that this (a) produces a better organised latent space that clusters stylistically similar sentences together, (b) performs best on a diverse set of text style transfer tasks than its counterparts, and (c) is capable of fine-grained control of Style Transfer strength. We also extend the text style transfer tasks to NLI datasets and show that these more complex definitions of style are learned best by EPAAE. To the best of our knowledge, extending style transfer to NLI tasks has not been explored before.}
+}</pre>
         </div>
       </div>
     </div>
