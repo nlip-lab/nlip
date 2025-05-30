@@ -10,10 +10,23 @@ year: 2022
 month: 6
 link: "https://dl.acm.org/doi/abs/10.1145/3501247.3531561"
 pdf: "https://dl.acm.org/doi/pdf/10.1145/3501247.3531561"
+video: https://dl.acm.org/action/downloadSupplement?doi=10.1145%2F3501247.3531561&file=WS22_S1_65.mp4
 cite: "Samujjwal Ghosh, Subhadeep Maji, and Maunendra Sankar Desarkar. 2022. GNoM: Graph Neural Network Enhanced Language Models for Disaster Related Multilingual Text Classification. In 14th ACM Web Science Conference 2022 (WebSci '22). Association for Computing Machinery, New York, NY, USA, 55–65. https://doi.org/10.1145/3501247.3531561"
 code: ""
 highlight: 0
 img: "gnom.png"
 video: "https://dl.acm.org/action/downloadSupplement?doi=10.1145%2F3501247.3531561&file=WS22_S1_65.mp4"
 summary: "We propose a multilingual disaster related text classification system which is capable to work undervmonolingual, cross-lingual and multilingual lingual scenarios and under limited supervision. Our end-to-end trainable framework combines the versatility of graph neural networks, by applying over the corpus, with the power of transformer based large language models, over examples, with the help of cross-attention between the two. We evaluate our framework over total nine English, Non-English and monolingual datasets invmonolingual, cross-lingual and multilingual lingual classification scenarios."
+bibtex: |
+  @inproceedings{ghosh2022gnom,
+      title = {GNoM: Graph Neural Network Enhanced Language Models for Disaster Related Multilingual Text Classification},
+      author = {Ghosh, Samujjwal and Maji, Subhadeep and Desarkar, Maunendra Sankar},
+      booktitle = {14th ACM Web Science Conference 2022},
+      pages = {55--65},
+      year = {2022},
+      publisher = {Association for Computing Machinery},
+      address = {New York, NY, USA},
+      doi = {10.1145/3501247.3531561},
+      url = {https://doi.org/10.1145/3501247.3531561}
+  }
 ---

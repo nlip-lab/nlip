@@ -133,19 +133,6 @@
             </a>
             
             
-            <a href="https://github.com/SuvodipDey/BoK" target="_blank" class="button is-rounded is-medium"
-              style="background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%); color: #fff; border: none; box-shadow: 0 4px 12px rgba(0,114,255,0.15); display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-weight: 600; min-width: 120px; min-height: 48px; border-radius: 18px;">
-              <span class="icon"
-                style="display: flex; align-items: center; justify-content: center; background: #e3f2fd; border-radius: 50%; width: 2.2em; height: 2.2em;">
-                <svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="24" height="24" rx="6" fill="none" />
-                  <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"
-                    stroke="#0072ff" stroke-width="2" fill="none" />
-                </svg>
-              </span>
-              <span style="display: flex; align-items: center; justify-content: center;">Code</span>
-            </a>
-            
             
             <a href="https://dl.acm.org/doi/10.1145/3626772.3657779" target="_blank" class="button is-rounded is-medium"
               style="background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%); color: #fff; border: none; box-shadow: 0 4px 12px rgba(67,206,162,0.15); display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-weight: 600; min-width: 120px; min-height: 48px; border-radius: 18px;">
@@ -200,7 +187,23 @@
       <h2 class="title">BibTeX</h2>
       <div style="position: relative;"><div style="overflow-x: auto; width: 100%;">
           <pre id="bibtex-block"
-            style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;">dac</pre>
+            style="background: #f7f7f9; border: 1px solid #e1e1e8; border-radius: 8px; padding: 1em 1.5em; font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace'; font-size: 1.08em; line-height: 1.4; color: #2d2d2d; margin: 0; min-height: 0; height: auto; display: block; text-align: left; white-space: pre; tab-size: 2;">@inproceedings{10.1145/3626772.3657779,
+    author    = {Maheswaran, Aishwarya and Maurya, Kaushal Kumar and Gupta, Manish and Desarkar, Maunendra Sankar},
+    title     = {DAC: Quantized Optimal Transport Reward-based Reinforcement Learning Approach to Detoxify Query Auto-Completion},
+    year      = {2024},
+    isbn      = {9798400704314},
+    publisher = {Association for Computing Machinery},
+    address   = {New York, NY, USA},
+    url       = {https://doi.org/10.1145/3626772.3657779},
+    doi       = {10.1145/3626772.3657779},
+    abstract  = {Modern Query Auto-Completion (QAC) systems utilize natural language generation (NLG) using large language models (LLM) to achieve remarkable performance. However, these systems are prone to generating biased and toxic completions due to inherent learning biases. Existing detoxification approaches exhibit two key limitations: (1) They primarily focus on mitigating toxicity for grammatically well-formed long sentences but struggle to adapt to the QAC task, where queries are short and structurally different (include spelling errors, do not follow grammatical rules and have relatively flexible word order). (2) These approaches often view detoxification through a binary lens where all text labeled as toxic is undesirable, and non-toxic is considered desirable. To address these limitations, we propose DAC, an intuitive and efficient reinforcement learning-based model to detoxify QAC. With DAC, we introduce an additional perspective of considering the third query class of addressable toxicity. These queries can encompass implicit toxicity, subjective toxicity, or non-toxic queries containing toxic words. We incorporate this three-class query behavior perspective into the proposed model through quantized optimal transport to learn distinctions and generate truly non-toxic completions. We evaluate toxicity levels in the generated completions by DAC across two real-world QAC datasets (Bing and AOL) using two classifiers: a publicly available generic classifier (Detoxify) and a search query-specific classifier, which we develop (TClassify). We find that DAC consistently outperforms all existing baselines on the Bing dataset and achieves competitive performance on the AOL dataset for query detoxification. \% providing high quality and low toxicity. We make the code publicly available.},
+    booktitle = {Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+    pages     = {608–618},
+    numpages  = {11},
+    keywords  = {auto-completion, large language models, optimal transport, query detoxification, reinforcement learning},
+    location  = {Washington DC, USA},
+    series    = {SIGIR &#39;24}
+}</pre>
         </div>
       </div>
     </div>

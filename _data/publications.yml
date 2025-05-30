@@ -139,11 +139,11 @@
   bibtex: dial-m
   summary: "We propose Dial-M, a Masking-based reference-free framework for Dialogue evaluation. The main idea is to mask the keywords of the current utterance and predict them, given the dialogue history and various conditions (like knowledge, persona, etc.), thereby making the evaluation framework simple and easily extensible for multiple datasets. Regardless of its simplicity, Dial-M achieves comparable performance to state-of-the-art metrics on several dialogue evaluation datasets. We also discuss the interpretability of our proposed metric along with error analysis."
 
-- key: "hyperhawkes"
+- key: "cl_hyperhawkes"
   authors: "Manisha Dubey, Srijith P. K., Maunendra Sankar Desarkar"
   title: "Time-to-Event Modeling with Hypernetwork based Hawkes Process"
   journal: "29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (SIGKDD 2023)"
-  abstract: ""
+  abstract: "Many real-world applications are associated with collection of events with timestamps, known as time-to-event data. Earthquake occurrences, social networks, and user activity logs can be represented as a sequence of discrete events observed in continuous time. Temporal point process serves as an essential tool for modeling such time-to-event data in continuous time space. Despite having massive amounts of event sequence data from various domains like social media, healthcare etc., real world application of temporal point process faces two major challenges: 1) it is not generalizable to predict events from unseen event sequences in dynamic environment 2) they are not capable of thriving in continually evolving environment with minimal supervision while retaining previously learnt knowledge. To tackle these issues, we propose HyperHawkes, a hypernetwork based temporal point process framework which is capable of modeling time of event occurrence for unseen sequences and consequently, zero-shot learning for time-to-event modeling. We also develop a hypernetwork based continually learning temporal point process for continuous modeling of time-to-event sequences with minimal forgetting. HyperHawkes augments the temporal point process with zero-shot modeling and continual learning capabilities. We demonstrate the application of the proposed framework through our experiments on real-world datasets. Our results show the efficacy of the proposed approach in terms of predicting future events under zero-shot regime for unseen event sequences. We also show that the proposed model is able to learn the time-to-event sequences continually while retaining information from previous event sequences, mitigating catastrophic forgetting in neural temporal point process."
   year: 2023
   month: 8
   url: "https://dl.acm.org/doi/10.1145/3580305.3599912"
@@ -152,7 +152,7 @@
   highlight: 0
   img: "cl_hyperhawkes.png"
   summary: ""
-  bibtex: hyperhawkes
+  bibtex: cl_hyperhawkes
 
 - key: "divhsk"
   authors: "Venkatesh E, Kaushal Kumar Maurya, Deepak Kumar and Maunendra Sankar Desarkar"
@@ -175,7 +175,7 @@
   authors: "Arkadipta De, Maunendra Sankar Desarkar, and Asif Ekbal"
   title: "Towards Improvement of Grounded Cross-Lingual Natural Language Inference with VisioTextual Attention"
   journal: "Natural Language Processing (Elsevier)"
-  abstract: ""
+  abstract: "Natural Language Inference (NLI) has been one of the fundamental tasks in Natural Language Processing (NLP). Recognizing Textual Entailment (RTE) between the two pieces of text is a crucial problem. It adds further challenges when it involves two languages, i.e., in the cross-lingual scenario. In this paper, we propose VisioTextual-Attention (VTA) — an effective visual–textual coattention mechanism for multi-modal crosslingual NLI. Through our research, we show that instead of using only linguistic input features, introducing visual features supporting the textual inputs improves the performance of NLI models if an effective cross-modal attention mechanism is carefully constructed. We perform several experiments on a standard cross-lingual textual entailment dataset in Hindi–English language pairs and show that the addition of visual information to the dataset along with our proposed VisioTextual Attention (VTA) enhances performance and surpasses the current state-of-the-art by 4.5%. Through monolingual experiments, we also show that the proposed VTA mechanism surpasses monolingual state-of-the-art by a margin of 2.89%. We argue that our VTA mechanism is model agnostic and can be used with other deep learning-based architectures for grounded cross-lingual NLI."
   year: 2023
   month: 08
   url: "https://www.sciencedirect.com/science/article/pii/S2949719123000201"
@@ -198,6 +198,7 @@
   cite: "Samujjwal Ghosh, Subhadeep Maji, and Maunendra Sankar Desarkar. 2022. GNoM: Graph Neural Network Enhanced Language Models for Disaster Related Multilingual Text Classification. In 14th ACM Web Science Conference 2022 (WebSci '22). Association for Computing Machinery, New York, NY, USA, 55–65. https://doi.org/10.1145/3501247.3531561"
   code: 
   highlight: 0
+  bibtex: gnom
   img: "gnom.png"
   video: https://dl.acm.org/action/downloadSupplement?doi=10.1145%2F3501247.3531561&file=WS22_S1_65.mp4
   summary: "We propose a multilingual disaster related text classification system which is capable to work undervmonolingual, cross-lingual and multilingual lingual scenarios and under limited supervision. Our end-to-end trainable framework combines the versatility of graph neural networks, by applying over the corpus, with the power of transformer based large language models, over examples, with the help of cross-attention between the two. We evaluate our framework over total nine English, Non-English and monolingual datasets invmonolingual, cross-lingual and multilingual lingual classification scenarios."
