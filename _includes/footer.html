@@ -18,6 +18,11 @@
     Last updated: {{ "now" | date: '%B %d, %Y' }}.
     {%- endif %}
     <br>
+    {% if site.data.version %}
+      <div class="site-version">
+      Version: {{ site.data.version.version }}
+      </div>
+    {% endif %}
     Website template inspired from <a href="https://kordinglab.com/">Kording Lab</a><br>
   </div>
 
