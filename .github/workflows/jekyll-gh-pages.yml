@@ -56,14 +56,6 @@ jobs:
           VERSION="deploy-$(date +'%Y%m%d-%H%M%S')-${GITHUB_SHA::7}"
           echo "version: $VERSION" > _data/version.yml
 
-      - name: Create and push tag
-        run: |
-          TAG="deploy-$(date +'%Y%m%d-%H%M%S')-${GITHUB_SHA::7}"
-          git tag $TAG
-          git push origin $TAG
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
