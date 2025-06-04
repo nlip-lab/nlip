@@ -28,6 +28,9 @@ title: Natural Language and Information Processing Lab - NLIP
     
         <div class="carousel-inner">
           <div class="carousel-item active">
+            <img src="{{site.baseurl}}/images/carousel/11.jpg"  style="width:100%;">
+          </div>
+          <div class="carousel-item">
             <img src="{{site.baseurl}}/images/carousel/10.jpg"  style="width:100%;">
           </div>
           <!-- Carousel 0 -->
