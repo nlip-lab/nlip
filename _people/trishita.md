@@ -2,8 +2,9 @@
 name: Trishita Saha
 position: masters
 avatar: trishita.jpg
-twitter: 
-joined: 2023
+twitter:
+passout: 1
+joining_year: 2023
 title: Trishita Saha
 layout: profile
 ---
@@ -29,10 +30,11 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 Trishita is a M.Tech scholar in the department of Computer Science and Engineering at IIT Hyderabad, focusing her research on Natural Language Processing and Large Language Model (LLM). She has completed her B.Tech degree in Computer Science and Engineering from Sikkim Manipal University. Her previous research spans developing new embedding techniques for Automatic Short Answer Grading and exploring credit risk prediction using ensemble methods. Her current research delves into the innovative application of LLM in real-life scenarios, particularly within the legal domain. She has published several research papers in reputed conferences and journals and was honoured with the Best Paper Award at IEMECON, 2023.
 
-
 ### Research Interest:
+
 - Natural Language Generation
 - Large Language Models (LLMs)
 - Expert System

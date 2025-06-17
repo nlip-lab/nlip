@@ -3,7 +3,8 @@ name: Devendra Kumar Dewangan
 position: phd
 avatar: devendra_dewangan.jpg
 twitter:
-joined: 2024
+passout: 0
+joining_year: 2024
 title: Devendra Kumar Dewangan
 layout: profile
 ---

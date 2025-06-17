@@ -1,9 +1,10 @@
 ---
 name: Dr. Sreekanth Madisetty
-position: others
+position: phd
 avatar: sreekanth_madisetty.jpg
 twitter:
-joined: 2015
+passout: 1
+joining_year: 2015
 affiliation: Research Scientist, <br> Jio Platforms Limited
 title: Sreekanth Madisetty
 layout: profile
@@ -30,11 +31,13 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 <p style="text-align:justify">
 Sreekanth is currently a Research Scientist at Jio Platforms Limited. He has completed his Ph.D. thesis with Dr. Maunendra Sankar Desarkar on <i>Towards Event Recommendation using Social Media: Content Identification, Characterization, and Future Popularity Estimation</i>. His thesis primarily focuses on developing machine learning models for analyzing social media texts and events.
 </p>
 
 ### Research Interests:
+
 - Natural language Understanding
 - Social Network Analysis
 

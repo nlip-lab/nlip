@@ -2,8 +2,9 @@
 name: Prerna Jolly
 position: masters
 avatar: prerna.jpg
-twitter: 
-joined: 2023
+twitter:
+passout: 1
+joining_year: 2023
 title: Prerna Jolly
 layout: profile
 ---
@@ -29,10 +30,10 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 Prerna Jolly is currently pursuing her M.Tech degree in the Department of Artificial Intelligence at IIT Hyderabad. Prior to joining IITH, she completed her Masters in Mathematics from IIT Ropar. Her previous research experience involves developing machine learning algorithms for modeling stock market prediction. Her research interests primarily focus on Natural Language Processing (NLP), particularly in the areas of Large Language Models (LLMs) and language generation.
 
-
 ### Research Interest:
+
 - Large Language Models (LLMs)
 - Language Generation
-

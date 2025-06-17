@@ -2,8 +2,9 @@
 name: Maharaj Brahma
 position: phd
 avatar: maharaj.JPG
-twitter: 
-joined: 2023
+twitter:
+passout: 0
+joining_year: 2023
 title: Maharaj Brahma
 layout: profile
 ---
@@ -28,12 +29,14 @@ layout: profile
 </div>
 <span style="display: block; margin-bottom: 1em"></span>
 
-### Bio: 
+### Bio:
+
 <p style="text-align: justify">
 Maharaj is a third-year Ph.D. student working in Natural Language Processing (NLP). Prior to joining the Ph.D. program, he gained experience in building data resources and processing tools for the low-resource language Bodo. Additionally, he has conducted research in machine translation and the identification of tonal words and their meanings from textual data in the Bodo language.
 </p>
 
 ### Research Interests:
+
 - Multilingual NLP
 - Cultural NLP
 - Low resource NLP

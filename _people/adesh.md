@@ -1,9 +1,10 @@
 ---
 name: Adesh Gupta
-position: mtechalumni
+position: masters
 avatar: adesh.jpg
-twitter: 
-joined: 2022
+twitter:
+passout: 1
+joining_year: 2022
 title: Adesh Gupta
 layout: profile
 ---
@@ -29,7 +30,9 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 TBA.
 
 ### Research Interest:
+
 TBA.

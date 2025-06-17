@@ -88,11 +88,11 @@ layout: default
   margin: 2rem 0 1rem 0;
 }
 .people-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-bottom: 2rem;
-  justify-items: center; /* Center align the cards */
+  justify-content: center; /* Center align the cards */
 }
 
 .section-header {
@@ -118,8 +118,12 @@ layout: default
   padding: 2rem 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
-  min-height: 360px;
-  max-width: 300px;
+  /* min-height: 240px;
+  max-height: 440px;
+  min-width: 280px;
+  max-width: 360px; */
+  height: 440px;
+  width: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,11 +132,11 @@ layout: default
 
 .person-avatar {
   width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  height: 240px;
+  border-radius: 10%;
   margin: 0 auto 1rem auto;
-  object-fit: cover;
-  border: 4px solid #e5e7eb;
+  object-fit: contain;
+  border: 1px solid #e5e7eb;
   display: block;
   transition: transform 0.3s ease;
 }
@@ -293,7 +297,7 @@ layout: default
   <!-- Faculty Section -->
   <div class="section-header">Faculty</div>
   <div class="people-grid">
-    {% assign faculty = site.people | where: 'position', 'professor' %}
+    {% assign faculty = site.people | where: 'position', 'faculty' %}
     {% for person in faculty %}
       <div class="person-card">
         {% if person.avatar %}
@@ -348,7 +352,9 @@ layout: default
   
   <div class="subsection-header">Current</div>
   <div class="people-grid">
-    {% assign mtech_current = site.people | where: 'position', 'masters' %}
+    {% assign mtech_current = site.people 
+       | where: "position", "masters" 
+       | where: "passout", "no" %}
     {% for person in mtech_current %}
       <div class="person-card">
         {% if person.avatar %}
@@ -436,7 +442,7 @@ layout: default
 <!-- Faculty Tab -->
 <div id="faculty-content" class="tab-content">
   <div class="people-grid">
-    {% assign faculty = site.people | where: 'position', 'professor' %}
+    {% assign faculty = site.people | where: 'position', 'faculty' %}
     {% for person in faculty %}
       <div class="person-card">
         {% if person.avatar %}
@@ -459,15 +465,12 @@ layout: default
 
 <!-- PhD Tab -->
 <div id="phd-content" class="tab-content">
-  <div class="subsection-header">Current</div>
   <div class="people-grid">
-    {% assign phd_current = site.people | where: 'position', 'phd' %}
+    {% assign phd_current = site.people | where: 'position', 'phd' | where: 'passout', '0' | sort: 'joining_year' %}
     {% for person in phd_current %}
       <div class="person-card">
         {% if person.avatar %}
           <img class="person-avatar" src="{{site.baseurl}}/images/people/{{person.avatar}}" alt="{{person.name}}">
-        {% else %}
-          <img class="person-avatar" src="http://evansheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg" alt="{{person.name}}">
         {% endif %}
         <div class="person-name">
           <a href="{{ site.baseurl }}{{ person.url }}" style="text-decoration: none; color: inherit;">{{person.name}}</a>
@@ -475,12 +478,33 @@ layout: default
         <div class="person-title">PhD Student</div>
         {% if person.role %}
           <div class="person-role">PhD {{person.role}}</div>
-        {% else %}
-          <div class="person-role">PhD Scholar</div>
         {% endif %}
-        {% if person.joining_year %}
+        <!-- {% if person.joining_year %}
           <div class="person-year">Joined: {{person.joining_year}}</div>
+        {% endif %} -->
+        <div class="person-affiliation">{{person.affiliation}}</div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="subsection-header">Alumni</div>
+  <div class="people-grid">
+    {% assign phd_alumni = site.people | where: 'position', 'phd' | where: 'passout', '1' | sort: 'joining_year' %}
+    {% for person in phd_alumni %}
+      <div class="person-card">
+        {% if person.avatar %}
+          <img class="person-avatar" src="{{site.baseurl}}/images/people/{{person.avatar}}" alt="{{person.name}}">
         {% endif %}
+        <div class="person-name">
+          <a href="{{ site.baseurl }}{{ person.url }}" style="text-decoration: none; color: inherit;">{{person.name}}</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        {% if person.role %}
+          <div class="person-role">PhD {{person.role}}</div>
+        {% endif %}
+        <!-- {% if person.joining_year %}
+          <div class="person-year">Joined: {{person.joining_year}}</div>
+        {% endif %} -->
         <div class="person-affiliation">{{person.affiliation}}</div>
       </div>
     {% endfor %}
@@ -489,9 +513,8 @@ layout: default
 
 <!-- MTech Tab -->
 <div id="mtech-content" class="tab-content">
-  <div class="subsection-header">Current</div>
   <div class="people-grid">
-    {% assign mtech_current = site.people | where: 'position', 'masters' %}
+    {% assign mtech_current = site.people | where: "position", "masters" | where: "passout", "0" | sort: 'joining_year' %}
     {% for person in mtech_current %}
       <div class="person-card">
         {% if person.avatar %}
@@ -505,11 +528,28 @@ layout: default
         <div class="person-title">MTech Student</div>
         {% if person.role %}
           <div class="person-role">M.Tech {{person.role}}</div>
-        {% else %}
-          <div class="person-role">M.Tech RA</div>
         {% endif %}
-        {% if person.joining_year %}
-          <div class="person-year">Joined: {{person.joining_year}}</div>
+        <div class="person-affiliation">{{person.affiliation}}</div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="subsection-header">Alumni</div>
+  <div class="people-grid">
+    {% assign mtech_alumni = site.people | where: "position", "masters" | where: "passout", "1" | sort: 'joining_year' %}
+    {% for person in mtech_alumni %}
+      <div class="person-card">
+        {% if person.avatar %}
+          <img class="person-avatar" src="{{site.baseurl}}/images/people/{{person.avatar}}" alt="{{person.name}}">
+        {% else %}
+          <img class="person-avatar" src="http://evansheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg" alt="{{person.name}}">
+        {% endif %}
+        <div class="person-name">
+          <a href="{{ site.baseurl }}{{ person.url }}" style="text-decoration: none; color: inherit;">{{person.name}}</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        {% if person.role %}
+          <div class="person-role">M.Tech {{person.role}}</div>
         {% endif %}
         <div class="person-affiliation">{{person.affiliation}}</div>
       </div>

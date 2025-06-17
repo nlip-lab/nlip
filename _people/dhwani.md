@@ -1,9 +1,10 @@
 ---
 name: Dhwani Natvarbhai Jakhaniya
-position: mtechalumni
+position: masters
 avatar: dhwani.jpg
-twitter: 
-joined: 2022
+twitter:
+passout: 1
+joining_year: 2022
 title: Dhwani Natvarbhai Jakhaniya
 layout: profile
 ---
@@ -29,7 +30,9 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 TBA.
 
 ### Research Interest:
+
 TBA.

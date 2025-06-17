@@ -1,9 +1,11 @@
 ---
 name: Soham Bhatt
-position: mtechalumni
+position: masters
+title: Soham Bhatt
 avatar: soham.JPG
-twitter: 
-joined: 2021
+twitter:
+passout: 1
+joining_year: 2021
 layout: profile
 ---
 
@@ -28,9 +30,11 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 Soham is a M.tech student in Smart Mobility Department at IIT Hyderabad. He is working on Image Captioning under the guidance of Dr Maunendra Desarkar. He has more than 3 years of industry experience where he was working as a Software Engineer on micro-services-based architecture to provide cutting-edge solutions to various engineering problems.
 
 ### Research Interest:
+
 - Natural Language Processing
 - Image Captioning
 - Fraud Detection and Anti Money Laundering Using Machine Learning Algorithms

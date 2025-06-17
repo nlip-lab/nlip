@@ -1,6 +1,6 @@
 ---
 name: Dr. Maunendra Sankar Desarkar
-position: professor
+position: faculty
 avatar: maunendra.JPG
 twitter: 
 title: Maunendra Sankar Desarkar

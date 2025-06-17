@@ -3,7 +3,8 @@ name: Shrey Satapara
 position: masters
 avatar: shrey.JPG
 twitter:
-joined: 2022
+passout: 1
+joining_year: 2022
 title: Shrey Satapara
 layout: profile
 ---
@@ -29,12 +30,14 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 <p style="text-align: justify">
 Shrey is an M.Tech. Student under the Dept. of AI, IIT Hyderabad. He is deeply passionate about exploring the intersections of Deep Learning, Natural Language Processing, he is interested in multilingual NLP. With a focus on continual learning and cross-lingual transfer in NLP. He has previously worked on projects related to hate and offensive speech detection in Indo-Aryan languages and text summarization for Indian languages.
 
 </p>
 
 ### Research Interests:
+
 - Deep Learning
 - Natural Language Generation
 - Continual Learning

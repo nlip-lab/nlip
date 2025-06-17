@@ -2,8 +2,9 @@
 name: Pramit Sahoo
 position: masters
 avatar: pramit.jpg
-twitter: 
-joined: 2023
+twitter:
+passout: 1
+joining_year: 2023
 title: Pramit Sahoo
 layout: profile
 ---
@@ -29,10 +30,11 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 Pramit is a M.Tech Student in the Department of Artificial Intelligence at the Indian Institute of Technology Hyderabad. Prior to joining IIT Hyderabad, he did research work in Medical Image Analysis and Nanotoxicity during his Bachelor of Pharmacy Degree. Currently, He is more into Natural Language Processing, especially in Machine Translation using Large Language Models.
 
-
 ### Research Interest:
+
 - Large Language Models (LLMs)
 - Machine Translation
 - Multilingual NLP

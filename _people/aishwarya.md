@@ -2,8 +2,9 @@
 name: M Aishwarya
 position: phd
 avatar: aishwarya.JPG
-twitter: 
-joined: 2021
+twitter:
+passout: 0
+joining_year: 2021
 title: M Aishwarya
 layout: profile
 ---
@@ -29,12 +30,13 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 <p style="text-align: justify">
 Aishwarya is a Joint Ph.D. student at IITH and Swinburne University, Australia. She works on controllable text generation, where the generated text must address some properties like toxicity, relevance, and empathy. Through her research, she aspires to create a transformative bridge between dialog systems and compassionate healthcare. She enjoys long walks in nature and listening to podcasts. </p>
 
 ### Research Interest:
+
 - Natural Language Generation
 - Controllable Text Generation
 - Responsible NLP
-- Medical NLP 
-
+- Medical NLP

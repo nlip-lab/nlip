@@ -239,11 +239,11 @@
   margin: 2rem 0 1rem 0;
 }
 .people-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-bottom: 2rem;
-  justify-items: center; /* Center align the cards */
+  justify-content: center; /* Center align the cards */
 }
 
 .section-header {
@@ -269,8 +269,12 @@
   padding: 2rem 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
-  min-height: 360px;
-  max-width: 300px;
+  /* min-height: 240px;
+  max-height: 440px;
+  min-width: 280px;
+  max-width: 360px; */
+  height: 440px;
+  width: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -279,11 +283,11 @@
 
 .person-avatar {
   width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  height: 240px;
+  border-radius: 10%;
   margin: 0 auto 1rem auto;
-  object-fit: cover;
-  border: 4px solid #e5e7eb;
+  object-fit: contain;
+  border: 1px solid #e5e7eb;
   display: block;
   transition: transform 0.3s ease;
 }
@@ -453,7 +457,7 @@
         <div class="person-name">
           <a href="/nlip/people/maunendra/index.html" style="text-decoration: none; color: inherit;">Dr. Maunendra Sankar Desarkar</a>
         </div>
-        <div class="person-title">Professor</div>
+        <div class="person-title">Faculty</div>
         
         <div class="person-affiliation"></div>
       </div>
@@ -479,6 +483,8 @@
           <div class="person-role">PhD Scholar</div>
         
         
+          <div class="person-year">Joined: 2021</div>
+        
         <div class="person-affiliation"></div>
       </div>
     
@@ -493,6 +499,8 @@
         
           <div class="person-role">PhD Scholar</div>
         
+        
+          <div class="person-year">Joined: 2020</div>
         
         <div class="person-affiliation"></div>
       </div>
@@ -509,7 +517,26 @@
           <div class="person-role">PhD Scholar</div>
         
         
+          <div class="person-year">Joined: 2024</div>
+        
         <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/kaushal.jpg" alt="Dr. Kaushal Kumar Maurya" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/kaushal/index.html" style="text-decoration: none; color: inherit;">Dr. Kaushal Kumar Maurya</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+          <div class="person-role">PhD Scholar</div>
+        
+        
+          <div class="person-year">Joined: 2018</div>
+        
+        <div class="person-affiliation">Postdoc at <br /> MBZUAI</div>
       </div>
     
       <div class="person-card">
@@ -524,7 +551,77 @@
           <div class="person-role">PhD Scholar</div>
         
         
+          <div class="person-year">Joined: 2023</div>
+        
         <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/manisha.png" alt="Dr. Manisha Dubey" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/manisha/index.html" style="text-decoration: none; color: inherit;">Dr. Manisha Dubey</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+          <div class="person-role">PhD Scholar</div>
+        
+        
+          <div class="person-year">Joined: 2017</div>
+        
+        <div class="person-affiliation">Postdoctoral Associate, <br /> University of Manchester</div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/samujjwal.jpg" alt="Dr. Samujjwal Ghosh" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/samujjwal/index.html" style="text-decoration: none; color: inherit;">Dr. Samujjwal Ghosh</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+          <div class="person-role">PhD Scholar</div>
+        
+        
+          <div class="person-year">Joined: 2016</div>
+        
+        <div class="person-affiliation">Machine Learning Engineer, <br />Intel</div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/sreekanth_madisetty.jpg" alt="Dr. Sreekanth Madisetty" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/sreekanth_madishetty/index.html" style="text-decoration: none; color: inherit;">Dr. Sreekanth Madisetty</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+          <div class="person-role">PhD Scholar</div>
+        
+        
+          <div class="person-year">Joined: 2015</div>
+        
+        <div class="person-affiliation">Research Scientist, <br /> Jio Platforms Limited</div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/suvodip.JPG" alt="Suvodip Dey" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/suvodip_dey/index.html" style="text-decoration: none; color: inherit;">Suvodip Dey</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+          <div class="person-role">PhD Scholar</div>
+        
+        
+          <div class="person-year">Joined: 2019</div>
+        
+        <div class="person-affiliation">Postdoc at University of Illinois Urbana-Champaign</div>
       </div>
     
   </div>
@@ -535,156 +632,6 @@
   <div class="subsection-header">Current</div>
   <div class="people-grid">
     
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/anjana.jpg" alt="S Anjana Shankar" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/anjana/index.html" style="text-decoration: none; color: inherit;">S Anjana Shankar</a>
-        </div>
-        <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/anya.jpg" alt="Anya Gupta" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/anya/index.html" style="text-decoration: none; color: inherit;">Anya Gupta</a>
-        </div>
-        <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/isha.jpg" alt="Isha Kumar" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/isha/index.html" style="text-decoration: none; color: inherit;">Isha Kumar</a>
-        </div>
-        <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/nishat.png" alt="Sk Nishat Saama" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/nishat/index.html" style="text-decoration: none; color: inherit;">Sk Nishat Saama</a>
-        </div>
-        <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/parasa.jpg" alt="Parasa Naga Venkata Pavan" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/parasa/index.html" style="text-decoration: none; color: inherit;">Parasa Naga Venkata Pavan</a>
-        </div>
-        <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/pramit.jpg" alt="Pramit Sahoo" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/pramit/index.html" style="text-decoration: none; color: inherit;">Pramit Sahoo</a>
-        </div>
-        <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/prerna.jpg" alt="Prerna Jolly" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/prerna/index.html" style="text-decoration: none; color: inherit;">Prerna Jolly</a>
-        </div>
-        <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/shrenik.jpeg" alt="Shrenik Ganguli" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/shrenik/index.html" style="text-decoration: none; color: inherit;">Shrenik Ganguli</a>
-        </div>
-        <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/shrey.JPG" alt="Shrey Satapara" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/shrey_satapara/index.html" style="text-decoration: none; color: inherit;">Shrey Satapara</a>
-        </div>
-        <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/trishita.jpg" alt="Trishita Saha" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/trishita/index.html" style="text-decoration: none; color: inherit;">Trishita Saha</a>
-        </div>
-        <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
-        
-        <div class="person-affiliation"></div>
-      </div>
     
   </div>
 
@@ -739,7 +686,7 @@
         <div class="person-name">
           <a href="/nlip/people/maunendra/index.html" style="text-decoration: none; color: inherit;">Dr. Maunendra Sankar Desarkar</a>
         </div>
-        <div class="person-title">Professor</div>
+        <div class="person-title">Faculty</div>
         
         <div class="person-affiliation"></div>
       </div>
@@ -749,24 +696,8 @@
 
 <!-- PhD Tab -->
 <div id="phd-content" class="tab-content">
-  <div class="subsection-header">Current</div>
   <div class="people-grid">
     
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/aishwarya.JPG" alt="M Aishwarya" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/aishwarya/index.html" style="text-decoration: none; color: inherit;">M Aishwarya</a>
-        </div>
-        <div class="person-title">PhD Student</div>
-        
-          <div class="person-role">PhD Scholar</div>
-        
-        
-        <div class="person-affiliation"></div>
-      </div>
     
       <div class="person-card">
         
@@ -777,24 +708,24 @@
         </div>
         <div class="person-title">PhD Student</div>
         
-          <div class="person-role">PhD Scholar</div>
-        
-        
+        <!-- 
+          <div class="person-year">Joined: 2020</div>
+         -->
         <div class="person-affiliation"></div>
       </div>
     
       <div class="person-card">
         
-          <img class="person-avatar" src="/nlip/images/people/devendra_dewangan.jpg" alt="Devendra Kumar Dewangan" />
+          <img class="person-avatar" src="/nlip/images/people/aishwarya.JPG" alt="M Aishwarya" />
         
         <div class="person-name">
-          <a href="/nlip/people/devendra_dewangan/index.html" style="text-decoration: none; color: inherit;">Devendra Kumar Dewangan</a>
+          <a href="/nlip/people/aishwarya/index.html" style="text-decoration: none; color: inherit;">M Aishwarya</a>
         </div>
         <div class="person-title">PhD Student</div>
         
-          <div class="person-role">PhD Scholar</div>
-        
-        
+        <!-- 
+          <div class="person-year">Joined: 2021</div>
+         -->
         <div class="person-affiliation"></div>
       </div>
     
@@ -807,10 +738,106 @@
         </div>
         <div class="person-title">PhD Student</div>
         
-          <div class="person-role">PhD Scholar</div>
-        
-        
+        <!-- 
+          <div class="person-year">Joined: 2023</div>
+         -->
         <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/devendra_dewangan.jpg" alt="Devendra Kumar Dewangan" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/devendra_dewangan/index.html" style="text-decoration: none; color: inherit;">Devendra Kumar Dewangan</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2024</div>
+         -->
+        <div class="person-affiliation"></div>
+      </div>
+    
+  </div>
+
+  <div class="subsection-header">Alumni</div>
+  <div class="people-grid">
+    
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/sreekanth_madisetty.jpg" alt="Dr. Sreekanth Madisetty" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/sreekanth_madishetty/index.html" style="text-decoration: none; color: inherit;">Dr. Sreekanth Madisetty</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2015</div>
+         -->
+        <div class="person-affiliation">Research Scientist, <br /> Jio Platforms Limited</div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/samujjwal.jpg" alt="Dr. Samujjwal Ghosh" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/samujjwal/index.html" style="text-decoration: none; color: inherit;">Dr. Samujjwal Ghosh</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2016</div>
+         -->
+        <div class="person-affiliation">Machine Learning Engineer, <br />Intel</div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/manisha.png" alt="Dr. Manisha Dubey" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/manisha/index.html" style="text-decoration: none; color: inherit;">Dr. Manisha Dubey</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2017</div>
+         -->
+        <div class="person-affiliation">Postdoctoral Associate, <br /> University of Manchester</div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/kaushal.jpg" alt="Dr. Kaushal Kumar Maurya" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/kaushal/index.html" style="text-decoration: none; color: inherit;">Dr. Kaushal Kumar Maurya</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2018</div>
+         -->
+        <div class="person-affiliation">Postdoc at <br /> MBZUAI</div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/suvodip.JPG" alt="Suvodip Dey" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/suvodip_dey/index.html" style="text-decoration: none; color: inherit;">Suvodip Dey</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2019</div>
+         -->
+        <div class="person-affiliation">Postdoc at University of Illinois Urbana-Champaign</div>
       </div>
     
   </div>
@@ -818,7 +845,6 @@
 
 <!-- MTech Tab -->
 <div id="mtech-content" class="tab-content">
-  <div class="subsection-header">Current</div>
   <div class="people-grid">
     
     
@@ -830,9 +856,6 @@
           <a href="/nlip/people/anjana/index.html" style="text-decoration: none; color: inherit;">S Anjana Shankar</a>
         </div>
         <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
         
         <div class="person-affiliation"></div>
       </div>
@@ -846,9 +869,6 @@
         </div>
         <div class="person-title">MTech Student</div>
         
-          <div class="person-role">M.Tech RA</div>
-        
-        
         <div class="person-affiliation"></div>
       </div>
     
@@ -860,9 +880,6 @@
           <a href="/nlip/people/isha/index.html" style="text-decoration: none; color: inherit;">Isha Kumar</a>
         </div>
         <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
         
         <div class="person-affiliation"></div>
       </div>
@@ -876,68 +893,83 @@
         </div>
         <div class="person-title">MTech Student</div>
         
-          <div class="person-role">M.Tech RA</div>
+        <div class="person-affiliation"></div>
+      </div>
+    
+  </div>
+
+  <div class="subsection-header">Alumni</div>
+  <div class="people-grid">
+    
+    
+      <div class="person-card">
         
+          <img class="person-avatar" src="/nlip/images/people/darshan.JPG" alt="Darshan Dobariya" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/darshan_dobariya/index.html" style="text-decoration: none; color: inherit;">Darshan Dobariya</a>
+        </div>
+        <div class="person-title">MTech Student</div>
         
         <div class="person-affiliation"></div>
       </div>
     
       <div class="person-card">
         
-          <img class="person-avatar" src="/nlip/images/people/parasa.jpg" alt="Parasa Naga Venkata Pavan" />
+          <img class="person-avatar" src="/nlip/images/people/kamal.JPG" alt="Kamal Shrestha" />
         
         <div class="person-name">
-          <a href="/nlip/people/parasa/index.html" style="text-decoration: none; color: inherit;">Parasa Naga Venkata Pavan</a>
+          <a href="/nlip/people/kamal_shrestha/index.html" style="text-decoration: none; color: inherit;">Kamal Shrestha</a>
         </div>
         <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
         
         <div class="person-affiliation"></div>
       </div>
     
       <div class="person-card">
         
-          <img class="person-avatar" src="/nlip/images/people/pramit.jpg" alt="Pramit Sahoo" />
+          <img class="person-avatar" src="/nlip/images/people/kaushiki.JPG" alt="Kaushiki Dwivedi" />
         
         <div class="person-name">
-          <a href="/nlip/people/pramit/index.html" style="text-decoration: none; color: inherit;">Pramit Sahoo</a>
+          <a href="/nlip/people/kaushiki_dwivedi/index.html" style="text-decoration: none; color: inherit;">Kaushiki Dwivedi</a>
         </div>
         <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
         
         <div class="person-affiliation"></div>
       </div>
     
       <div class="person-card">
         
-          <img class="person-avatar" src="/nlip/images/people/prerna.jpg" alt="Prerna Jolly" />
+          <img class="person-avatar" src="/nlip/images/people/soham.JPG" alt="Soham Bhatt" />
         
         <div class="person-name">
-          <a href="/nlip/people/prerna/index.html" style="text-decoration: none; color: inherit;">Prerna Jolly</a>
+          <a href="/nlip/people/soham_bhatt/index.html" style="text-decoration: none; color: inherit;">Soham Bhatt</a>
         </div>
         <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
         
         <div class="person-affiliation"></div>
       </div>
     
       <div class="person-card">
         
-          <img class="person-avatar" src="/nlip/images/people/shrenik.jpeg" alt="Shrenik Ganguli" />
+          <img class="person-avatar" src="/nlip/images/people/adesh.jpg" alt="Adesh Gupta" />
         
         <div class="person-name">
-          <a href="/nlip/people/shrenik/index.html" style="text-decoration: none; color: inherit;">Shrenik Ganguli</a>
+          <a href="/nlip/people/adesh/index.html" style="text-decoration: none; color: inherit;">Adesh Gupta</a>
         </div>
         <div class="person-title">MTech Student</div>
         
-          <div class="person-role">M.Tech RA</div>
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
         
+          <img class="person-avatar" src="/nlip/images/people/dhwani.jpg" alt="Dhwani Natvarbhai Jakhaniya" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/dhwani/index.html" style="text-decoration: none; color: inherit;">Dhwani Natvarbhai Jakhaniya</a>
+        </div>
+        <div class="person-title">MTech Student</div>
         
         <div class="person-affiliation"></div>
       </div>
@@ -951,8 +983,53 @@
         </div>
         <div class="person-title">MTech Student</div>
         
-          <div class="person-role">M.Tech RA</div>
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
         
+          <img class="person-avatar" src="/nlip/images/people/parasa.jpg" alt="Parasa Naga Venkata Pavan" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/parasa/index.html" style="text-decoration: none; color: inherit;">Parasa Naga Venkata Pavan</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/pramit.jpg" alt="Pramit Sahoo" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/pramit/index.html" style="text-decoration: none; color: inherit;">Pramit Sahoo</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/prerna.jpg" alt="Prerna Jolly" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/prerna/index.html" style="text-decoration: none; color: inherit;">Prerna Jolly</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/shrenik.jpeg" alt="Shrenik Ganguli" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/shrenik/index.html" style="text-decoration: none; color: inherit;">Shrenik Ganguli</a>
+        </div>
+        <div class="person-title">MTech Student</div>
         
         <div class="person-affiliation"></div>
       </div>
@@ -965,9 +1042,6 @@
           <a href="/nlip/people/trishita/index.html" style="text-decoration: none; color: inherit;">Trishita Saha</a>
         </div>
         <div class="person-title">MTech Student</div>
-        
-          <div class="person-role">M.Tech RA</div>
-        
         
         <div class="person-affiliation"></div>
       </div>

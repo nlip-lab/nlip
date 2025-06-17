@@ -2,8 +2,9 @@
 name: Sk Nishat Saama
 position: masters
 avatar: nishat.png
-twitter: 
-joined: 2024
+twitter:
+passout: 0
+joining_year: 2024
 title: Sk Nishat Saama
 layout: profile
 ---
@@ -29,6 +30,7 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio
+
 <p style="text-align: justify">
 Sk Nishat Saama is a M.Tech. Research Assistant in the Department of Computer Science and Engineering at IIT Hyderabad. Prior to joining IITH, she completed her B.Tech. from KIIT University, Bhubaneshwar. There she worked on projects like "Analysis of optimization algorithms for Inventory Control" and "Crop Yield Prediction using Machine Learning". Currently she is a part of the Natural Language and Information Processing Lab where she will be working in the domain of NLP.
 </p>
