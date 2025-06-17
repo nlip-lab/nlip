@@ -115,15 +115,15 @@ layout: default
   background: white;
   border-radius: 0.75rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2rem 1.5rem;
+  padding: 1rem 1rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   /* min-height: 240px;
   max-height: 440px;
   min-width: 280px;
   max-width: 360px; */
   height: 440px;
-  width: 360px;
+  width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,7 +142,7 @@ layout: default
 }
 
 .person-avatar:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .person-name {
@@ -253,18 +253,21 @@ layout: default
   }
   
   .people-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center; /* Center align the cards */
   }
   
   .person-card {
-    min-height: 320px;
+    height: 400px;
     padding: 1.5rem;
   }
   
   .person-avatar {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 240px;
   }
 }
 </style>
@@ -281,166 +284,18 @@ layout: default
 <div class="sticky-tabs">
   <div class="tab-container">
     <div class="tabs">
-      <div class="tab active" data-tab="all">All Members</div>
-      <div class="tab" data-tab="faculty">Faculty</div>
+      <div class="tab active" data-tab="faculty">Faculty</div>
       <div class="tab" data-tab="phd">PhD</div>
       <div class="tab" data-tab="mtech">MTech</div>
-      <div class="tab" data-tab="interns">Interns</div>
+      <!-- <div class="tab" data-tab="interns">Interns</div> -->
     </div>
   </div>
 </div>
 
 <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
 
-<!-- All Members Tab -->
-<div id="all-content" class="tab-content active">
-  <!-- Faculty Section -->
-  <div class="section-header">Faculty</div>
-  <div class="people-grid">
-    {% assign faculty = site.people | where: 'position', 'faculty' %}
-    {% for person in faculty %}
-      <div class="person-card">
-        {% if person.avatar %}
-          <img class="person-avatar" src="{{site.baseurl}}/images/people/{{person.avatar}}" alt="{{person.name}}">
-        {% else %}
-          <img class="person-avatar" src="http://evansheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg" alt="{{person.name}}">
-        {% endif %}
-        <div class="person-name">
-          <a href="{{ site.baseurl }}{{ person.url }}" style="text-decoration: none; color: inherit;">{{person.name}}</a>
-        </div>
-        <div class="person-title">{{person.position | capitalize}}</div>
-        {% if person.specialization %}
-          <div class="person-role">{{person.specialization}}</div>
-        {% endif %}
-        <div class="person-affiliation">{{person.affiliation}}</div>
-      </div>
-    {% endfor %}
-  </div>
-
-  <!-- PhD Students Section -->
-  <div class="section-header">PhD Students</div>
-  
-  <div class="subsection-header">Current</div>
-  <div class="people-grid">
-    {% assign phd_current = site.people | where: 'position', 'phd' %}
-    {% for person in phd_current %}
-      <div class="person-card">
-        {% if person.avatar %}
-          <img class="person-avatar" src="{{site.baseurl}}/images/people/{{person.avatar}}" alt="{{person.name}}">
-        {% else %}
-          <img class="person-avatar" src="http://evansheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg" alt="{{person.name}}">
-        {% endif %}
-        <div class="person-name">
-          <a href="{{ site.baseurl }}{{ person.url }}" style="text-decoration: none; color: inherit;">{{person.name}}</a>
-        </div>
-        <div class="person-title">PhD Student</div>
-        {% if person.role %}
-          <div class="person-role">PhD {{person.role}}</div>
-        {% else %}
-          <div class="person-role">PhD Scholar</div>
-        {% endif %}
-        {% if person.joining_year %}
-          <div class="person-year">Joined: {{person.joining_year}}</div>
-        {% endif %}
-        <div class="person-affiliation">{{person.affiliation}}</div>
-      </div>
-    {% endfor %}
-  </div>
-
-  <!-- MTech Students Section -->
-  <div class="section-header">MTech Students</div>
-  
-  <div class="subsection-header">Current</div>
-  <div class="people-grid">
-    {% assign mtech_current = site.people 
-       | where: "position", "masters" 
-       | where: "passout", "no" %}
-    {% for person in mtech_current %}
-      <div class="person-card">
-        {% if person.avatar %}
-          <img class="person-avatar" src="{{site.baseurl}}/images/people/{{person.avatar}}" alt="{{person.name}}">
-        {% else %}
-          <img class="person-avatar" src="http://evansheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg" alt="{{person.name}}">
-        {% endif %}
-        <div class="person-name">
-          <a href="{{ site.baseurl }}{{ person.url }}" style="text-decoration: none; color: inherit;">{{person.name}}</a>
-        </div>
-        <div class="person-title">MTech Student</div>
-        {% if person.role %}
-          <div class="person-role">M.Tech {{person.role}}</div>
-        {% else %}
-          <div class="person-role">M.Tech RA</div>
-        {% endif %}
-        {% if person.joining_year %}
-          <div class="person-year">Joined: {{person.joining_year}}</div>
-        {% endif %}
-        <div class="person-affiliation">{{person.affiliation}}</div>
-      </div>
-    {% endfor %}
-  </div>
-
-  <div class="subsection-header">Alumni</div>
-  <table class="alumni-table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Batch</th>
-        <th>Current Affiliation</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><a href="https://www.linkedin.com/in/sharan21/">Sharan Narasimhan</a></td><td>Masters student (2020-2022)</td><td>Data Engineer at Indeed</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/venkateshelangovan/">Venkatesh E</a></td><td>Masters student (2020-2022)</td><td>Machine Learning Engineer at Qualcomm</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/arkadipta-de/">Arkadipta De</a></td><td>Masters student (2020-2022)</td><td>Applied AI Researcher at Fujitsu Research India</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/vandita-dutt-840646141/">Vandita Dutt</a></td><td>Masters student (2020-2022)</td><td>-</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/sagarjinde/">Sagar Jinde</a></td><td>Masters student (2019-2021)</td><td>Machine Learning Engineer at Qualcomm</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/vikramanandsingh/">Vikram Anand Singh</a></td><td>Masters student (2018-2020)</td><td>Software Developer at BNY Mellon Technology</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/shounak-kundu-53977817/">Shounak Kundu</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td><td>Machine Learning Engineer at InMobi</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/rishik-ramena-0a0b52b0/">Rishik Ramena</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018)</td><td>Software Engineer at Microsoft</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/priyambada-ambastha-133962119/">Priyambada Ambastha</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td><td><b>Gold Medalist</b> at IITH, Applied Scientist at Amazon</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/rashmi-hti-3bb52039/">Rashmi HTI</a></td><td>Masters student (2016-2018)</td><td>Associate at Goldman Sachs</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/priyanka-choudhary-9b0b46111/">Priyanka Choudhary</a></td><td>Masters student (2016-2018)</td><td>Lecturer at rpsc technical education department</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/shamikkundu/">Shamik Kundu</a></td><td>Masters student (2016-2018)</td><td>Data Scientist at Rakuten</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/manjela-toppo-021342154/">Manjela Toppo</a></td><td>Masters student(2016-2018)</td><td>-</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/shashank-singh-a527bb112/">Shashank Singh</a></td><td>Masters Student (2015-2017)</td><td>Software Developer at PayPal</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/pradyumna-deshpande-72a51455/">Pradyumna Deshpande</a></td><td>Masters Student (2015-2017)</td><td>Platform Engineer at PayPay Corporation Tokyo, Japan</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/swapdewalkar/">Swapnil Ashok dewalakar</a></td><td>Masters student (2017-2019)</td><td>SDE at Fanatics,Inc.</td></tr>
-    </tbody>
-  </table>
-
-  <!-- Interns Section -->
-  <div class="section-header">Interns</div>
-  
-  <div class="subsection-header">Current</div>
-  <div class="people-grid">
-    {% assign interns_current = site.people | where: 'position', 'visiting' %}
-    {% for person in interns_current %}
-      <div class="person-card">
-        {% if person.avatar %}
-          <img class="person-avatar" src="{{site.baseurl}}/images/people/{{person.avatar}}" alt="{{person.name}}">
-        {% else %}
-          <img class="person-avatar" src="http://evansheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg" alt="{{person.name}}">
-        {% endif %}
-        <div class="person-name">
-          <a href="{{ site.baseurl }}{{ person.url }}" style="text-decoration: none; color: inherit;">{{person.name}}</a>
-        </div>
-        <div class="person-title">Research Intern</div>
-        {% if person.role %}
-          <div class="person-role">{{person.role}}</div>
-        {% else %}
-          <div class="person-role">Summer Intern</div>
-        {% endif %}
-        {% if person.joining_year %}
-          <div class="person-year">Joined: {{person.joining_year}}</div>
-        {% endif %}
-        <div class="person-affiliation">{{person.affiliation}}</div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
-
 <!-- Faculty Tab -->
-<div id="faculty-content" class="tab-content">
+<div id="faculty-content" class="tab-content active">
   <div class="people-grid">
     {% assign faculty = site.people | where: 'position', 'faculty' %}
     {% for person in faculty %}
@@ -556,7 +411,6 @@ layout: default
     {% endfor %}
   </div>
 
-  <div class="subsection-header">Alumni</div>
   <table class="alumni-table">
     <thead>
       <tr>
@@ -581,14 +435,14 @@ layout: default
       <tr><td><a href="https://www.linkedin.com/in/manjela-toppo-021342154/">Manjela Toppo</a></td><td>Masters student(2016-2018)</td><td>-</td></tr>
       <tr><td><a href="https://www.linkedin.com/in/shashank-singh-a527bb112/">Shashank Singh</a></td><td>Masters Student (2015-2017)</td><td>Software Developer at PayPal</td></tr>
       <tr><td><a href="https://www.linkedin.com/in/pradyumna-deshpande-72a51455/">Pradyumna Deshpande</a></td><td>Masters Student (2015-2017)</td><td>Platform Engineer at PayPay Corporation Tokyo, Japan</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/swapdewalkar/">Swapnil Ashok dewalakar</a></td><td>Masters student (2017-2019)</td><td>SDE at Fanatics,Inc.</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/swapdewalkar/">Swapnil Ashok Dewalakar</a></td><td>Masters student (2017-2019)</td><td>SDE at Fanatics,Inc.</td></tr>
     </tbody>
   </table>
 </div>
 
 <!-- Interns Tab -->
 <div id="interns-content" class="tab-content">
-  <div class="subsection-header">Current</div>
+  <!-- <div class="subsection-header">Current</div> -->
   <div class="people-grid">
     {% assign interns_current = site.people | where: 'position', 'visiting' %}
     {% for person in interns_current %}
@@ -629,11 +483,11 @@ document.addEventListener('DOMContentLoaded', function() {
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
       const targetTab = this.getAttribute('data-tab');
-      
+
       // Remove active class from all tabs and contents
       tabs.forEach(t => t.classList.remove('active'));
       tabContents.forEach(tc => tc.classList.remove('active'));
-      
+
       // Add active class to clicked tab and corresponding content
       this.classList.add('active');
       document.getElementById(targetTab + '-content').classList.add('active');

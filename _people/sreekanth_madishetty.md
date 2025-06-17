@@ -5,7 +5,7 @@ avatar: sreekanth_madisetty.jpg
 twitter:
 passout: 1
 joining_year: 2015
-affiliation: Research Scientist, <br> Jio Platforms Limited
+affiliation: Research Scientist, Jio Platforms Limited
 title: Sreekanth Madisetty
 layout: profile
 ---

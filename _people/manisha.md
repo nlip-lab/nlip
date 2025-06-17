@@ -4,7 +4,7 @@ position: phd
 avatar: manisha.png
 passout: 1
 joining_year: 2017
-affiliation: Postdoctoral Associate, <br> University of Manchester
+affiliation: Postdoctoral Associate, University of Manchester
 title: Manisha Dubey
 layout: profile
 ---

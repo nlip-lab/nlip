@@ -1,9 +1,10 @@
 ---
 name: Aditi Bagora
-position: mtechalumni
+position: masters
 avatar: aditi.JPG
-twitter: 
-joined: 2021
+twitter:
+passout: 1
+joining_year: 2021
 title: Aditi Bagora
 layout: profile
 ---
@@ -29,9 +30,10 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 My research focuses on controlled text generation. The generated text should be non-toxic and the sentiment that is generated should be positive.
 
-
 ### Research Interest:
+
 - Natural Language Generation
 - Controllable Text Generation

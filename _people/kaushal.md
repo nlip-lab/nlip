@@ -5,7 +5,7 @@ avatar: kaushal.jpg
 twitter:
 passout: 1
 joining_year: 2018
-affiliation: Postdoc at <br> MBZUAI
+affiliation: Postdoc at MBZUAI
 title: Kaushal Kumar Maurya
 layout: profile
 ---

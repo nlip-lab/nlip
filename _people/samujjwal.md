@@ -4,7 +4,7 @@ position: phd
 avatar: samujjwal.jpg
 passout: 1
 joining_year: 2016
-affiliation: Machine Learning Engineer, <br>Intel
+affiliation: Machine Learning Engineer, Intel
 title: Samujjwal Ghosh
 layout: profile
 ---

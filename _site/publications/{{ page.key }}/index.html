@@ -551,15 +551,15 @@
   background: white;
   border-radius: 0.75rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2rem 1.5rem;
+  padding: 1rem 1rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   /* min-height: 240px;
   max-height: 440px;
   min-width: 280px;
   max-width: 360px; */
   height: 440px;
-  width: 360px;
+  width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -578,7 +578,7 @@
 }
 
 .person-avatar:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .person-name {
@@ -689,18 +689,21 @@
   }
   
   .people-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center; /* Center align the cards */
   }
   
   .person-card {
-    min-height: 320px;
+    height: 400px;
     padding: 1.5rem;
   }
   
   .person-avatar {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 240px;
   }
 }
 </style>
@@ -717,250 +720,18 @@
 <div class="sticky-tabs">
   <div class="tab-container">
     <div class="tabs">
-      <div class="tab active" data-tab="all">All Members</div>
-      <div class="tab" data-tab="faculty">Faculty</div>
+      <div class="tab active" data-tab="faculty">Faculty</div>
       <div class="tab" data-tab="phd">PhD</div>
       <div class="tab" data-tab="mtech">MTech</div>
-      <div class="tab" data-tab="interns">Interns</div>
+      <!-- <div class="tab" data-tab="interns">Interns</div> -->
     </div>
   </div>
 </div>
 
 <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
 
-<!-- All Members Tab -->
-<div id="all-content" class="tab-content active">
-  <!-- Faculty Section -->
-  <div class="section-header">Faculty</div>
-  <div class="people-grid">
-    
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/maunendra.JPG" alt="Dr. Maunendra Sankar Desarkar" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/maunendra/index.html" style="text-decoration: none; color: inherit;">Dr. Maunendra Sankar Desarkar</a>
-        </div>
-        <div class="person-title">Faculty</div>
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-  </div>
-
-  <!-- PhD Students Section -->
-  <div class="section-header">PhD Students</div>
-  
-  <div class="subsection-header">Current</div>
-  <div class="people-grid">
-    
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/aishwarya.JPG" alt="M Aishwarya" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/aishwarya/index.html" style="text-decoration: none; color: inherit;">M Aishwarya</a>
-        </div>
-        <div class="person-title">PhD Student</div>
-        
-          <div class="person-role">PhD Scholar</div>
-        
-        
-          <div class="person-year">Joined: 2021</div>
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/debolena.JPG" alt="Debolena Basak" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/debolena_basak/index.html" style="text-decoration: none; color: inherit;">Debolena Basak</a>
-        </div>
-        <div class="person-title">PhD Student</div>
-        
-          <div class="person-role">PhD Scholar</div>
-        
-        
-          <div class="person-year">Joined: 2020</div>
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/devendra_dewangan.jpg" alt="Devendra Kumar Dewangan" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/devendra_dewangan/index.html" style="text-decoration: none; color: inherit;">Devendra Kumar Dewangan</a>
-        </div>
-        <div class="person-title">PhD Student</div>
-        
-          <div class="person-role">PhD Scholar</div>
-        
-        
-          <div class="person-year">Joined: 2024</div>
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/kaushal.jpg" alt="Dr. Kaushal Kumar Maurya" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/kaushal/index.html" style="text-decoration: none; color: inherit;">Dr. Kaushal Kumar Maurya</a>
-        </div>
-        <div class="person-title">PhD Student</div>
-        
-          <div class="person-role">PhD Scholar</div>
-        
-        
-          <div class="person-year">Joined: 2018</div>
-        
-        <div class="person-affiliation">Postdoc at <br /> MBZUAI</div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/maharaj.JPG" alt="Maharaj Brahma" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/maharaj/index.html" style="text-decoration: none; color: inherit;">Maharaj Brahma</a>
-        </div>
-        <div class="person-title">PhD Student</div>
-        
-          <div class="person-role">PhD Scholar</div>
-        
-        
-          <div class="person-year">Joined: 2023</div>
-        
-        <div class="person-affiliation"></div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/manisha.png" alt="Dr. Manisha Dubey" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/manisha/index.html" style="text-decoration: none; color: inherit;">Dr. Manisha Dubey</a>
-        </div>
-        <div class="person-title">PhD Student</div>
-        
-          <div class="person-role">PhD Scholar</div>
-        
-        
-          <div class="person-year">Joined: 2017</div>
-        
-        <div class="person-affiliation">Postdoctoral Associate, <br /> University of Manchester</div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/samujjwal.jpg" alt="Dr. Samujjwal Ghosh" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/samujjwal/index.html" style="text-decoration: none; color: inherit;">Dr. Samujjwal Ghosh</a>
-        </div>
-        <div class="person-title">PhD Student</div>
-        
-          <div class="person-role">PhD Scholar</div>
-        
-        
-          <div class="person-year">Joined: 2016</div>
-        
-        <div class="person-affiliation">Machine Learning Engineer, <br />Intel</div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/sreekanth_madisetty.jpg" alt="Dr. Sreekanth Madisetty" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/sreekanth_madishetty/index.html" style="text-decoration: none; color: inherit;">Dr. Sreekanth Madisetty</a>
-        </div>
-        <div class="person-title">PhD Student</div>
-        
-          <div class="person-role">PhD Scholar</div>
-        
-        
-          <div class="person-year">Joined: 2015</div>
-        
-        <div class="person-affiliation">Research Scientist, <br /> Jio Platforms Limited</div>
-      </div>
-    
-      <div class="person-card">
-        
-          <img class="person-avatar" src="/nlip/images/people/suvodip.JPG" alt="Suvodip Dey" />
-        
-        <div class="person-name">
-          <a href="/nlip/people/suvodip_dey/index.html" style="text-decoration: none; color: inherit;">Suvodip Dey</a>
-        </div>
-        <div class="person-title">PhD Student</div>
-        
-          <div class="person-role">PhD Scholar</div>
-        
-        
-          <div class="person-year">Joined: 2019</div>
-        
-        <div class="person-affiliation">Postdoc at University of Illinois Urbana-Champaign</div>
-      </div>
-    
-  </div>
-
-  <!-- MTech Students Section -->
-  <div class="section-header">MTech Students</div>
-  
-  <div class="subsection-header">Current</div>
-  <div class="people-grid">
-    
-    
-  </div>
-
-  <div class="subsection-header">Alumni</div>
-  <table class="alumni-table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Batch</th>
-        <th>Current Affiliation</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><a href="https://www.linkedin.com/in/sharan21/">Sharan Narasimhan</a></td><td>Masters student (2020-2022)</td><td>Data Engineer at Indeed</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/venkateshelangovan/">Venkatesh E</a></td><td>Masters student (2020-2022)</td><td>Machine Learning Engineer at Qualcomm</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/arkadipta-de/">Arkadipta De</a></td><td>Masters student (2020-2022)</td><td>Applied AI Researcher at Fujitsu Research India</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/vandita-dutt-840646141/">Vandita Dutt</a></td><td>Masters student (2020-2022)</td><td>-</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/sagarjinde/">Sagar Jinde</a></td><td>Masters student (2019-2021)</td><td>Machine Learning Engineer at Qualcomm</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/vikramanandsingh/">Vikram Anand Singh</a></td><td>Masters student (2018-2020)</td><td>Software Developer at BNY Mellon Technology</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/shounak-kundu-53977817/">Shounak Kundu</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td><td>Machine Learning Engineer at InMobi</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/rishik-ramena-0a0b52b0/">Rishik Ramena</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018)</td><td>Software Engineer at Microsoft</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/priyambada-ambastha-133962119/">Priyambada Ambastha</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td><td><b>Gold Medalist</b> at IITH, Applied Scientist at Amazon</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/rashmi-hti-3bb52039/">Rashmi HTI</a></td><td>Masters student (2016-2018)</td><td>Associate at Goldman Sachs</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/priyanka-choudhary-9b0b46111/">Priyanka Choudhary</a></td><td>Masters student (2016-2018)</td><td>Lecturer at rpsc technical education department</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/shamikkundu/">Shamik Kundu</a></td><td>Masters student (2016-2018)</td><td>Data Scientist at Rakuten</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/manjela-toppo-021342154/">Manjela Toppo</a></td><td>Masters student(2016-2018)</td><td>-</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/shashank-singh-a527bb112/">Shashank Singh</a></td><td>Masters Student (2015-2017)</td><td>Software Developer at PayPal</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/pradyumna-deshpande-72a51455/">Pradyumna Deshpande</a></td><td>Masters Student (2015-2017)</td><td>Platform Engineer at PayPay Corporation Tokyo, Japan</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/swapdewalkar/">Swapnil Ashok dewalakar</a></td><td>Masters student (2017-2019)</td><td>SDE at Fanatics,Inc.</td></tr>
-    </tbody>
-  </table>
-
-  <!-- Interns Section -->
-  <div class="section-header">Interns</div>
-  
-  <div class="subsection-header">Current</div>
-  <div class="people-grid">
-    
-    
-  </div>
-</div>
-
 <!-- Faculty Tab -->
-<div id="faculty-content" class="tab-content">
+<div id="faculty-content" class="tab-content active">
   <div class="people-grid">
     
     
@@ -1062,7 +833,7 @@
         <!-- 
           <div class="person-year">Joined: 2015</div>
          -->
-        <div class="person-affiliation">Research Scientist, <br /> Jio Platforms Limited</div>
+        <div class="person-affiliation">Research Scientist, Jio Platforms Limited</div>
       </div>
     
       <div class="person-card">
@@ -1077,7 +848,7 @@
         <!-- 
           <div class="person-year">Joined: 2016</div>
          -->
-        <div class="person-affiliation">Machine Learning Engineer, <br />Intel</div>
+        <div class="person-affiliation">Machine Learning Engineer, Intel</div>
       </div>
     
       <div class="person-card">
@@ -1092,7 +863,7 @@
         <!-- 
           <div class="person-year">Joined: 2017</div>
          -->
-        <div class="person-affiliation">Postdoctoral Associate, <br /> University of Manchester</div>
+        <div class="person-affiliation">Postdoctoral Associate, University of Manchester</div>
       </div>
     
       <div class="person-card">
@@ -1107,7 +878,7 @@
         <!-- 
           <div class="person-year">Joined: 2018</div>
          -->
-        <div class="person-affiliation">Postdoc at <br /> MBZUAI</div>
+        <div class="person-affiliation">Postdoc at MBZUAI</div>
       </div>
     
       <div class="person-card">
@@ -1186,6 +957,18 @@
   <div class="subsection-header">Alumni</div>
   <div class="people-grid">
     
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/aditi.JPG" alt="Aditi Bagora" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/aditi_bagora/index.html" style="text-decoration: none; color: inherit;">Aditi Bagora</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
     
       <div class="person-card">
         
@@ -1333,7 +1116,6 @@
     
   </div>
 
-  <div class="subsection-header">Alumni</div>
   <table class="alumni-table">
     <thead>
       <tr>
@@ -1358,14 +1140,14 @@
       <tr><td><a href="https://www.linkedin.com/in/manjela-toppo-021342154/">Manjela Toppo</a></td><td>Masters student(2016-2018)</td><td>-</td></tr>
       <tr><td><a href="https://www.linkedin.com/in/shashank-singh-a527bb112/">Shashank Singh</a></td><td>Masters Student (2015-2017)</td><td>Software Developer at PayPal</td></tr>
       <tr><td><a href="https://www.linkedin.com/in/pradyumna-deshpande-72a51455/">Pradyumna Deshpande</a></td><td>Masters Student (2015-2017)</td><td>Platform Engineer at PayPay Corporation Tokyo, Japan</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/swapdewalkar/">Swapnil Ashok dewalakar</a></td><td>Masters student (2017-2019)</td><td>SDE at Fanatics,Inc.</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/swapdewalkar/">Swapnil Ashok Dewalakar</a></td><td>Masters student (2017-2019)</td><td>SDE at Fanatics,Inc.</td></tr>
     </tbody>
   </table>
 </div>
 
 <!-- Interns Tab -->
 <div id="interns-content" class="tab-content">
-  <div class="subsection-header">Current</div>
+  <!-- <div class="subsection-header">Current</div> -->
   <div class="people-grid">
     
     
@@ -1385,11 +1167,11 @@ document.addEventListener('DOMContentLoaded', function() {
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
       const targetTab = this.getAttribute('data-tab');
-      
+
       // Remove active class from all tabs and contents
       tabs.forEach(t => t.classList.remove('active'));
       tabContents.forEach(tc => tc.classList.remove('active'));
-      
+
       // Add active class to clicked tab and corresponding content
       this.classList.add('active');
       document.getElementById(targetTab + '-content').classList.add('active');
@@ -1518,13 +1300,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </div>
 
-    
-<footer class="footer mt-1">
+    <footer class="footer mt-1" style="bottom: 1px; width: 100%;">
   <div>
-    <a href="https://nlip-lab.github.io" style="font-size: 0.8rem;">Natural Language and Information Processing Lab</a><br>
-    <a href="https://iith.ac.in" style="color: black;">Indian Institute of Technology Hyderabad (IITH)</a>, Hyderabad, India
+    <a href="https://nlip-lab.github.io" style="font-size: 0.8rem;">Natural Language and Information Processing
+      Lab</a><br>
+    <a href="https://iith.ac.in" style="color: black;">Indian Institute of Technology Hyderabad (IITH)</a>, Hyderabad,
+    India
   </div>
-  
+
   <div class="mt-3">
     For more details visit our <a href="/nlip/contact">Contact us</a> page
   </div>
