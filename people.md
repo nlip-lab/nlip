@@ -95,14 +95,6 @@ layout: default
   justify-content: center; /* Center align the cards */
 }
 
-.section-header {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #111827;
-  margin: 2rem 0 1.5rem 0;
-  text-align: center; /* Center align section headers */
-}
-
 .subsection-header {
   font-size: 1.5rem;
   font-weight: 600;
