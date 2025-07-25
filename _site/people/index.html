@@ -286,10 +286,10 @@
   height: 240px;
   border-radius: 10%;
   margin: 0 auto 1rem auto;
-  object-fit: contain;
+  object-fit: cover;
   border: 1px solid #e5e7eb;
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .person-avatar:hover {
@@ -305,6 +305,13 @@
 }
 
 .person-title {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.person-designation {
   color: #6b7280;
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
@@ -423,10 +430,10 @@
 }
 </style>
 
-<div class="page-header" style="background: white; padding: 3rem 0; text-align: center;">
+<div class="page-header" style="background: white; padding: 1rem 0; text-align: center;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-    <h1 style="font-size: 3rem; font-weight: bold; color: #111827; margin-bottom: 1rem;">Our Team</h1>
-    <p style="font-size: 1.25rem; color: #6b7280; max-width: 600px; margin: 0 auto;">
+    <h6 style="font-size: 2rem; font-weight: bold; color: #111827; margin-bottom: 1rem;">Our Team</h6>
+    <p style="font-size: 1rem; color: #6b7280; max-width: 600px; margin: 0 auto;">
       Meet the talented individuals who drive innovation and research at NLIP Lab
     </p>
   </div>
@@ -457,7 +464,7 @@
         <div class="person-name">
           <a href="/nlip/people/maunendra/index.html" style="text-decoration: none; color: inherit;">Dr. Maunendra Sankar Desarkar</a>
         </div>
-        <div class="person-title">Faculty</div>
+        <div class="person-designation">Associate Professor, CSE Department, IIT Hyderabad</div>
         
         <div class="person-affiliation"></div>
       </div>
@@ -526,6 +533,21 @@
         
         <!-- 
           <div class="person-year">Joined: 2024</div>
+         -->
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/annamma_t_philip.jpg" alt="Annamma T Philip" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/annamma/index.html" style="text-decoration: none; color: inherit;">Annamma T Philip</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2025</div>
          -->
         <div class="person-affiliation"></div>
       </div>
@@ -645,7 +667,7 @@
     
       <div class="person-card">
         
-          <img class="person-avatar" src="/nlip/images/people/isha.jpg" alt="Isha Kumar" />
+          <img class="person-avatar" src="/nlip/images/people/isha.png" alt="Isha Kumar" />
         
         <div class="person-name">
           <a href="/nlip/people/isha/index.html" style="text-decoration: none; color: inherit;">Isha Kumar</a>
@@ -929,7 +951,7 @@ function scrollToTop() {
   <span style="display: block; margin-bottom: 2em"></span>
   <div class="container">
     <!-- &copy; Copyright 2025 NLIP Lab, All Rights Reserved.
-    <br> -->Last updated: July 14, 2025.
+    <br> -->Last updated: July 25, 2025.
     <br>
     
     Website template inspired from <a href="https://kordinglab.com/">Kording Lab</a><br>

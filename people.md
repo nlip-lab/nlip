@@ -135,10 +135,10 @@ layout: default
   height: 240px;
   border-radius: 10%;
   margin: 0 auto 1rem auto;
-  object-fit: contain;
+  object-fit: cover;
   border: 1px solid #e5e7eb;
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .person-avatar:hover {
@@ -154,6 +154,13 @@ layout: default
 }
 
 .person-title {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.person-designation {
   color: #6b7280;
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
@@ -272,10 +279,10 @@ layout: default
 }
 </style>
 
-<div class="page-header" style="background: white; padding: 3rem 0; text-align: center;">
+<div class="page-header" style="background: white; padding: 1rem 0; text-align: center;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-    <h1 style="font-size: 3rem; font-weight: bold; color: #111827; margin-bottom: 1rem;">Our Team</h1>
-    <p style="font-size: 1.25rem; color: #6b7280; max-width: 600px; margin: 0 auto;">
+    <h6 style="font-size: 2rem; font-weight: bold; color: #111827; margin-bottom: 1rem;">Our Team</h6>
+    <p style="font-size: 1rem; color: #6b7280; max-width: 600px; margin: 0 auto;">
       Meet the talented individuals who drive innovation and research at NLIP Lab
     </p>
   </div>
@@ -308,7 +315,7 @@ layout: default
         <div class="person-name">
           <a href="{{ site.baseurl }}{{ person.url }}" style="text-decoration: none; color: inherit;">{{person.name}}</a>
         </div>
-        <div class="person-title">{{person.position | capitalize}}</div>
+        <div class="person-designation">{{person.designation}}</div>
         {% if person.specialization %}
           <div class="person-role">{{person.specialization}}</div>
         {% endif %}

@@ -1,7 +1,7 @@
 ---
 name: Isha Kumar
 position: masters
-avatar: isha.jpg
+avatar: isha.png
 twitter:
 passout: 0
 joining_year: 2024
