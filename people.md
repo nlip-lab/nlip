@@ -95,14 +95,6 @@ layout: default
   justify-content: center; /* Center align the cards */
 }
 
-.subsection-header {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #374151;
-  margin: 2rem 0 1rem 0;
-  text-align: center; /* Center align subsection headers */
-}
-
 .person-card {
   background: white;
   border-radius: 0.75rem;
