@@ -1,9 +1,10 @@
 ---
 name: Isha Kumar
 position: masters
-avatar: isha.jpg
-twitter: 
-joined: 2024
+avatar: isha.png
+twitter:
+passout: 0
+joining_year: 2024
 title: Isha Kumar
 layout: profile
 ---
@@ -29,12 +30,14 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio
+
 <p style="text-align: justify">
 Isha Kumar is an M.Tech student in the Department of CSE at IIT Hyderabad and a Bachelors in ECE from the University of Mumbai, with an industry experience at Tata Consultancy Services in the Google Business Unit. Her projects include an Intelligent System for Recognizing Hate Speech & Offensive Content that combines transformer-based embeddings (BERT) with LSTM networks and advanced preprocessing, and the Autonomous AI-Powered News Aggregator—awarded silver medal at FLIPR Hackathon 2025—which integrates real-time API calls, web scraping, Gemini AI, a full-stack architecture (React.js, Node.js/Express.js), and cloud deployment via Netlify and Render. She is also enhancing EfficientSAM, a project inspired by Meta AI Research that leverages computer vision, deep learning, zero-shot learning, vision transformers, and self-attention mechanisms for improved image segmentation.
 </p>
 
 ### Research Interests
-- Natural Language Processing 
+
+- Natural Language Processing
 - Deep Learning
 - Computer Vision
 - Machine Learning

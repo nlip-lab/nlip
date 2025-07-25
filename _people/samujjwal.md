@@ -1,9 +1,10 @@
 ---
 name: Dr. Samujjwal Ghosh
-position: others
+position: phd
 avatar: samujjwal.jpg
-joined: 2016
-affiliation: Machine Learning Engineer, <br>Intel
+passout: 1
+joining_year: 2016
+affiliation: Machine Learning Engineer, Intel
 title: Samujjwal Ghosh
 layout: profile
 ---
@@ -29,12 +30,13 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 <p style="text-align:justify">
 Samujjwal is a Machine Learning Engineer at Intel, where he specializes in working on Graph Neural Networks. He has completed his Ph.D. thesis with Dr. Maunendra Sankar Desarkar on <i> Towards Limited Supervision for Utilizing Social Media for Disaster Response</i>. His thesis primarily focuses on developing machine learning models with limited supervision. Prior to pursuing his Ph.D., he gained experience as a Software Engineer at Symantec Software India Private Limited. Additionally, he holds a Master's degree (M.Tech) in Computer Science and Engineering from the Department of IIT Kharagpur.</p>
 
 ### Research Interests:
+
 - Graph Neural Networks
 - Natural Language Processing
 
 **Current Affiliation:** Machine Learning Engineer at Intel
-

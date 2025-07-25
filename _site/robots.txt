@@ -1,0 +1,34 @@
+# robots.txt for https://www.yourdomain.com
+
+# 1) Allow all well-behaved crawlers
+User-agent: *
+Allow: /
+
+# 2) Throttle crawl rate to reduce server load
+Crawl-delay: 5
+
+# 3) Block sensitive or non-public sections
+Disallow: /admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /api/
+
+# 4) Exclude URL parameters and certain file types
+Disallow: /*?*
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.zip$
+Disallow: /*.tar$
+
+# 5) Reference your sitemap
+Sitemap: https://www.yourdomain.com/sitemap.xml
+
+# 6) Block known bad bots
+User-agent: BadBot
+Disallow: /
+
+# 7) Allow image crawlers on your images folder
+User-agent: Googlebot-Image
+Allow: /images/

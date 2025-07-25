@@ -1,10 +1,10 @@
 ---
 name: Dr. Manisha Dubey
-position: others
+position: phd
 avatar: manisha.png
-twitter: 
-joined: 2017
-affiliation: Postdoctoral Associate, <br> University of Manchester
+passout: 1
+joining_year: 2017
+affiliation: Postdoctoral Associate, University of Manchester
 title: Manisha Dubey
 layout: profile
 ---
@@ -30,14 +30,14 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 <p style="text-align:justify">
 Manisha is currently working as a postdoctoral associate at the University of Manchester with Prof. Samuel Kaski. She has completed her Ph.D. thesis with Dr. P.K Srijith and Dr. Maunendra Sankar Desakar on <i>Improving Temporal and Spatial Event Modeling using Hawkes Process and Neural Network</i>. Her research interest focuses on developing machine learning models and algorithms for probabilistic analysis of social network dynamics. She is exploring various domains like event modeling, spatio-temporal modeling, graph neural network, social networks and point process.</p>
 
-
 ### Research Interests:
+
 - Sequential Modeling
 - Graph-based Modeling
 - Social Network Analysis
 
 **Current Affiliation:** Postdoctoral Associate at the University of Manchester
-

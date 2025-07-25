@@ -1,17 +1,19 @@
 ---
 name: Dr. Maunendra Sankar Desarkar
-position: professor
+position: faculty
 avatar: maunendra.JPG
-twitter: 
+twitter:
 title: Maunendra Sankar Desarkar
 layout: profile
+designation: Associate Professor, CSE Department, IIT Hyderabad
 ---
 
- <img width="300" src="{{site.baseurl}}/images/people/{{page.avatar}}" data-action="zoom"> 
+ <img width="300" src="{{site.baseurl}}/images/people/{{page.avatar}}" data-action="zoom">
 
 ### Designation
-- Associate Professor at Department of CSE, IIT Hyderabad 
-- Head of the AI Department, IIT Hyderabad 
+
+- Associate Professor at Department of CSE, IIT Hyderabad
+<!-- - Head of the AI Department, IIT Hyderabad -->
 - Founder of the NLIP Lab
 
 ### Contacts
@@ -39,6 +41,7 @@ layout: profile
 </p>
 
 #### Research Interests:
+
 - Natural Language Processing
 - Information Retrieval
 - Recommender Systems

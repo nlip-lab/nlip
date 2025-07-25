@@ -2,8 +2,9 @@
 name: Anya Gupta
 position: masters
 avatar: anya.jpg
-twitter: 
-joined: 2024
+twitter:
+passout: 0
+joining_year: 2024
 title: Anya Gupta
 layout: profile
 ---
@@ -28,12 +29,14 @@ layout: profile
 </div>
 <span style="display: block; margin-bottom: 1em"></span>
 
-### Bio: 
+### Bio:
+
 <p style="text-align: justify">
 Anya Gupta is an M.Tech student in Computer Science and Engineering at IIT Hyderabad. She holds a B.Tech in Information Technology from Fr. C. Rodrigues Institute of Technology, University of Mumbai. Her interests lie in Natural Language Processing and Deep Learning. She has worked on projects like "Emotion recognition using CNN and RASA" and "RemRover"—a remotely controlled surveillance rover leveraging IoT and web sockets. Currently, she is part of the Natural Language and Information Processing Lab, focusing on NLP.
 </p>
 
 ### Research Interests:
+
 - Machine Learning
 <!-- - Deep Learning -->
 - Natural Language Processing

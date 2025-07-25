@@ -1,13 +1,14 @@
 ---
 name: Suvodip Dey
-position: others
+position: phd
 avatar: suvodip.JPG
-joined: 2019
+passout: 1
+joining_year: 2019
 title: Suvodip Dey
 affiliation: Postdoc at University of Illinois Urbana-Champaign
 layout: profile
 ---
- 
+
 <img width="300" src="{{site.baseurl}}/images/people/{{page.avatar}}" data-action="zoom">
 
 ### Contacts
@@ -28,10 +29,12 @@ layout: profile
 </div>
 <span style="display: block; margin-bottom: 1em"></span>
 
-### Bio: 
+### Bio:
+
 TBA.
 
 ### Research Interests:
+
 - Natural language Understanding
 - Natural Language Generation
 - Conversational AI

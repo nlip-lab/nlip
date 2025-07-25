@@ -1,10 +1,11 @@
 ---
 name: Dr. Kaushal Kumar Maurya
-position: others
+position: phd
 avatar: kaushal.jpg
-twitter: 
-joined: 2018
-affiliation: Postdoc at <br> MBZUAI
+twitter:
+passout: 1
+joining_year: 2018
+affiliation: Postdoc at MBZUAI
 title: Kaushal Kumar Maurya
 layout: profile
 ---
@@ -29,12 +30,14 @@ layout: profile
 </div>
 <span style="display: block; margin-bottom: 1em"></span>
 
-### Bio: 
+### Bio:
+
 <p style="text-align: justify">
 Kaushal is a Ph.D. candidate in the Department of Computer Science and Engineering at the Indian Institute of Technology Hyderabad, advised by Dr. Maunendra Sankar Desarkar. He is an active collaborator at Microsoft India, working with Manish Gupta and Anoop Kunchukuttan. He has completed three internships at Microsoft (in the Translation and Auto-suggest teams) and Nvidia-AI. He loves reading, traveling, playing sports, and learning new languages.
 </p>
 
 ### Research Interests:
+
 - Natural Language Generation
 - Multilingual NLP
 - Low-resource NLP
@@ -42,4 +45,3 @@ Kaushal is a Ph.D. candidate in the Department of Computer Science and Engineeri
 - Responsible NLP
 - Question and Answering
 - Conversational AI
-

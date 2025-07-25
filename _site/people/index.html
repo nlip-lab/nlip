@@ -155,779 +155,795 @@
     </div>
   </div>
 </nav>
-    <div class="container mt-5 content page">
-  <!-- <h1 class="page-title">People</h1> -->
-  
-<!-- Skip section if there's nobody -->
+    <style>
+.sticky-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
-<div class="pos_header">
+.tab-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
-<h3>Faculty</h3>
- 
-</div>
+.tabs {
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0 0.5rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  justify-content: center;
+}
 
-<div class="content list people">
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/maunendra/index.html"><img class="profile-thumbnail" src="/nlip/images/people/maunendra.JPG" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/maunendra/index.html">Dr. Maunendra Sankar Desarkar</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-</div>
-<hr />
+.tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 
-<!-- Skip section if there's nobody -->
+.tab {
+  padding: 0.5rem 1.5rem;
+  background: #f8f9fa;
+  border-radius: 20px;
+  color: #2c3e50;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  border: 1px solid #e9ecef;
+  cursor: pointer;
+  font-weight: 500;
+}
 
-<!-- Skip section if there's nobody -->
+.tab:hover {
+  background: #e9ecef;
+  color: #2c3e50;
+  border-color: #2c3e50;
+}
 
-<div class="pos_header">
+.tab.active {
+  background: #2c3e50;
+  color: white;
+  border-color: #2c3e50;
+  font-weight: 500;
+}
 
-<h3>Ph.D. Students</h3>
- 
-</div>
+.tab-content {
+  display: none;
+  padding: 2rem 0;
+}
 
-<div class="content list people">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/debolena_basak/index.html"><img class="profile-thumbnail" src="/nlip/images/people/debolena.JPG" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/debolena_basak/index.html">Debolena Basak</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/aishwarya/index.html"><img class="profile-thumbnail" src="/nlip/images/people/aishwarya.JPG" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/aishwarya/index.html">M Aishwarya</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/maharaj/index.html"><img class="profile-thumbnail" src="/nlip/images/people/maharaj.JPG" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/maharaj/index.html">Maharaj Brahma</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/devendra_dewangan/index.html"><img class="profile-thumbnail" src="/nlip/images/people/devendra_dewangan.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/devendra_dewangan/index.html">Devendra Kumar Dewangan</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-  
-    
-  
-</div>
-<hr />
+.tab-content.active {
+  display: block;
+}
 
-<!-- Skip section if there's nobody -->
+.section-header {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111827;
+  margin: 2rem 0 1.5rem 0;
+}
 
-<div class="pos_header">
+.subsection-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 2rem 0 1rem 0;
+}
+.people-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center; /* Center align the cards */
+}
 
-<h3>M.Tech. Students</h3>
+.section-header {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111827;
+  margin: 2rem 0 1.5rem 0;
+  text-align: center; /* Center align section headers */
+}
 
-</div>
+.subsection-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 2rem 0 1rem 0;
+  text-align: center; /* Center align subsection headers */
+}
 
-<div class="content list people">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/shrey_satapara/index.html"><img class="profile-thumbnail" src="/nlip/images/people/shrey.JPG" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/shrey_satapara/index.html">Shrey Satapara</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/parasa/index.html"><img class="profile-thumbnail" src="/nlip/images/people/parasa.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/parasa/index.html">Parasa Naga Venkata Pavan</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/pramit/index.html"><img class="profile-thumbnail" src="/nlip/images/people/pramit.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/pramit/index.html">Pramit Sahoo</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/prerna/index.html"><img class="profile-thumbnail" src="/nlip/images/people/prerna.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/prerna/index.html">Prerna Jolly</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/shrenik/index.html"><img class="profile-thumbnail" src="/nlip/images/people/shrenik.jpeg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/shrenik/index.html">Shrenik Ganguli</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/trishita/index.html"><img class="profile-thumbnail" src="/nlip/images/people/trishita.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/trishita/index.html">Trishita Saha</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/anjana/index.html"><img class="profile-thumbnail" src="/nlip/images/people/anjana.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/anjana/index.html">S Anjana Shankar</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/anya/index.html"><img class="profile-thumbnail" src="/nlip/images/people/anya.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/anya/index.html">Anya Gupta</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/isha/index.html"><img class="profile-thumbnail" src="/nlip/images/people/isha.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/isha/index.html">Isha Kumar</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/nishat/index.html"><img class="profile-thumbnail" src="/nlip/images/people/nishat.png" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/nishat/index.html">Sk Nishat Saama</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-</div>
-<hr />
+.person-card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  /* min-height: 240px;
+  max-height: 440px;
+  min-width: 280px;
+  max-width: 360px; */
+  height: 440px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
 
-<!-- Skip section if there's nobody -->
+.person-avatar {
+  width: 200px;
+  height: 240px;
+  border-radius: 10%;
+  margin: 0 auto 1rem auto;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+  display: block;
+  transition: transform 0.2s ease;
+}
 
-<!-- Skip section if there's nobody -->
+.person-avatar:hover {
+  transform: scale(1.1);
+}
 
-<!-- Skip section if there's nobody -->
+.person-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
 
-<div class="pos_header">
+.person-title {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
 
-<h3>Ph.D. Alumni students</h3>
+.person-designation {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
 
-</div>
+.person-role {
+  color: #3b82f6;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #eff6ff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
 
-<div class="content list people">
-  
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/sreekanth_madishetty/index.html"><img class="profile-thumbnail" src="/nlip/images/people/sreekanth_madisetty.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/sreekanth_madishetty/index.html">Dr. Sreekanth Madisetty</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;">Research Scientist, <br /> Jio Platforms Limited</span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/samujjwal/index.html"><img class="profile-thumbnail" src="/nlip/images/people/samujjwal.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/samujjwal/index.html">Dr. Samujjwal Ghosh</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;">Machine Learning Engineer, <br />Intel</span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/manisha/index.html"><img class="profile-thumbnail" src="/nlip/images/people/manisha.png" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/manisha/index.html">Dr. Manisha Dubey</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;">Postdoctoral Associate, <br /> University of Manchester</span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/kaushal/index.html"><img class="profile-thumbnail" src="/nlip/images/people/kaushal.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/kaushal/index.html">Dr. Kaushal Kumar Maurya</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;">Postdoc at <br /> MBZUAI</span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/suvodip_dey/index.html"><img class="profile-thumbnail" src="/nlip/images/people/suvodip.JPG" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/suvodip_dey/index.html">Suvodip Dey</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;">Postdoc at University of Illinois Urbana-Champaign</span>
-        </div>
-      </div>    
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-</div>
-<hr />
+.person-year {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
 
-<!-- Skip section if there's nobody -->
+.person-affiliation {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-top: auto;
+}
 
-<!-- Skip section if there's nobody -->
+.alumni-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
 
-<div class="pos_header">
+.alumni-table th,
+.alumni-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
 
-<h3>M.Tech. Alumni Students</h3>
- 
-</div>
+.alumni-table th {
+  background: #f9fafb;
+  font-weight: 600;
+}
 
-<div class="content list people">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/aditi_bagora/index.html"><img class="profile-thumbnail" src="/nlip/images/people/aditi.JPG" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/aditi_bagora/index.html">Aditi Bagora</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/darshan_dobariya/index.html"><img class="profile-thumbnail" src="/nlip/images/people/darshan.JPG" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/darshan_dobariya/index.html">Darshan Dobariya</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/kamal_shrestha/index.html"><img class="profile-thumbnail" src="/nlip/images/people/kamal.JPG" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/kamal_shrestha/index.html">Kamal Shrestha</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/kaushiki_dwivedi/index.html"><img class="profile-thumbnail" src="/nlip/images/people/kaushiki.JPG" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/kaushiki_dwivedi/index.html">Kaushiki Dwivedi</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/soham_bhatt/index.html"><img class="profile-thumbnail" src="/nlip/images/people/soham.JPG" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/soham_bhatt/index.html">Soham Bhatt</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/adesh/index.html"><img class="profile-thumbnail" src="/nlip/images/people/adesh.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/adesh/index.html">Adesh Gupta</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-      <div class="list-item-people" style="padding: 1em;">
-        <div class="list-post-title">
-        <div class="" style="width:200px; margin:0 auto;">
-          
-            <a href="/nlip/people/dhwani/index.html"><img class="profile-thumbnail" src="/nlip/images/people/dhwani.jpg" style="border: 0px solid #e6e6e6; align:center; border-radius: 300px;" /></a>
-          
-         <a class="people" href="/nlip/people/dhwani/index.html">Dhwani Natvarbhai Jakhaniya</a>
-        </div>
-        <span style="width: 150px; color: #a6a6a6;"></span>
-        </div>
-      </div>    
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-</div>
-<hr />
+.go-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #2c3e50;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border: none;
+}
 
-<h3>Alumni</h3>
+.go-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Name</th>
-      <th style="text-align: left">Batch</th>
-      <th style="text-align: left">Current Affiliation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/sharan21/">Sharan Narasimhan</a></td>
-      <td style="text-align: left">Masters student (2020-2022)</td>
-      <td style="text-align: left">Data Engineer at Indeed</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/venkateshelangovan/">Venkatesh E</a></td>
-      <td style="text-align: left">Masters student (2020-2022)</td>
-      <td style="text-align: left">Machine Learning Engineer at Qualcomm</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/arkadipta-de/">Arkadipta De</a></td>
-      <td style="text-align: left">Masters student (2020-2022)</td>
-      <td style="text-align: left">Applied AI Researcher at Fujitsu Research India</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/vandita-dutt-840646141/">Vandita Dutt </a></td>
-      <td style="text-align: left">Masters student (2020-2022)</td>
-      <td style="text-align: left">-</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/sagarjinde/">Sagar Jinde </a></td>
-      <td style="text-align: left">Masters student (2019-2021)</td>
-      <td style="text-align: left">Machine Learning Engineer at Qualcomm</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/vikramanandsingh/">Vikram Anand Singh </a></td>
-      <td style="text-align: left">Masters student (2018-2020)</td>
-      <td style="text-align: left">Software Developer at BNY Mellon Technology</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/shounak-kundu-53977817/">Shounak Kundu</a></td>
-      <td style="text-align: left">Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td>
-      <td style="text-align: left">Machine Learning Engineer atInMobi</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/rishik-ramena-0a0b52b0/">Rishik Ramena </a></td>
-      <td style="text-align: left">Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018 )</td>
-      <td style="text-align: left">Software Engineer at Microsoft</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/priyambada-ambastha-133962119/">Priyambada Ambastha</a></td>
-      <td style="text-align: left">Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td>
-      <td style="text-align: left"><b>Gold Medalist</b> at IITH, Applied Scientist at Amazon</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/rashmi-hti-3bb52039/">Rashmi HTI </a></td>
-      <td style="text-align: left">Masters student (2016-2018)</td>
-      <td style="text-align: left">Associate at Goldman Sachs</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/priyanka-choudhary-9b0b46111/">Priyanka Choudhary</a></td>
-      <td style="text-align: left">Masters student (2016-2018)</td>
-      <td style="text-align: left">Lecturer at rpsc technical education department</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/shamikkundu/">Shamik Kundu </a></td>
-      <td style="text-align: left">Masters student (2016-2018)</td>
-      <td style="text-align: left">Data Scientist at Rakuten</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/manjela-toppo-021342154/">Manjela Toppo </a></td>
-      <td style="text-align: left">Masters student(2016-2018)</td>
-      <td style="text-align: left">-</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/shashank-singh-a527bb112/">Shashank Singh</a></td>
-      <td style="text-align: left">Masters Student (2015-2017)</td>
-      <td style="text-align: left">Software Developer at PayPal</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/pradyumna-deshpande-72a51455/">Pradyumna Deshpande </a></td>
-      <td style="text-align: left">Masters Student (2015-2017)</td>
-      <td style="text-align: left">Platform Engineer at PayPay Corporation Tokyo, Japan</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><a href="https://www.linkedin.com/in/swapdewalkar/">Swapnil Ashok dewalakar</a></td>
-      <td style="text-align: left">Masters student (2017-2019)</td>
-      <td style="text-align: left">SDE at Fanatics,Inc.</td>
-    </tr>
-  </tbody>
-</table>
+.go-to-top:hover {
+  background: #34495e;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 
-</div>
+@media (max-width: 768px) {
+  .sticky-tabs {
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .tabs {
+    justify-content: flex-start;
+    padding: 0 1rem;
+  }
+  
+  .tab {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    min-width: 80px;
+  }
+  
+  .people-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center; /* Center align the cards */
+  }
+  
+  .person-card {
+    height: 400px;
+    padding: 1.5rem;
+  }
+  
+  .person-avatar {
+    width: 200px;
+    height: 240px;
+  }
+}
+</style>
 
-    
-<footer class="footer mt-1">
-  <div>
-    <a href="https://nlip-lab.github.io" style="font-size: 0.8rem;">Natural Language and Information Processing Lab</a><br>
-    <a href="https://iith.ac.in" style="color: black;">Indian Institute of Technology Hyderabad (IITH)</a>, Hyderabad, India
+<div class="page-header" style="background: white; padding: 1rem 0; text-align: center;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+    <h6 style="font-size: 2rem; font-weight: bold; color: #111827; margin-bottom: 1rem;">Our Team</h6>
+    <p style="font-size: 1rem; color: #6b7280; max-width: 600px; margin: 0 auto;">
+      Meet the talented individuals who drive innovation and research at NLIP Lab
+    </p>
   </div>
+</div>
+
+<div class="sticky-tabs">
+  <div class="tab-container">
+    <div class="tabs">
+      <div class="tab active" data-tab="faculty">Faculty</div>
+      <div class="tab" data-tab="phd">PhD</div>
+      <div class="tab" data-tab="mtech">MTech</div>
+      <!-- <div class="tab" data-tab="interns">Interns</div> -->
+    </div>
+  </div>
+</div>
+
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+
+<!-- Faculty Tab -->
+<div id="faculty-content" class="tab-content active">
+  <div class="people-grid">
+    
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/maunendra.JPG" alt="Dr. Maunendra Sankar Desarkar" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/maunendra/index.html" style="text-decoration: none; color: inherit;">Dr. Maunendra Sankar Desarkar</a>
+        </div>
+        <div class="person-designation">Associate Professor, CSE Department, IIT Hyderabad</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+  </div>
+</div>
+
+<!-- PhD Tab -->
+<div id="phd-content" class="tab-content">
+  <div class="people-grid">
+    
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/debolena.JPG" alt="Debolena Basak" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/debolena_basak/index.html" style="text-decoration: none; color: inherit;">Debolena Basak</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2020</div>
+         -->
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/aishwarya.JPG" alt="M Aishwarya" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/aishwarya/index.html" style="text-decoration: none; color: inherit;">M Aishwarya</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2021</div>
+         -->
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/maharaj.JPG" alt="Maharaj Brahma" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/maharaj/index.html" style="text-decoration: none; color: inherit;">Maharaj Brahma</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2023</div>
+         -->
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/devendra_dewangan.jpg" alt="Devendra Kumar Dewangan" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/devendra_dewangan/index.html" style="text-decoration: none; color: inherit;">Devendra Kumar Dewangan</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2024</div>
+         -->
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/annamma_t_philip.jpg" alt="Annamma T Philip" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/annamma/index.html" style="text-decoration: none; color: inherit;">Annamma T Philip</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2025</div>
+         -->
+        <div class="person-affiliation"></div>
+      </div>
+    
+  </div>
+
+  <div class="subsection-header">Alumni</div>
+  <div class="people-grid">
+    
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/sreekanth_madisetty.jpg" alt="Dr. Sreekanth Madisetty" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/sreekanth_madishetty/index.html" style="text-decoration: none; color: inherit;">Dr. Sreekanth Madisetty</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2015</div>
+         -->
+        <div class="person-affiliation">Research Scientist, Jio Platforms Limited</div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/samujjwal.jpg" alt="Dr. Samujjwal Ghosh" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/samujjwal/index.html" style="text-decoration: none; color: inherit;">Dr. Samujjwal Ghosh</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2016</div>
+         -->
+        <div class="person-affiliation">Machine Learning Engineer, Intel</div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/manisha.png" alt="Dr. Manisha Dubey" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/manisha/index.html" style="text-decoration: none; color: inherit;">Dr. Manisha Dubey</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2017</div>
+         -->
+        <div class="person-affiliation">Postdoctoral Associate, University of Manchester</div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/kaushal.jpg" alt="Dr. Kaushal Kumar Maurya" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/kaushal/index.html" style="text-decoration: none; color: inherit;">Dr. Kaushal Kumar Maurya</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2018</div>
+         -->
+        <div class="person-affiliation">Postdoc at MBZUAI</div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/suvodip.JPG" alt="Suvodip Dey" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/suvodip_dey/index.html" style="text-decoration: none; color: inherit;">Suvodip Dey</a>
+        </div>
+        <div class="person-title">PhD Student</div>
+        
+        <!-- 
+          <div class="person-year">Joined: 2019</div>
+         -->
+        <div class="person-affiliation">Postdoc at University of Illinois Urbana-Champaign</div>
+      </div>
+    
+  </div>
+</div>
+
+<!-- MTech Tab -->
+<div id="mtech-content" class="tab-content">
+  <div class="people-grid">
+    
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/anjana.jpg" alt="S Anjana Shankar" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/anjana/index.html" style="text-decoration: none; color: inherit;">S Anjana Shankar</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/anya.jpg" alt="Anya Gupta" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/anya/index.html" style="text-decoration: none; color: inherit;">Anya Gupta</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/isha.png" alt="Isha Kumar" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/isha/index.html" style="text-decoration: none; color: inherit;">Isha Kumar</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/nishat.png" alt="Sk Nishat Saama" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/nishat/index.html" style="text-decoration: none; color: inherit;">Sk Nishat Saama</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+  </div>
+
+  <div class="subsection-header">Alumni</div>
+  <div class="people-grid">
+    
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/aditi.JPG" alt="Aditi Bagora" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/aditi_bagora/index.html" style="text-decoration: none; color: inherit;">Aditi Bagora</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/darshan.JPG" alt="Darshan Dobariya" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/darshan_dobariya/index.html" style="text-decoration: none; color: inherit;">Darshan Dobariya</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/kamal.JPG" alt="Kamal Shrestha" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/kamal_shrestha/index.html" style="text-decoration: none; color: inherit;">Kamal Shrestha</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/kaushiki.JPG" alt="Kaushiki Dwivedi" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/kaushiki_dwivedi/index.html" style="text-decoration: none; color: inherit;">Kaushiki Dwivedi</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/soham.JPG" alt="Soham Bhatt" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/soham_bhatt/index.html" style="text-decoration: none; color: inherit;">Soham Bhatt</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/adesh.jpg" alt="Adesh Gupta" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/adesh/index.html" style="text-decoration: none; color: inherit;">Adesh Gupta</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/dhwani.jpg" alt="Dhwani Natvarbhai Jakhaniya" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/dhwani/index.html" style="text-decoration: none; color: inherit;">Dhwani Natvarbhai Jakhaniya</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/shrey.JPG" alt="Shrey Satapara" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/shrey_satapara/index.html" style="text-decoration: none; color: inherit;">Shrey Satapara</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/parasa.jpg" alt="Parasa Naga Venkata Pavan" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/parasa/index.html" style="text-decoration: none; color: inherit;">Parasa Naga Venkata Pavan</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/pramit.jpg" alt="Pramit Sahoo" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/pramit/index.html" style="text-decoration: none; color: inherit;">Pramit Sahoo</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/prerna.jpg" alt="Prerna Jolly" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/prerna/index.html" style="text-decoration: none; color: inherit;">Prerna Jolly</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/shrenik.jpeg" alt="Shrenik Ganguli" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/shrenik/index.html" style="text-decoration: none; color: inherit;">Shrenik Ganguli</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+      <div class="person-card">
+        
+          <img class="person-avatar" src="/nlip/images/people/trishita.jpg" alt="Trishita Saha" />
+        
+        <div class="person-name">
+          <a href="/nlip/people/trishita/index.html" style="text-decoration: none; color: inherit;">Trishita Saha</a>
+        </div>
+        <div class="person-title">MTech Student</div>
+        
+        <div class="person-affiliation"></div>
+      </div>
+    
+  </div>
+
+  <table class="alumni-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Batch</th>
+        <th>Current Affiliation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><a href="https://www.linkedin.com/in/sharan21/">Sharan Narasimhan</a></td><td>Masters student (2020-2022)</td><td>Data Engineer at Indeed</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/venkateshelangovan/">Venkatesh E</a></td><td>Masters student (2020-2022)</td><td>Machine Learning Engineer at Qualcomm</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/arkadipta-de/">Arkadipta De</a></td><td>Masters student (2020-2022)</td><td>Applied AI Researcher at Fujitsu Research India</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/vandita-dutt-840646141/">Vandita Dutt</a></td><td>Masters student (2020-2022)</td><td>-</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/sagarjinde/">Sagar Jinde</a></td><td>Masters student (2019-2021)</td><td>Machine Learning Engineer at Qualcomm</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/vikramanandsingh/">Vikram Anand Singh</a></td><td>Masters student (2018-2020)</td><td>Software Developer at BNY Mellon Technology</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/shounak-kundu-53977817/">Shounak Kundu</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td><td>Machine Learning Engineer at InMobi</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/rishik-ramena-0a0b52b0/">Rishik Ramena</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018)</td><td>Software Engineer at Microsoft</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/priyambada-ambastha-133962119/">Priyambada Ambastha</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td><td><b>Gold Medalist</b> at IITH, Applied Scientist at Amazon</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/rashmi-hti-3bb52039/">Rashmi HTI</a></td><td>Masters student (2016-2018)</td><td>Associate at Goldman Sachs</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/priyanka-choudhary-9b0b46111/">Priyanka Choudhary</a></td><td>Masters student (2016-2018)</td><td>Lecturer at rpsc technical education department</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/shamikkundu/">Shamik Kundu</a></td><td>Masters student (2016-2018)</td><td>Data Scientist at Rakuten</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/manjela-toppo-021342154/">Manjela Toppo</a></td><td>Masters student(2016-2018)</td><td>-</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/shashank-singh-a527bb112/">Shashank Singh</a></td><td>Masters Student (2015-2017)</td><td>Software Developer at PayPal</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/pradyumna-deshpande-72a51455/">Pradyumna Deshpande</a></td><td>Masters Student (2015-2017)</td><td>Platform Engineer at PayPay Corporation Tokyo, Japan</td></tr>
+      <tr><td><a href="https://www.linkedin.com/in/swapdewalkar/">Swapnil Ashok Dewalakar</a></td><td>Masters student (2017-2019)</td><td>SDE at Fanatics,Inc.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Interns Tab -->
+<div id="interns-content" class="tab-content">
+  <!-- <div class="subsection-header">Current</div> -->
+  <div class="people-grid">
+    
+    
+  </div>
+</div>
+
+</div>
+
+<p><button class="go-to-top" onclick="scrollToTop()">↑</button></p>
+
+<script>
+// Tab switching functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('.tab');
+  const tabContents = document.querySelectorAll('.tab-content');
   
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const targetTab = this.getAttribute('data-tab');
+
+      // Remove active class from all tabs and contents
+      tabs.forEach(t => t.classList.remove('active'));
+      tabContents.forEach(tc => tc.classList.remove('active'));
+
+      // Add active class to clicked tab and corresponding content
+      this.classList.add('active');
+      document.getElementById(targetTab + '-content').classList.add('active');
+    });
+  });
+  
+  // Go to top button functionality
+  const goToTopBtn = document.querySelector('.go-to-top');
+  
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      goToTopBtn.classList.add('visible');
+    } else {
+      goToTopBtn.classList.remove('visible');
+    }
+  });
+});
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+</script>
+
+
+    <footer class="footer mt-1" style="bottom: 1px; width: 100%;">
+  <div>
+    <a href="https://nlip-lab.github.io" style="font-size: 0.8rem;">Natural Language and Information Processing
+      Lab</a><br>
+    <a href="https://iith.ac.in" style="color: black;">Indian Institute of Technology Hyderabad (IITH)</a>, Hyderabad,
+    India
+  </div>
+
   <div class="mt-3">
     For more details visit our <a href="/nlip/contact">Contact us</a> page
   </div>
@@ -935,7 +951,7 @@
   <span style="display: block; margin-bottom: 2em"></span>
   <div class="container">
     <!-- &copy; Copyright 2025 NLIP Lab, All Rights Reserved.
-    <br> -->Last updated: July 14, 2025.
+    <br> -->Last updated: July 25, 2025.
     <br>
     
     Website template inspired from <a href="https://kordinglab.com/">Kording Lab</a><br>

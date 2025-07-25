@@ -3,7 +3,8 @@ name: S Anjana Shankar
 position: masters
 avatar: anjana.jpg
 twitter: 
-joined: 2024
+passout: 0
+joining_year: 2024
 title: S Anjana Shankar
 layout: profile
 ---

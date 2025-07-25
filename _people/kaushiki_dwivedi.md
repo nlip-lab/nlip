@@ -1,9 +1,10 @@
 ---
 name: Kaushiki Dwivedi
-position: mtechalumni
+position: masters
 avatar: kaushiki.JPG
 linkedin: www.linkedin.com/in/kaushiki-dwivedi-10k6
-joined: 2021
+passout: 1
+joining_year: 2021
 title: Kaushiki Dwivedi
 layout: profile
 ---
@@ -29,11 +30,12 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio
+
 <p style="text-align: justify">
 Kaushiki's research focuses on hate speech diffusion, which involves toxicity detection, analysis of social networks on Twitter, and the spread of hate among users and how it affects their networks. She has also worked on recommendation systems, clarification question generation, and graph neural networks. She loves music, enjoys jamming sessions and plays badminton.</p>
 
 ### Research Interests
+
 - Social Network Analysis
 - Graph Neural Networks for NLP
 - Natural Language Generation
-

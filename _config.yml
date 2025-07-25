@@ -23,11 +23,10 @@ number_of_news_in_homepage: 6
 last_updated: true
 
 # Contact Details
-address: "Academic Block-C, Lab C-309, IITH, Hyderabad, India"
+address: "CS-412, Computer Science Building, Indian Institute of Technology Hyderabad, Kandi-502284, Sangareddy, Telangana, India"
 office_hours: "Monday-Friday <br>(9.00am - 5.00pm)"
 phone: "040-23018337"
 email: "nlip@cse.iith.ac.in"
-
 research_dropdown: true
 
 # Navigation

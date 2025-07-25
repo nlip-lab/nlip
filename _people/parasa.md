@@ -2,8 +2,9 @@
 name: Parasa Naga Venkata Pavan
 position: masters
 avatar: parasa.jpg
-twitter: 
-joined: 2023
+twitter:
+passout: 1
+joining_year: 2023
 title: Parasa Naga Venkata Pavan
 layout: profile
 ---
@@ -29,10 +30,11 @@ layout: profile
 <span style="display: block; margin-bottom: 1em"></span>
 
 ### Bio:
+
 Parasa Naga Venkata Pavan is a M.Tech Student in the Department of Computer Science at the Indian Institute of Technology Hyderabad. Prior to joining IIT Hyderabad, he completed his Btech at National Institute of Technology Andhra Pradesh.There he worked on the project named Devanagari handwritten text recognition where he developed end to end CRNN model to digitalize the handwritten text in the images.Currently he is a part of the Natural Language and Information Processing Lab, where he will be working in the domain of NLP.
 
-
 ### Research Interest:
+
 - Natural Language Processing
 - Computer Vision
 - Machine learning
