@@ -23,7 +23,7 @@ Disallow: /*.zip$
 Disallow: /*.tar$
 
 # 5) Reference your sitemap
-Sitemap: https://www.yourdomain.com/sitemap.xml
+Sitemap: https://www.example.com/sitemap.xml
 
 # 6) Block known bad bots
 User-agent: BadBot

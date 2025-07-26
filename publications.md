@@ -69,12 +69,12 @@ permalink: /publication/
 
 .publication-tile {
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(72, 132, 223, 0.51);
   overflow: hidden;
   transition: all 0.3s ease;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   cursor: pointer;
 }
 
@@ -316,7 +316,7 @@ permalink: /publication/
 }
 
 .year-section {
-  margin: 3rem 0 2rem;
+  margin: 1.5rem 0 1.5rem;
 }
 
 .year-header {
@@ -324,7 +324,7 @@ permalink: /publication/
   color: white;
   padding: 1rem 1rem;
   border-radius: 8px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-size: 1.5rem;
   font-weight: 600;
   width: 100%;
@@ -380,7 +380,7 @@ permalink: /publication/
   margin-bottom: 2rem;
   border-bottom: 1px solid #eee;
   z-index: 100;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .year-nav-container {
@@ -599,6 +599,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div style="background:#fff;padding:2rem;max-width:90vw;max-height:80vh;overflow:auto;position:relative;border-radius:8px;">
           <button id="close-bibtex-modal" style="position:absolute;top:10px;right:10px;">Close</button>
           <pre style="white-space:pre-wrap;">${bibtex}</pre>
+
         </div>
       `;
       document.body.appendChild(modal);
@@ -606,14 +607,15 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.remove();
       };
     }
-  }
+
+}
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  const tiles = document.querySelectorAll('.publication-tile');
-  tiles.forEach(tile => {
-    const summary = tile.querySelector('.publication-summary');
-    const abstract = tile.querySelector('.publication-abstract');
+const tiles = document.querySelectorAll('.publication-tile');
+tiles.forEach(tile => {
+const summary = tile.querySelector('.publication-summary');
+const abstract = tile.querySelector('.publication-abstract');
 
     if (summary) {
       summary.classList.add('preview');
@@ -630,15 +632,16 @@ document.addEventListener('DOMContentLoaded', function() {
         tile.classList.toggle('expanded');
       });
     }
-  });
 
-  // Year navigation functionality
-  const yearNavItems = document.querySelectorAll('.year-nav-item');
-  const yearSections = document.querySelectorAll('.year-section');
-  
-  // Update active state based on scroll position
-  function updateActiveYear() {
-    const scrollPosition = window.scrollY + 100; // Offset for better trigger point
+});
+
+// Year navigation functionality
+const yearNavItems = document.querySelectorAll('.year-nav-item');
+const yearSections = document.querySelectorAll('.year-section');
+
+// Update active state based on scroll position
+function updateActiveYear() {
+const scrollPosition = window.scrollY + 100; // Offset for better trigger point
 
     yearSections.forEach(section => {
       const year = section.querySelector('.year-header').textContent;
@@ -654,57 +657,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     });
-  }
 
-  // Smooth scroll to year section
-  yearNavItems.forEach(item => {
-    item.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
+}
 
-  // Update active state on scroll
-  window.addEventListener('scroll', updateActiveYear);
-  // Initial active state
-  updateActiveYear();
+// Smooth scroll to year section
+yearNavItems.forEach(item => {
+item.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetSection = document.querySelector(targetId);
+if (targetSection) {
+targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+});
+});
 
-  // Go to Top functionality
-  const goToTopButton = document.createElement('div');
-  goToTopButton.className = 'go-to-top';
-  goToTopButton.innerHTML = `
-    <svg viewBox="0 0 24 24">
+// Update active state on scroll
+window.addEventListener('scroll', updateActiveYear);
+// Initial active state
+updateActiveYear();
+
+// Go to Top functionality
+const goToTopButton = document.createElement('div');
+goToTopButton.className = 'go-to-top';
+goToTopButton.innerHTML = `    <svg viewBox="0 0 24 24">
       <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6zM5 18v2h14v-2H5z"/>
     </svg>
-  `;
-  document.body.appendChild(goToTopButton);
+ `;
+document.body.appendChild(goToTopButton);
 
-  // Show/hide button based on scroll position
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-      goToTopButton.classList.add('visible');
-    } else {
-      goToTopButton.classList.remove('visible');
-    }
-  });
+// Show/hide button based on scroll position
+window.addEventListener('scroll', function() {
+if (window.scrollY > 300) {
+goToTopButton.classList.add('visible');
+} else {
+goToTopButton.classList.remove('visible');
+}
+});
 
-  // Smooth scroll to top when clicked
-  goToTopButton.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
+// Smooth scroll to top when clicked
+goToTopButton.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
 
-  // Create BibTeX modal
-  const modal = document.createElement('div');
-  modal.className = 'bibtex-modal';
-  modal.innerHTML = `
-    <div class="bibtex-content">
+// Create BibTeX modal
+const modal = document.createElement('div');
+modal.className = 'bibtex-modal';
+modal.innerHTML = `    <div class="bibtex-content">
       <div class="bibtex-header">
         <div class="bibtex-title">BibTeX</div>
         <div class="bibtex-actions">
@@ -723,19 +725,19 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <pre></pre>
     </div>
-  `;
-  document.body.appendChild(modal);
+ `;
+document.body.appendChild(modal);
 
-  // Handle BibTeX links
-  const links = document.querySelectorAll('.publication-link');
-  links.forEach(link => {
-    const text = link.textContent.toLowerCase();
+// Handle BibTeX links
+const links = document.querySelectorAll('.publication-link');
+links.forEach(link => {
+const text = link.textContent.toLowerCase();
 
     if (text.includes('bibtex')) {
       link.addEventListener('click', async function(e) {
         e.preventDefault();
         e.stopPropagation();
-        
+
         const bibtexUrl = this.getAttribute('href');
         try {
           const response = await fetch(bibtexUrl);
@@ -748,43 +750,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }
-  });
 
-  // Copy BibTeX content
-  const copyButton = modal.querySelector('.copy-bibtex');
-  copyButton.addEventListener('click', () => {
-    const bibtexContent = modal.querySelector('pre').textContent;
-    navigator.clipboard.writeText(bibtexContent).then(() => {
-      const originalText = copyButton.innerHTML;
-      copyButton.innerHTML = `
-        <svg viewBox="0 0 24 24">
+});
+
+// Copy BibTeX content
+const copyButton = modal.querySelector('.copy-bibtex');
+copyButton.addEventListener('click', () => {
+const bibtexContent = modal.querySelector('pre').textContent;
+navigator.clipboard.writeText(bibtexContent).then(() => {
+const originalText = copyButton.innerHTML;
+copyButton.innerHTML = `        <svg viewBox="0 0 24 24">
           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
         </svg>
         Copied!
-      `;
-      setTimeout(() => {
-        copyButton.innerHTML = originalText;
-      }, 2000);
-    });
-  });
+     `;
+setTimeout(() => {
+copyButton.innerHTML = originalText;
+}, 2000);
+});
+});
 
-  // Close modal when clicking close button or outside
-  modal.querySelector('.close-bibtex').addEventListener('click', () => {
-    modal.classList.remove('active');
-  });
+// Close modal when clicking close button or outside
+modal.querySelector('.close-bibtex').addEventListener('click', () => {
+modal.classList.remove('active');
+});
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-    }
-  });
+modal.addEventListener('click', (e) => {
+if (e.target === modal) {
+modal.classList.remove('active');
+}
+});
 
-  // Close modal with Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      modal.classList.remove('active');
-    }
-  });
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape' && modal.classList.contains('active')) {
+modal.classList.remove('active');
+}
+});
 });
 </script>
 
@@ -890,5 +892,6 @@ document.addEventListener('DOMContentLoaded', function() {
     {% endif %}
     {% endfor %}
     </div>
+
 </div>
 {% endfor %}

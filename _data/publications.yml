@@ -1,3 +1,50 @@
+# Year 2025
+
+- key: "inherent-ability"
+  authors: "Aishwarya Maheswaran, Caslon Chua, Maunendra Sankar Desarkar"
+  title: "Probing the Inherent Ability of Large Language Models for Generating Empathetic Responses"
+  journal: "2025 IEEE Swiss Conference on Data Science (SDS)"
+  abstract: 'Large Language Models (LLMs) have demonstrated capabilities beyond basic text generation, like question answering, translation, and even stylistic text generation. Since these models are available for public use, enormous effort has been put into safety engineering to ensure that undesirable and harmful text is not generated and the generations are polite and empathetic. In this work, we examine the inherent empathy capabilities of five open-source LLMs and evaluate them from multiple angles using automated metrics to understand their capabilities and limitations. In the context of this work, “inherent” refers to the LLM’s ability to generate empathetic text without having to explicitly prompt for it. We examine if empathy is treated as a style change or is the model demonstrating some understanding of the specific user’s context. We find that LLMs use more emotion words than humans in their generations. They can also infer the user’s emotional state, a crucial characteristic of empathy. Due to the probabilistic nature of obtaining generations, there is a tendency for the responses to drift away from the user’s actual intent. In such cases, specific prompting allows the model to respond appropriately. We summarize the differences observed between human and LLM generations and conclude with a potential research direction for empathetic dialog generation that leverages the capabilities of LLMs.'
+  year: 2025
+  month: 6
+  highlight: 1
+  img: "inherent-ability.png"
+  bibtex: inherent-ability
+  url: "https://ieeexplore.ieee.org/document/11081499"
+  pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11081499"
+  summary: 'Large Language Models (LLMs) have demonstrated capabilities beyond basic text generation, like question answering, translation, and even stylistic text generation. Since these models are available for public use, enormous effort has been put into safety engineering to ensure that undesirable and harmful text is not generated and the generations are polite and empathetic. In this work, we examine the inherent empathy capabilities of five open-source LLMs and evaluate them from multiple angles using automated metrics to understand their capabilities and limitations. In the context of this work, “inherent” refers to the LLM’s ability to generate empathetic text without having to explicitly prompt for it. We examine if empathy is treated as a style change or is the model demonstrating some understanding of the specific user’s context. We find that LLMs use more emotion words than humans in their generations. They can also infer the user’s emotional state, a crucial characteristic of empathy. Due to the probabilistic nature of obtaining generations, there is a tendency for the responses to drift away from the user’s actual intent. In such cases, specific prompting allows the model to respond appropriately. We summarize the differences observed between human and LLM generations and conclude with a potential research direction for empathetic dialog generation that leverages the capabilities of LLMs.'
+
+- key: "morphtok"
+  authors: "Maharaj Brahma, N J Karthika, Atul Kumar Singh, Devaraja Adiga, Smruti Bhate, Ganesh Ramakrishnan, Rohit Saluja, Maunendra Sankar Desarkar"
+  title: "MorphTok: Morphologically Grounded Tokenization for Indic languages"
+  journal: "ICML 2025 Tokenization Workshop (TokShop)"
+  abstract: 'Tokenization is a crucial step in NLP, especially with the rise of large language models (LLMs), impacting downstream performance, computational cost, and efficiency. Existing LLMs rely on the classical Byte-pair Encoding (BPE) algorithm for subword tokenization that greedily merges frequent character bigrams, often leading to segmentation that does not align with linguistically meaningful units. To address this, we propose morphology-aware segmentation as a pre-tokenization step before applying BPE. To facilitate morphology-aware segmentation, we create a novel dataset for Hindi and Marathi, incorporating sandhi splitting to enhance the subword tokenization. Experiments on downstream tasks show that morphologically grounded tokenization improves machine translation and language modeling performance. Additionally, to handle the dependent vowels common in syllable-based writing systems used by Indic languages, we propose Constrained BPE (CBPE), an extension to the standard BPE algorithm incorporating script-specific constraints. In particular, CBPE handles dependent vowels to form a cohesive unit with other characters instead of occurring as a single unit. Our results show that CBPE achieves a 1.68% reduction in fertility scores while maintaining comparable or improved downstream performance in machine translation and language modeling, offering a computationally efficient alternative to standard BPE. Moreover, to evaluate segmentation across different tokenization algorithms, we introduce a new human evaluation metric, \textit{EvalTok}, enabling more human-grounded assessment.'
+  year: 2025
+  month: 6
+  highlight: 1
+  img: "morphtok.png"
+  bibtex: morphtok
+  url: "https://openreview.net/forum?id=32wHtvZOqH"
+  pdf: "https://openreview.net/pdf?id=32wHtvZOqH"
+  summary: 'Tokenization is a crucial step in NLP, especially with the rise of large language models (LLMs), impacting downstream performance, computational cost, and efficiency. Existing LLMs rely on the classical Byte-pair Encoding (BPE) algorithm for subword tokenization that greedily merges frequent character bigrams, often leading to segmentation that does not align with linguistically meaningful units. To address this, we propose morphology-aware segmentation as a pre-tokenization step before applying BPE. To facilitate morphology-aware segmentation, we create a novel dataset for Hindi and Marathi, incorporating sandhi splitting to enhance the subword tokenization. Experiments on downstream tasks show that morphologically grounded tokenization improves machine translation and language modeling performance. Additionally, to handle the dependent vowels common in syllable-based writing systems used by Indic languages, we propose Constrained BPE (CBPE), an extension to the standard BPE algorithm incorporating script-specific constraints. In particular, CBPE handles dependent vowels to form a cohesive unit with other characters instead of occurring as a single unit. Our results show that CBPE achieves a 1.68% reduction in fertility scores while maintaining comparable or improved downstream performance in machine translation and language modeling, offering a computationally efficient alternative to standard BPE. Moreover, to evaluate segmentation across different tokenization algorithms, we introduce a new human evaluation metric, \textit{EvalTok}, enabling more human-grounded assessment.'
+
+- key: "notam"
+  authors: "Minal Nitin Dani, Aishwarya Maheswaran, Maunendra Sankar Desarkar"
+  title: "Semantics-aware prompting for translating NOtices To AirMen"
+  journal: "Findings of the Association for Computational Linguistics: ACL 2025"
+  abstract: 'A NOTAM or NOtice To AirMen is a crucial notice for different aviation stakeholders, particularly flight crews. It delivers essential notifications about abnormal conditions of Aviation System components such as changes to facilities, hazards, service, procedure that are not known far enough in advance to be publicized through other means. NOTAM messages are short, contain acronyms, and look cryptic in most of the cases. Writing and understanding these messages put heavy cognitive load on its end users. In this work, we take up the task of translating NOTAMs into English natural language using LLMs. Since NOTAMs do not adhere to English grammar rules and have their own decoding rules, large language models (LLMs) cannot translate them without effective prompting. In this paper, we develop a framework to come up with effective prompts to achieve the translations. Our approach uses context-aware semantic prompting techniques, paired with domain-specific rules, to improve the accuracy and clarity of translations. The framework is evaluated using comprehensive experiments (6 LLMs of varying sizes, and with 5 different prompting setups for each) and eight evaluation metrics measuring different aspects of the translation. The results demonstrate that our methodology can produce clear translations that accurately convey the information contained in NOTAMs.' 
+  year: 2025
+  month: 5
+  highlight: 1
+  img: "notam.jpg"
+  bibtex: notam
+  url: "https://aclanthology.org/2025.findings-acl.1253/"
+  pdf: "https://aclanthology.org/2025.findings-acl.1253.pdf"
+  summary: 'A NOTAM or NOtice To AirMen is a crucial notice for different aviation stakeholders, particularly flight crews. It delivers essential notifications about abnormal conditions of Aviation System components such as changes to facilities, hazards, service, procedure that are not known far enough in advance to be publicized through other means. NOTAM messages are short, contain acronyms, and look cryptic in most of the cases. Writing and understanding these messages put heavy cognitive load on its end users. In this work, we take up the task of translating NOTAMs into English natural language using LLMs. Since NOTAMs do not adhere to English grammar rules and have their own decoding rules, large language models (LLMs) cannot translate them without effective prompting. In this paper, we develop a framework to come up with effective prompts to achieve the translations. Our approach uses context-aware semantic prompting techniques, paired with domain-specific rules, to improve the accuracy and clarity of translations. The framework is evaluated using comprehensive experiments (6 LLMs of varying sizes, and with 5 different prompting setups for each) and eight evaluation metrics measuring different aspects of the translation. The results demonstrate that our methodology can produce clear translations that accurately convey the information contained in NOTAMs.'
+
+
+# Year 2024
+
 - key: "bok"
   authors: "Suvodip Dey, Maunendra Sankar Desarkar"
   title: "BoK: Introducing Bag-of-Keywords Loss for Interpretable Dialogue Response Generation"
@@ -67,6 +114,8 @@
   pdf: "https://aclanthology.org/2024.eacl-short.26.pdf"
   bibtex: charspan
   summary: "We address the task of machine translation(MT) from extremely low-resource language(ELRL) to English by leveraging cross-lingualtransfer from closely-related high-resourcelanguage (HRL). The development of an MTsystem for ELRL is challenging because theselanguages typically lack parallel corpora andmonolingual corpora, and their representationsare absent from large multilingual languagemodels. Many ELRLs share lexical similaritieswith some HRLs, which presents a novelmodeling opportunity. However, existingsubword-based neural MT models do notexplicitly harness this lexical similarity, as theyonly implicitly align HRL and ELRL latentembedding space. To overcome this limitation,we propose a novel, CHARSPAN, approachbased on character-span noise augmentationinto the training data of HRL. This serves asa regularization technique, making the modelmore robust to lexical divergences betweenthe HRL and ELRL, thus facilitating effectivecross-lingual transfer. Our method significantlyoutperformed strong baselines in zero-shotsettings on closely related HRL and ELRL pairsfrom three diverse language families, emergingas the state-of-the-art model for ELRLs."
+
+# Year 2023
 
 - key: "select-noise"
   authors: "Maharaj Brahma, Kaushal Kumar Maurya, Maunendra Sankar Desarkar"
@@ -185,6 +234,8 @@
   img: "vta-ex.png"
   summary: ""
   bibtex: vta
+
+# Year 2022
 
 - key: "gnom"
   authors: "Samujjwal Ghosh, Subhadeep Maji, Maunendra Sankar Desarkar"
@@ -360,6 +411,8 @@
   summary: "In our experiments, we show that the proposed method outperforms state-of-the-art techniques by 2.74% weighted F1 score on average on two standard public datasets in the area of disaster management. We also report experimental results for granular actionable multilabel classification datasets in disaster domain for the first time, on which we outperform BERT by 3.00% on average w.r.t. weighted F1."
   bibtex: unspuervised-domain-gnn
 
+# Year 2021
+
 - key: "hostility"
   authors: "Arkadipta De, Venkatesh E, Kaushal Kumar Maurya, and Maunendra Sankar Desarkar"
   title: "Coarse and Fine-Grained Hostility Detection in Hindi Posts using Fine Tuned Multilingual Embeddings"
@@ -395,9 +448,6 @@
   bibtex: multi-view-hypergraph
   summary: "We propose a Multi-view Hypergraph Convolution Network (Multi-HGCN) where we learn POI representations by considering multiple hypergraphs across multiple views of the data. We build a comprehensive model to learn the POI representation capturing temporal, spatial and trajectory-based patterns among POIs by employing hypergraphs. We use hypergraph convolution to learn better POI representation by using spectral properties of hypergraph. Experiments conducted on three real-world datasets show that the proposed approach outperforms the state-of-the-art approaches."
 
-
-
-
 - key: "maurya-etal-2021-zmbart"
   authors: "Kaushal Kumar Maurya, Maunendra Sankar Desarkar, Yoshinobu Kano, and Kumari Deepshikha"
   title: "ZmBART: An Unsupervised Cross-lingual Transfer Framework for Language Generation"
@@ -414,7 +464,6 @@
   video: "https://aclanthology.org/2021.findings-acl.248.mp4"
   summary: "We propose an unsupervised crosslingual language generation framework (called ZmBART) that does not use any parallel or pseudo-parallel/back-translated data. In this framework, we further pre-train mBART sequence-to-sequence denoising auto-encoder model with an auxiliary task using monolingual data of three languages. The objective function of the auxiliary task is close to the target tasks which enriches the multi-lingual latent representation of mBART and provides good initialization for target tasks. Then, this model is fine-tuned with task-specific supervised English data and directly evaluated with low-resource languages in the Zero-shot setting."
   bibtex: maurya-etal-2021-zmbart
-
 
 - key: "hidst"
   authors: "Suvodip Dey, Maunendra Sankar Desarkar"
