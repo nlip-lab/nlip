@@ -223,12 +223,12 @@
 
 .publication-tile {
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(72, 132, 223, 0.51);
   overflow: hidden;
   transition: all 0.3s ease;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   cursor: pointer;
 }
 
@@ -470,7 +470,7 @@
 }
 
 .year-section {
-  margin: 3rem 0 2rem;
+  margin: 1.5rem 0 1.5rem;
 }
 
 .year-header {
@@ -478,7 +478,7 @@
   color: white;
   padding: 1rem 1rem;
   border-radius: 8px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-size: 1.5rem;
   font-weight: 600;
   width: 100%;
@@ -534,7 +534,7 @@
   margin-bottom: 2rem;
   border-bottom: 1px solid #eee;
   z-index: 100;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .year-nav-container {
@@ -753,6 +753,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div style="background:#fff;padding:2rem;max-width:90vw;max-height:80vh;overflow:auto;position:relative;border-radius:8px;">
           <button id="close-bibtex-modal" style="position:absolute;top:10px;right:10px;">Close</button>
           <pre style="white-space:pre-wrap;">${bibtex}</pre>
+
         </div>
       `;
       document.body.appendChild(modal);
@@ -760,14 +761,15 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.remove();
       };
     }
-  }
+
+}
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  const tiles = document.querySelectorAll('.publication-tile');
-  tiles.forEach(tile => {
-    const summary = tile.querySelector('.publication-summary');
-    const abstract = tile.querySelector('.publication-abstract');
+const tiles = document.querySelectorAll('.publication-tile');
+tiles.forEach(tile => {
+const summary = tile.querySelector('.publication-summary');
+const abstract = tile.querySelector('.publication-abstract');
 
     if (summary) {
       summary.classList.add('preview');
@@ -784,15 +786,16 @@ document.addEventListener('DOMContentLoaded', function() {
         tile.classList.toggle('expanded');
       });
     }
-  });
 
-  // Year navigation functionality
-  const yearNavItems = document.querySelectorAll('.year-nav-item');
-  const yearSections = document.querySelectorAll('.year-section');
-  
-  // Update active state based on scroll position
-  function updateActiveYear() {
-    const scrollPosition = window.scrollY + 100; // Offset for better trigger point
+});
+
+// Year navigation functionality
+const yearNavItems = document.querySelectorAll('.year-nav-item');
+const yearSections = document.querySelectorAll('.year-section');
+
+// Update active state based on scroll position
+function updateActiveYear() {
+const scrollPosition = window.scrollY + 100; // Offset for better trigger point
 
     yearSections.forEach(section => {
       const year = section.querySelector('.year-header').textContent;
@@ -808,57 +811,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     });
-  }
 
-  // Smooth scroll to year section
-  yearNavItems.forEach(item => {
-    item.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
+}
 
-  // Update active state on scroll
-  window.addEventListener('scroll', updateActiveYear);
-  // Initial active state
-  updateActiveYear();
+// Smooth scroll to year section
+yearNavItems.forEach(item => {
+item.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetSection = document.querySelector(targetId);
+if (targetSection) {
+targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+});
+});
 
-  // Go to Top functionality
-  const goToTopButton = document.createElement('div');
-  goToTopButton.className = 'go-to-top';
-  goToTopButton.innerHTML = `
-    <svg viewBox="0 0 24 24">
+// Update active state on scroll
+window.addEventListener('scroll', updateActiveYear);
+// Initial active state
+updateActiveYear();
+
+// Go to Top functionality
+const goToTopButton = document.createElement('div');
+goToTopButton.className = 'go-to-top';
+goToTopButton.innerHTML = `    <svg viewBox="0 0 24 24">
       <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6zM5 18v2h14v-2H5z"/>
     </svg>
-  `;
-  document.body.appendChild(goToTopButton);
+ `;
+document.body.appendChild(goToTopButton);
 
-  // Show/hide button based on scroll position
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-      goToTopButton.classList.add('visible');
-    } else {
-      goToTopButton.classList.remove('visible');
-    }
-  });
+// Show/hide button based on scroll position
+window.addEventListener('scroll', function() {
+if (window.scrollY > 300) {
+goToTopButton.classList.add('visible');
+} else {
+goToTopButton.classList.remove('visible');
+}
+});
 
-  // Smooth scroll to top when clicked
-  goToTopButton.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
+// Smooth scroll to top when clicked
+goToTopButton.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
 
-  // Create BibTeX modal
-  const modal = document.createElement('div');
-  modal.className = 'bibtex-modal';
-  modal.innerHTML = `
-    <div class="bibtex-content">
+// Create BibTeX modal
+const modal = document.createElement('div');
+modal.className = 'bibtex-modal';
+modal.innerHTML = `    <div class="bibtex-content">
       <div class="bibtex-header">
         <div class="bibtex-title">BibTeX</div>
         <div class="bibtex-actions">
@@ -877,19 +879,19 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <pre></pre>
     </div>
-  `;
-  document.body.appendChild(modal);
+ `;
+document.body.appendChild(modal);
 
-  // Handle BibTeX links
-  const links = document.querySelectorAll('.publication-link');
-  links.forEach(link => {
-    const text = link.textContent.toLowerCase();
+// Handle BibTeX links
+const links = document.querySelectorAll('.publication-link');
+links.forEach(link => {
+const text = link.textContent.toLowerCase();
 
     if (text.includes('bibtex')) {
       link.addEventListener('click', async function(e) {
         e.preventDefault();
         e.stopPropagation();
-        
+
         const bibtexUrl = this.getAttribute('href');
         try {
           const response = await fetch(bibtexUrl);
@@ -902,48 +904,50 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }
-  });
 
-  // Copy BibTeX content
-  const copyButton = modal.querySelector('.copy-bibtex');
-  copyButton.addEventListener('click', () => {
-    const bibtexContent = modal.querySelector('pre').textContent;
-    navigator.clipboard.writeText(bibtexContent).then(() => {
-      const originalText = copyButton.innerHTML;
-      copyButton.innerHTML = `
-        <svg viewBox="0 0 24 24">
+});
+
+// Copy BibTeX content
+const copyButton = modal.querySelector('.copy-bibtex');
+copyButton.addEventListener('click', () => {
+const bibtexContent = modal.querySelector('pre').textContent;
+navigator.clipboard.writeText(bibtexContent).then(() => {
+const originalText = copyButton.innerHTML;
+copyButton.innerHTML = `        <svg viewBox="0 0 24 24">
           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
         </svg>
         Copied!
-      `;
-      setTimeout(() => {
-        copyButton.innerHTML = originalText;
-      }, 2000);
-    });
-  });
+     `;
+setTimeout(() => {
+copyButton.innerHTML = originalText;
+}, 2000);
+});
+});
 
-  // Close modal when clicking close button or outside
-  modal.querySelector('.close-bibtex').addEventListener('click', () => {
-    modal.classList.remove('active');
-  });
+// Close modal when clicking close button or outside
+modal.querySelector('.close-bibtex').addEventListener('click', () => {
+modal.classList.remove('active');
+});
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-    }
-  });
+modal.addEventListener('click', (e) => {
+if (e.target === modal) {
+modal.classList.remove('active');
+}
+});
 
-  // Close modal with Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      modal.classList.remove('active');
-    }
-  });
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape' && modal.classList.contains('active')) {
+modal.classList.remove('active');
+}
+});
 });
 </script>
 
 <div class="year-nav">
   <div class="year-nav-container">
+    
+    <a href="#year-2025" class="year-nav-item">2025</a>
     
     <a href="#year-2024" class="year-nav-item">2024</a>
     
@@ -968,9 +972,314 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <h2>Publications by Year</h2>
 
+<div class="year-section" id="year-2025">
+    <div class="year-header">2025</div>
+    <div class="year-content">
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        <div class="publication-tile">
+            <div class="publication-tile-content">
+                
+                <div class="publication-image-container">
+                    <img src="/nlip/publications/images/inherent-ability.png" class="publication-image" alt="Probing the Inherent Ability of Large Language Models for Generating Empathetic Responses" />
+                </div>
+                
+                <div class="publication-content">
+
+                    <h3 class="publication-title">
+                    Probing the Inherent Ability of Large Language Models for Generating Empathetic Responses
+                        <!-- <a href="/publications/inherent-ability/">Probing the Inherent Ability of Large Language Models for Generating Empathetic Responses</a> -->
+                    </h3>
+
+                    <p class="publication-authors">Aishwarya Maheswaran, Caslon Chua, Maunendra Sankar Desarkar</p>
+                    <p class="publication-journal">2025 IEEE Swiss Conference on Data Science (SDS) (June 2025)</p>
+                    
+                    <p class="publication-abstract">Large Language Models (LLMs) have demonstrated capabilities beyond basic text generation, like question answering, translation, and even stylistic text generation. Since these models are available for public use, enormous effort has been put into safety engineering to ensure that undesirable and harmful text is not generated and the generations are polite and empathetic. In this work, we examine the inherent empathy capabilities of five open-source LLMs and evaluate them from multiple angles using automated metrics to understand their capabilities and limitations. In the context of this work, “inherent” refers to the LLM’s ability to generate empathetic text without having to explicitly prompt for it. We examine if empathy is treated as a style change or is the model demonstrating some understanding of the specific user’s context. We find that LLMs use more emotion words than humans in their generations. They can also infer the user’s emotional state, a crucial characteristic of empathy. Due to the probabilistic nature of obtaining generations, there is a tendency for the responses to drift away from the user’s actual intent. In such cases, specific prompting allows the model to respond appropriately. We summarize the differences observed between human and LLM generations and conclude with a potential research direction for empathetic dialog generation that leverages the capabilities of LLMs.</p>
+                    
+                    <div class="publication-links">
+
+                        
+                        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=11081499" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            PDF
+                        </a>
+                        
+                        
+                        
+                        <a href="https://ieeexplore.ieee.org/document/11081499" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            URL
+                        </a>
+                        
+                        
+                        <!-- 
+                        <a href="/nlip/publications/references/inherent-ability.txt" class="publication-link show-bibtex">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            BibTeX
+                        </a>
+                         -->
+                        
+                        <a href="/nlip/publications/references/inherent-ability.bib" class="publication-link">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            BibTeX
+                        </a>
+                        
+                        <a href="/nlip/publications/inherent-ability/" class="btn btn-sm btn-outline-primary" target="_blank" style="font-size: 0.95rem; padding: 0.45rem 1.1rem; min-width: unset; min-height: unset; height: auto; line-height: 1.2; border-radius: 6px; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center;">
+                          Read More
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        <div class="publication-tile">
+            <div class="publication-tile-content">
+                
+                <div class="publication-image-container">
+                    <img src="/nlip/publications/images/morphtok.png" class="publication-image" alt="MorphTok: Morphologically Grounded Tokenization for Indic languages" />
+                </div>
+                
+                <div class="publication-content">
+
+                    <h3 class="publication-title">
+                    MorphTok: Morphologically Grounded Tokenization for Indic languages
+                        <!-- <a href="/publications/morphtok/">MorphTok: Morphologically Grounded Tokenization for Indic languages</a> -->
+                    </h3>
+
+                    <p class="publication-authors">Maharaj Brahma, N J Karthika, Atul Kumar Singh, Devaraja Adiga, Smruti Bhate, Ganesh Ramakrishnan, Rohit Saluja, Maunendra Sankar Desarkar</p>
+                    <p class="publication-journal">ICML 2025 Tokenization Workshop (TokShop) (June 2025)</p>
+                    
+                    <p class="publication-abstract">Tokenization is a crucial step in NLP, especially with the rise of large language models (LLMs), impacting downstream performance, computational cost, and efficiency. Existing LLMs rely on the classical Byte-pair Encoding (BPE) algorithm for subword tokenization that greedily merges frequent character bigrams, often leading to segmentation that does not align with linguistically meaningful units. To address this, we propose morphology-aware segmentation as a pre-tokenization step before applying BPE. To facilitate morphology-aware segmentation, we create a novel dataset for Hindi and Marathi, incorporating sandhi splitting to enhance the subword tokenization. Experiments on downstream tasks show that morphologically grounded tokenization improves machine translation and language modeling performance. Additionally, to handle the dependent vowels common in syllable-based writing systems used by Indic languages, we propose Constrained BPE (CBPE), an extension to the standard BPE algorithm incorporating script-specific constraints. In particular, CBPE handles dependent vowels to form a cohesive unit with other characters instead of occurring as a single unit. Our results show that CBPE achieves a 1.68% reduction in fertility scores while maintaining comparable or improved downstream performance in machine translation and language modeling, offering a computationally efficient alternative to standard BPE. Moreover, to evaluate segmentation across different tokenization algorithms, we introduce a new human evaluation metric, \textit{EvalTok}, enabling more human-grounded assessment.</p>
+                    
+                    <div class="publication-links">
+
+                        
+                        <a href="https://openreview.net/pdf?id=32wHtvZOqH" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            PDF
+                        </a>
+                        
+                        
+                        
+                        <a href="https://openreview.net/forum?id=32wHtvZOqH" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            URL
+                        </a>
+                        
+                        
+                        <!-- 
+                        <a href="/nlip/publications/references/morphtok.txt" class="publication-link show-bibtex">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            BibTeX
+                        </a>
+                         -->
+                        
+                        <a href="/nlip/publications/references/morphtok.bib" class="publication-link">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            BibTeX
+                        </a>
+                        
+                        <a href="/nlip/publications/morphtok/" class="btn btn-sm btn-outline-primary" target="_blank" style="font-size: 0.95rem; padding: 0.45rem 1.1rem; min-width: unset; min-height: unset; height: auto; line-height: 1.2; border-radius: 6px; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center;">
+                          Read More
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        <div class="publication-tile">
+            <div class="publication-tile-content">
+                
+                <div class="publication-image-container">
+                    <img src="/nlip/publications/images/notam.jpg" class="publication-image" alt="Semantics-aware prompting for translating NOtices To AirMen" />
+                </div>
+                
+                <div class="publication-content">
+
+                    <h3 class="publication-title">
+                    Semantics-aware prompting for translating NOtices To AirMen
+                        <!-- <a href="/publications/notam/">Semantics-aware prompting for translating NOtices To AirMen</a> -->
+                    </h3>
+
+                    <p class="publication-authors">Minal Nitin Dani, Aishwarya Maheswaran, Maunendra Sankar Desarkar</p>
+                    <p class="publication-journal">Findings of the Association for Computational Linguistics: ACL 2025 (May 2025)</p>
+                    
+                    <p class="publication-abstract">A NOTAM or NOtice To AirMen is a crucial notice for different aviation stakeholders, particularly flight crews. It delivers essential notifications about abnormal conditions of Aviation System components such as changes to facilities, hazards, service, procedure that are not known far enough in advance to be publicized through other means. NOTAM messages are short, contain acronyms, and look cryptic in most of the cases. Writing and understanding these messages put heavy cognitive load on its end users. In this work, we take up the task of translating NOTAMs into English natural language using LLMs. Since NOTAMs do not adhere to English grammar rules and have their own decoding rules, large language models (LLMs) cannot translate them without effective prompting. In this paper, we develop a framework to come up with effective prompts to achieve the translations. Our approach uses context-aware semantic prompting techniques, paired with domain-specific rules, to improve the accuracy and clarity of translations. The framework is evaluated using comprehensive experiments (6 LLMs of varying sizes, and with 5 different prompting setups for each) and eight evaluation metrics measuring different aspects of the translation. The results demonstrate that our methodology can produce clear translations that accurately convey the information contained in NOTAMs.</p>
+                    
+                    <div class="publication-links">
+
+                        
+                        <a href="https://aclanthology.org/2025.findings-acl.1253.pdf" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            PDF
+                        </a>
+                        
+                        
+                        
+                        <a href="https://aclanthology.org/2025.findings-acl.1253/" class="publication-link" target="_blank">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            URL
+                        </a>
+                        
+                        
+                        <!-- 
+                        <a href="/nlip/publications/references/notam.txt" class="publication-link show-bibtex">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            BibTeX
+                        </a>
+                         -->
+                        
+                        <a href="/nlip/publications/references/notam.bib" class="publication-link">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            BibTeX
+                        </a>
+                        
+                        <a href="/nlip/publications/notam/" class="btn btn-sm btn-outline-primary" target="_blank" style="font-size: 0.95rem; padding: 0.45rem 1.1rem; min-width: unset; min-height: unset; height: auto; line-height: 1.2; border-radius: 6px; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center;">
+                          Read More
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+</div>
+
 <div class="year-section" id="year-2024">
     <div class="year-header">2024</div>
     <div class="year-content">
+    
+    
+    
+    
+    
+    
     
     
         
@@ -1400,11 +1709,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     </div>
+
 </div>
 
 <div class="year-section" id="year-2023">
     <div class="year-header">2023</div>
     <div class="year-content">
+    
+    
+    
+    
+    
+    
     
     
     
@@ -2059,11 +2375,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     </div>
+
 </div>
 
 <div class="year-section" id="year-2022">
     <div class="year-header">2022</div>
     <div class="year-content">
+    
+    
+    
+    
+    
+    
     
     
     
@@ -2888,11 +3211,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     </div>
+
 </div>
 
 <div class="year-section" id="year-2021">
     <div class="year-header">2021</div>
     <div class="year-content">
+    
+    
+    
+    
+    
+    
     
     
     
@@ -3276,11 +3606,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     </div>
+
 </div>
 
 <div class="year-section" id="year-2020">
     <div class="year-header">2020</div>
     <div class="year-content">
+    
+    
+    
+    
+    
+    
     
     
     
@@ -3645,11 +3982,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     </div>
+
 </div>
 
 <div class="year-section" id="year-2019">
     <div class="year-header">2019</div>
     <div class="year-content">
+    
+    
+    
+    
+    
+    
     
     
     
@@ -3866,11 +4210,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     </div>
+
 </div>
 
 <div class="year-section" id="year-2018">
     <div class="year-header">2018</div>
     <div class="year-content">
+    
+    
+    
+    
+    
+    
     
     
     
@@ -4083,11 +4434,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     </div>
+
 </div>
 
 <div class="year-section" id="year-2017">
     <div class="year-header">2017</div>
     <div class="year-content">
+    
+    
+    
+    
+    
+    
     
     
     
@@ -4229,6 +4587,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     </div>
+
 </div>
 
 
@@ -4249,7 +4608,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <span style="display: block; margin-bottom: 2em"></span>
   <div class="container">
     <!-- &copy; Copyright 2025 NLIP Lab, All Rights Reserved.
-    <br> -->Last updated: July 25, 2025.
+    <br> -->Last updated: July 26, 2025.
     <br>
     
     Website template inspired from <a href="https://kordinglab.com/">Kording Lab</a><br>
