@@ -577,7 +577,7 @@ layout: default
         {% if person.avatar %}
           <img class="person-avatar" src="{{site.baseurl}}/images/people/{{person.avatar}}" alt="{{person.name}}">
         {% else %}
-          <img class="person-avatar" src="http://evanssheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg" alt="{{person.name}}">
+          <img class="person-avatar" src="http://evansheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg" alt="{{person.name}}">
         {% endif %}
         <div class="person-name">
           <a href="{{ site.baseurl }}{{ person.url }}" style="text-decoration: none; color: inherit;">{{person.name}}</a>
