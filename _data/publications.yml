@@ -42,6 +42,20 @@
   pdf: "https://aclanthology.org/2025.findings-acl.1253.pdf"
   summary: 'A NOTAM or NOtice To AirMen is a crucial notice for different aviation stakeholders, particularly flight crews. It delivers essential notifications about abnormal conditions of Aviation System components such as changes to facilities, hazards, service, procedure that are not known far enough in advance to be publicized through other means. NOTAM messages are short, contain acronyms, and look cryptic in most of the cases. Writing and understanding these messages put heavy cognitive load on its end users. In this work, we take up the task of translating NOTAMs into English natural language using LLMs. Since NOTAMs do not adhere to English grammar rules and have their own decoding rules, large language models (LLMs) cannot translate them without effective prompting. In this paper, we develop a framework to come up with effective prompts to achieve the translations. Our approach uses context-aware semantic prompting techniques, paired with domain-specific rules, to improve the accuracy and clarity of translations. The framework is evaluated using comprehensive experiments (6 LLMs of varying sizes, and with 5 different prompting setups for each) and eight evaluation metrics measuring different aspects of the translation. The results demonstrate that our methodology can produce clear translations that accurately convey the information contained in NOTAMs.'
 
+- key: "bea2025"
+  authors: "Trishita Saha, Shrenik Ganguli, Maunendra Sankar Desarkar"
+  title: "NLIP at BEA2025 Shared Task: Evaluation of Pedagogical Ability of AI Tutors"
+  journal: "BEA Shared Task, SIGEDU, ACL 2025"
+  abstract: 'This paper presents our system entry in the Building Educational Applications (BEA) 2025 Shared Task on Pedagogical Ability Assessment of AI-powered Tutors. The task evaluates multiple dimensions of AI tutor responses within student-teacher educational dialogues, including mistake identification, mistake location, providing guidance, and actionability. Our approach leverages transformer-based models (Vaswani et al., 2017), especially DeBERTa and RoBERTa, and incorporates ordinal regression, threshold tuning, oversampling, and multi-task learning. Our best-performing systems are capable of assessing tutor response quality across all tracks. This highlights the effectiveness of tailored transformer architectures and pedagogically motivated training strategies for AI tutor evaluation.'
+  year: 2025
+  month: 5
+  highlight: 1
+  img: "bea2025.png"
+  bibtex: bea2025
+  url: "https://aclanthology.org/2025.bea-1.99/"
+  pdf: "https://aclanthology.org/anthology-files/pdf/bea/2025.bea-1.99.pdf"
+  summary: 'This paper presents our system entry in the Building Educational Applications (BEA) 2025 Shared Task on Pedagogical Ability Assessment of AI-powered Tutors. The task evaluates multiple dimensions of AI tutor responses within student-teacher educational dialogues, including mistake identification, mistake location, providing guidance, and actionability. Our approach leverages transformer-based models (Vaswani et al., 2017), especially DeBERTa and RoBERTa, and incorporates ordinal regression, threshold tuning, oversampling, and multi-task learning. Our best-performing systems are capable of assessing tutor response quality across all tracks. This highlights the effectiveness of tailored transformer architectures and pedagogically motivated training strategies for AI tutor evaluation.'
+
 
 # Year 2024
 
