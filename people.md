@@ -455,7 +455,7 @@ layout: default
 <div class="page-header" style="background: white; padding: 1rem 0; text-align: center;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
     <h6 style="font-size: 2rem; font-weight: bold; color: #111827; margin-bottom: 1rem;">Our Team</h6>
-    <p style="font-size: 1rem; color: #6b7280; max-width: 600px; margin: 0 auto;">
+    <p style="font-size: 1rem; color: #6b7280; max-width: 1000px; margin: 0 auto;">
       Meet the talented individuals who drive innovation and research at NLIP Lab
     </p>
   </div>
