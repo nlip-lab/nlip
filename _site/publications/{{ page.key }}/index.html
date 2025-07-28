@@ -522,7 +522,23 @@
   font-weight: 600;
   color: #374151;
   margin: 2rem 0 1rem 0;
+  /* center align header */
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
+
+/* add colored underline beneath subsection headers */
+.subsection-header::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #3b82f6;
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
 .people-grid {
   display: flex;
   flex-wrap: wrap;
@@ -532,22 +548,49 @@
 }
 
 .person-card {
-  background: white;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1rem 1rem;
   text-align: center;
-  transition: all 0.2s ease;
-  /* min-height: 240px;
-  max-height: 440px;
-  min-width: 280px;
-  max-width: 360px; */
-  height: 440px;
+  /* smooth animations */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  /* subtle border for hover accent */
+  border: 1px solid rgba(59,130,246,0);
   width: 320px;
+  /* auto height to fit content */
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+/* shimmer highlight on card */
+.person-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg) translate(-100%, -100%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.person-card:hover::before {
+  transform: rotate(45deg) translate(0, 0);
+}
+
+/* elevate and scale card on hover */
+.person-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background-color: #f8f9fa;
+  border-color: rgba(59,130,246,0.5);
 }
 
 .person-avatar {
@@ -557,12 +600,16 @@
   margin: 0 auto 1rem auto;
   object-fit: cover;
   border: 1px solid #e5e7eb;
+  /* subtle avatar shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: block;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, filter 0.5s ease, box-shadow 0.3s ease;
 }
 
-.person-avatar:hover {
+.person-card:hover .person-avatar {
   transform: scale(1.1);
+  filter: brightness(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .person-name {
@@ -571,6 +618,11 @@
   color: #111827;
   margin-bottom: 0.5rem;
   line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.person-card:hover .person-name {
+  color: #3b82f6;
 }
 
 .person-title {
@@ -578,6 +630,11 @@
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.person-card:hover .person-title {
+  color: #3b82f6;
 }
 
 .person-designation {
@@ -596,6 +653,12 @@
   border-radius: 20px;
   margin-bottom: 0.5rem;
   display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.person-card:hover .person-role {
+  background-color: #dbeafe;
+  color: #1e40af;
 }
 
 .person-year {
@@ -612,32 +675,128 @@
   margin-top: auto;
 }
 
-.alumni-table {
+.alumni-tile {
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  border: 1px solid rgba(59,130,246,0);
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.alumni-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background-color: #f8f9fa;
+  border-color: rgba(59,130,246,0.5);
+}
+
+.alumni-tile::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg) translate(-100%, -100%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.alumni-tile:hover::before {
+  transform: rotate(45deg) translate(0, 0);
+}
+
+.alumni-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  border: 3px solid #e5e7eb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.alumni-avatar img {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-.alumni-table th,
-.alumni-table td {
-  padding: 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid #e5e7eb;
+.alumni-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.alumni-table th {
-  background: #f9fafb;
+.alumni-name {
+  font-size: 1.2rem;
   font-weight: 600;
+  color: #111827;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.alumni-name:hover {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.alumni-batch {
+  color: #6b7280;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: #f3f4f6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  display: inline-block;
+  width: fit-content;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.alumni-tile:hover .alumni-batch {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.alumni-affiliation {
+  color: #374151;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .go-to-top {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: #2c3e50;
+  background: #3b82f6;
   color: white;
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -646,9 +805,11 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
   z-index: 1000;
   border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .go-to-top.visible {
@@ -657,9 +818,13 @@
 }
 
 .go-to-top:hover {
-  background: #34495e;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  background: #2563eb;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+}
+
+.go-to-top:active {
+  transform: translateY(-2px) scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -676,7 +841,7 @@
   .tab {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
-    min-width: 80px;
+    min-width: min-content;
   }
   
   .people-grid {
@@ -695,6 +860,30 @@
   .person-avatar {
     width: 200px;
     height: 240px;
+  }
+  
+  .alumni-tile {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+  
+  .alumni-avatar {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .alumni-content {
+    align-items: center;
+  }
+  
+  .alumni-batch {
+    align-self: center;
+  }
+  
+  .alumni-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 </style>
@@ -1122,33 +1311,151 @@
     
   </div>
 
-  <table class="alumni-table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Batch</th>
-        <th>Current Affiliation</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><a href="https://www.linkedin.com/in/sharan21/">Sharan Narasimhan</a></td><td>Masters student (2020-2022)</td><td>Data Engineer at Indeed</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/venkateshelangovan/">Venkatesh E</a></td><td>Masters student (2020-2022)</td><td>Machine Learning Engineer at Qualcomm</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/arkadipta-de/">Arkadipta De</a></td><td>Masters student (2020-2022)</td><td>Applied AI Researcher at Fujitsu Research India</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/vandita-dutt-840646141/">Vandita Dutt</a></td><td>Masters student (2020-2022)</td><td>-</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/sagarjinde/">Sagar Jinde</a></td><td>Masters student (2019-2021)</td><td>Machine Learning Engineer at Qualcomm</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/vikramanandsingh/">Vikram Anand Singh</a></td><td>Masters student (2018-2020)</td><td>Software Developer at BNY Mellon Technology</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/shounak-kundu-53977817/">Shounak Kundu</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td><td>Machine Learning Engineer at InMobi</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/rishik-ramena-0a0b52b0/">Rishik Ramena</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018)</td><td>Software Engineer at Microsoft</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/priyambada-ambastha-133962119/">Priyambada Ambastha</a></td><td>Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</td><td><b>Gold Medalist</b> at IITH, Applied Scientist at Amazon</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/rashmi-hti-3bb52039/">Rashmi HTI</a></td><td>Masters student (2016-2018)</td><td>Associate at Goldman Sachs</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/priyanka-choudhary-9b0b46111/">Priyanka Choudhary</a></td><td>Masters student (2016-2018)</td><td>Lecturer at rpsc technical education department</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/shamikkundu/">Shamik Kundu</a></td><td>Masters student (2016-2018)</td><td>Data Scientist at Rakuten</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/manjela-toppo-021342154/">Manjela Toppo</a></td><td>Masters student(2016-2018)</td><td>-</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/shashank-singh-a527bb112/">Shashank Singh</a></td><td>Masters Student (2015-2017)</td><td>Software Developer at PayPal</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/pradyumna-deshpande-72a51455/">Pradyumna Deshpande</a></td><td>Masters Student (2015-2017)</td><td>Platform Engineer at PayPay Corporation Tokyo, Japan</td></tr>
-      <tr><td><a href="https://www.linkedin.com/in/swapdewalkar/">Swapnil Ashok Dewalakar</a></td><td>Masters student (2017-2019)</td><td>SDE at Fanatics,Inc.</td></tr>
-    </tbody>
-  </table>
+  <div class="alumni-grid">
+    <div class="alumni-tile">
+      <div class="alumni-avatar">SN</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/sharan21/" class="alumni-name">Sharan Narasimhan</a>
+        <div class="alumni-batch">Masters student (2020-2022)</div>
+        <div class="alumni-affiliation">Data Engineer at Indeed</div>
+      </div>
+    </div>
+
+    <div class="alumni-tile">
+      <div class="alumni-avatar">VE</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/venkateshelangovan/" class="alumni-name">Venkatesh E</a>
+        <div class="alumni-batch">Masters student (2020-2022)</div>
+        <div class="alumni-affiliation">Machine Learning Engineer at Qualcomm</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">AD</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/arkadipta-de/" class="alumni-name">Arkadipta De</a>
+        <div class="alumni-batch">Masters student (2020-2022)</div>
+        <div class="alumni-affiliation">Applied AI Researcher at Fujitsu Research India</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">VD</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/vandita-dutt-840646141/" class="alumni-name">Vandita Dutt</a>
+        <div class="alumni-batch">Masters student (2020-2022)</div>
+        <div class="alumni-affiliation">-</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">SJ</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/sagarjinde/" class="alumni-name">Sagar Jinde</a>
+        <div class="alumni-batch">Masters student (2019-2021)</div>
+        <div class="alumni-affiliation">Machine Learning Engineer at Qualcomm</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">VS</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/vikramanandsingh/" class="alumni-name">Vikram Anand Singh</a>
+        <div class="alumni-batch">Masters student (2018-2020)</div>
+        <div class="alumni-affiliation">Software Developer at BNY Mellon Technology</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">SK</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/shounak-kundu-53977817/" class="alumni-name">Shounak Kundu</a>
+        <div class="alumni-batch">Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</div>
+        <div class="alumni-affiliation">Machine Learning Engineer at InMobi</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">RR</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/rishik-ramena-0a0b52b0/" class="alumni-name">Rishik Ramena</a>
+        <div class="alumni-batch">Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018)</div>
+        <div class="alumni-affiliation">Software Engineer at Microsoft</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">PA</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/priyambada-ambastha-133962119/" class="alumni-name">Priyambada Ambastha</a>
+        <div class="alumni-batch">Masters student, 3-Year MTech, joint supervision with Dr. Srijith PK (2018-2021)</div>
+        <div class="alumni-affiliation"><b>Gold Medalist</b> at IITH, Applied Scientist at Amazon</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">RH</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/rashmi-hti-3bb52039/" class="alumni-name">Rashmi HTI</a>
+        <div class="alumni-batch">Masters student (2016-2018)</div>
+        <div class="alumni-affiliation">Associate at Goldman Sachs</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">PC</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/priyanka-choudhary-9b0b46111/" class="alumni-name">Priyanka Choudhary</a>
+        <div class="alumni-batch">Masters student (2016-2018)</div>
+        <div class="alumni-affiliation">Lecturer at rpsc technical education department</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">SK</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/shamikkundu/" class="alumni-name">Shamik Kundu</a>
+        <div class="alumni-batch">Masters student (2016-2018)</div>
+        <div class="alumni-affiliation">Data Scientist at Rakuten</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">MT</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/manjela-toppo-021342154/" class="alumni-name">Manjela Toppo</a>
+        <div class="alumni-batch">Masters student (2016-2018)</div>
+        <div class="alumni-affiliation">-</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">SS</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/shashank-singh-a527bb112/" class="alumni-name">Shashank Singh</a>
+        <div class="alumni-batch">Masters Student (2015-2017)</div>
+        <div class="alumni-affiliation">Software Developer at PayPal</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">PD</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/pradyumna-deshpande-72a51455/" class="alumni-name">Pradyumna Deshpande</a>
+        <div class="alumni-batch">Masters Student (2015-2017)</div>
+        <div class="alumni-affiliation">Platform Engineer at PayPay Corporation Tokyo, Japan</div>
+      </div>
+    </div>
+    
+    <div class="alumni-tile">
+      <div class="alumni-avatar">SD</div>
+      <div class="alumni-content">
+        <a href="https://www.linkedin.com/in/swapdewalkar/" class="alumni-name">Swapnil Ashok Dewalakar</a>
+        <div class="alumni-batch">Masters student (2017-2019)</div>
+        <div class="alumni-affiliation">SDE at Fanatics,Inc.</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Interns Tab -->
