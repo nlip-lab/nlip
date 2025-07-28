@@ -490,7 +490,7 @@ layout: default
         </div>
         <div class="person-designation">{{person.designation}}</div>
         {% if person.specialization %}
-          <div class="person-role>{{person.specialization}}</div>
+          <div class="person-role">{{person.specialization}}</div>
         {% endif %}
         <div class="person-affiliation">{{person.affiliation}}</div>
       </div>
