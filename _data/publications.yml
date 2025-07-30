@@ -65,7 +65,7 @@
   journal: "2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)"
   abstract: 'Drones excel at capturing aerial-view images, especially in human unreachable areas. Automatically interpreting and describing these images enables decision-making easier without the need to review the images extensively. Traditional image captioning models struggle with aerial imagery due to diverse orientations, perspectives, and unclear objects. Integrating the capabilities of Large Vision Language Models (LVLMs) with drone images can improve description utility, benefiting strategic missions like surveillance, search and rescue, etc. However, the lack of image-caption datasets for drone imagery poses a significant challenge for training and evaluating drone image captioning. To address this gap, we contribute the first Aerial-view Image Captioning dataset (AeroCaps), containing four captions per image. Another major hurdle for the task is the hallucinatory nature of LVLMs. To this end, we perform the first extensive analysis of hallucinations on aerial imagery by two SOTA LVLMs - LLaVA and InstructBLIP on our proposed dataset and VisDrone. We explore the reasons behind such hallucinations. We release the LVLM-generated image captions along with our hallucination-labelled annotations as the Labelled Illusion Dataset (LID) for further research. Additionally, we review how effective advanced LLMs like GPT-4 are in evaluating the degree of hallucinations made by other LVLMs like LLaVA.'
   year: 2025
-  month: 10
+  month: 4
   highlight: 1
   img: "aerial-mirage.png"
   bibtex: aerial-mirage
