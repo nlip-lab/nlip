@@ -23,6 +23,5 @@ bibtex: |
         urldate    = {2025-07-26},
         month      = jun,
         year       = {2025},
-        file       = {Full Text PDF:/home/devendra/snap/zotero-snap/common/Zotero/storage/9AYU6MNS/2025 - MorphTok Morphologically Grounded Tokenization for Indic languages.pdf:application/pdf}
     }
 ---

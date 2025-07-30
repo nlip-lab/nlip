@@ -28,6 +28,5 @@ bibtex: |
         month     = jul,
         year      = {2025},
         pages     = {24407--24417},
-        file      = {Full Text PDF:/home/devendra/snap/zotero-snap/common/Zotero/storage/LYMA8AC4/Dani et al. - 2025 - Semantics-aware prompting for translating NOtices To AirMen.pdf:application/pdf}
     }
 ---

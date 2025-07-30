@@ -27,6 +27,5 @@ bibtex: |
       note      = {ISSN: 2835-3420},
       keywords  = {Conversational AI, Data science, Emotion recognition, Generative AI, Large language models, Measurement, Probabilistic logic, Question answering (information retrieval), Safety, Training, Translation},
       pages     = {32--39},
-      file      = {Full Text PDF:/home/devendra/snap/zotero-snap/common/Zotero/storage/R2CDBS4M/Maheswaran et al. - 2025 - Probing the Inherent Ability of Large Language Models for Generating Empathetic Responses.pdf:application/pdf}
   }
 ---
