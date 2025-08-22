@@ -144,6 +144,7 @@ permalink: /publication/
 
 .publication-title a:hover {
   color: #3498db;
+  text-decoration: underline;
 }
 
 .publication-title a::after {
@@ -247,6 +248,10 @@ permalink: /publication/
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.journal-url {
+  /* color:hsl(204, 86%, 53%) !important; */
 }
 
 .publication-link:hover {

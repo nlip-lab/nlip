@@ -7,10 +7,10 @@
   <title>{{ page.title | default: site.name }} - IIT Hyderabad</title>
 
   <!-- CSS from default.html -->
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600"> -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" />
+  <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'> -->
+  <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" /> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -57,6 +57,10 @@
   <script src="{{ site.baseurl }}/js/transition.js"></script>
 
   <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+
     /* Styles from default.html (general site styles) */
     .carousel {
       border-radius: 10px;
@@ -91,6 +95,27 @@
       margin: 30px auto;
       text-align: center;
     }
+
+    .publication-authors p {
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+    
+    a {
+      color: hsl(204, 86%, 53%) !important;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: hsl(204, 93%, 48%) !important;
+      text-decoration: underline;
+    }
+
+    .publication-affiliation {
+
+    }
+
   </style>
 </head>
 
@@ -105,11 +130,17 @@
           <div class="is-size-5 publication-authors" style="text-align: center;">
             {{ page.authors | markdownify }}
           </div>
-          <div class="is-size-5 publication-authors" style="text-align: center;">
+          <div class="is-size-5 publication-affiliation" style="text-align: center;">
             {{ page.affiliation | markdownify }}
-            {% if page.journal %}<br><span style="font-size:1.3rem; font-weight:700; color:#2c3e50;">{{ page.journal
-              }}</span>{% endif %}
+            {% if page.equalcontribution %}
+              <span style="color:#8e8e91">^ Indicates Equal Contribution</span>
+            {% endif %}
           </div>
+          {% if page.journal %}
+            <br>
+            <div style="font-size:1.3rem;">
+              <a class="journal-url" href="{{ page.journal_url }}" target="_blank">{{ page.journal }}</a></div>
+            {% endif %}
           <div class="column has-text-centered" style="text-align: center;"></div>
           <div class="publication-links"
             style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap;">
@@ -218,9 +249,24 @@
   {% if page.teaser_img %}
   <section class="hero teaser">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <img src="{{ page.teaser_img }}" />
-        <h2 class="subtitle has-text-centered">{{ page.teaser_caption }}</h2>
+      <div class="hero-body" style="text-align: center;">
+        <img src="{{ site.baseurl }}/publications/images/{{ page.teaser_img }}" style="max-width: 100%; max-height: 500px; display: inline-block;"/>
+        <p class="subtitle has-text-justified">{{ page.teaser_caption }}</p>
+      </div>
+      
+    </div>
+  </section>
+  {% endif %}
+  {% if page.tldr %}
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p style="text-align: justify; font-style: italic; font-size: large;"><b>TL;DR:</b> {{ page.tldr }}</p>
+          </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -229,14 +275,57 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3" style="text-align: center;">Abstract</h2>
           <div class="content has-text-justified">
-            <p>{{ page.abstract }}</p>
+            <p style="text-align: justify;">{{ page.abstract }}</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- Contents -->
+  {% if page.other_content == 1%}
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" style="text-align: center;"> {{ page.content_title_1 }}</h2>
+          <div class="content has-text-justified">
+            <p style="text-align: justify;">{{ page.content_content_1 }}</p>
+          </div>
+        </div>
+        <div class="spotlight-image-wrapper" style="width: 100%; text-align: center; margin: 1.5rem 0">
+          <img src="{{ site.baseurl }}/publications/images/{{ page.content_image_1 }}" alt="{{ page.title }} image"
+            style="max-width: 100%; max-height: 400px; display: inline-block; border-radius: 8px;" />
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" style="text-align: center;"> {{ page.content_title_2 }}</h2>
+          <div class="content has-text-justified">
+            <p style="text-align: justify;">{{ page.content_content_2 }}</p>
+          </div>
+        </div>
+        <div class="spotlight-image-wrapper" style="width: 100%; text-align: center; margin: 1.5rem 0">
+          <img src="{{ site.baseurl }}/publications/images/{{ page.content_image_2 }}"
+            style="max-width: 100%; max-height: 400px; display: inline-block; border-radius: 8px;" />
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" style="text-align: center;"> {{ page.content_title_3 }}</h2>
+          <div class="content has-text-justified">
+            <p style="text-align: justify;">{{ page.content_content_3 }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  
+  <!-- End content -->
   {% if page.carousel %}
   {{ page.carousel | markdownify }}
   {% endif %}
@@ -278,6 +367,19 @@
     </div>
   </section>
   {% endif %}
+
+  <section>
+    <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered" style="text-align: center; padding:5px">
+       <a href="https://nlip-lab.github.io/nlip">
+          Go back to NLIP Lab
+       </a>
+      </div>
+    </div>
+  </div>
+  </section>
+  
 
   <!-- Scripts from default.html's body (to be placed before closing </body>) -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
