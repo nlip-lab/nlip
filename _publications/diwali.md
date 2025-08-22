@@ -3,7 +3,7 @@ layout: publication_spotlight
 collections: publications
 key: diwali
 img: "analysis2_diwali.png"
-title: "🪔 DIWALI - Diversity and Inclusivity aWare cuLture specific Items for India"
+title: "🪔 DIWALI - Diversity and Inclusivity aWare cuLture specific Items for India <br><p style='font-size:0.8rem; padding:2px'>Dataset and Assessment of LLMs for Cultural Text Adaptation in Indian Context</p>"
 authors: "[Pramit Sahoo^](https://pramitsahoo.github.io/), [Maharaj Brahma^](https://maharajbrahma.github.io/), [Maunendra Sankar Desarkar](https://people.iith.ac.in/maunendra/)"
 affiliation: "Natural Language and Information Processing Lab (NLIP)<br>Indian Institute of Technology Hyderabad<br>Hyderabad, India"
 tldr: "We create a novel Cultural Specific Items Dataset for 36 Indian sub-regions. Our dataset comprises ~8k culturally relevant items belonging to 17 cultural facets."
