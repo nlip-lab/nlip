@@ -7,10 +7,10 @@
   <title>Meta-XNLG: A Meta-Learning Approach Based on Language Clustering for Zero-Shot Cross-Lingual Transfer and Generation - IIT Hyderabad</title>
 
   <!-- CSS from default.html -->
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600"> -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" />
+  <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'> -->
+  <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" /> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -57,6 +57,10 @@
   <script src="/nlip/js/transition.js"></script>
 
   <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+
     /* Styles from default.html (general site styles) */
     .carousel {
       border-radius: 10px;
@@ -91,6 +95,27 @@
       margin: 30px auto;
       text-align: center;
     }
+
+    .publication-authors p {
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+    
+    a {
+      color: hsl(204, 86%, 53%) !important;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: hsl(204, 93%, 48%) !important;
+      text-decoration: underline;
+    }
+
+    .publication-affiliation {
+
+    }
+
   </style>
 </head>
 
@@ -106,11 +131,16 @@
             <p>Kaushal Maurya and Maunendra Sankar Desarkar</p>
 
           </div>
-          <div class="is-size-5 publication-authors" style="text-align: center;">
+          <div class="is-size-5 publication-affiliation" style="text-align: center;">
             
 
-            <br><span style="font-size:1.3rem; font-weight:700; color:#2c3e50;">Findings of the Association for Computational Linguistics, ACL 2022</span>
+            
           </div>
+          
+            <br>
+            <div style="font-size:1.3rem;">
+              <a class="journal-url" href="" target="_blank">Findings of the Association for Computational Linguistics, ACL 2022</a></div>
+            
           <div class="column has-text-centered" style="text-align: center;"></div>
           <div class="publication-links"
             style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap;">
@@ -186,18 +216,23 @@
     </div>
   </section>
   
+  
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3" style="text-align: center;">Abstract</h2>
           <div class="content has-text-justified">
-            <p>Recently, the NLP community has witnessed a rapid advancement in multilingual and cross-lingual transfer research where the supervision is transferred from high-resource languages (HRLs) to low-resource languages (LRLs). However, the cross-lingual transfer is not uniform across languages, particularly in the zero-shot setting. Towards this goal, one promising research direction is to learn shareable structures across multiple tasks with limited annotated data. The downstream multilingual applications may benefit from such a learning setup as most of the languages across the globe are low-resource and share some structures with other languages. In this paper, we propose a novel meta-learning framework (called Meta-X$_{NLG}$) to learn shareable structures from typologically diverse languages based on meta-learning and language clustering. This is a step towards uniform cross-lingual transfer for unseen languages. We first cluster the languages based on language representations and identify the centroid language of each cluster. Then, a meta-learning algorithm is trained with all centroid languages and evaluated on the other languages in the zero-shot setting. We demonstrate the effectiveness of this modeling on two NLG tasks (Abstractive Text Summarization and Question Generation), 5 popular datasets and 30 typologically diverse languages. Consistent improvements over strong baselines demonstrate the efficacy of the proposed framework. The careful design of the model makes this end-to-end NLG setup less vulnerable to the accidental translation problem, which is a prominent concern in zero-shot cross-lingual NLG tasks.</p>
+            <p style="text-align: justify;">Recently, the NLP community has witnessed a rapid advancement in multilingual and cross-lingual transfer research where the supervision is transferred from high-resource languages (HRLs) to low-resource languages (LRLs). However, the cross-lingual transfer is not uniform across languages, particularly in the zero-shot setting. Towards this goal, one promising research direction is to learn shareable structures across multiple tasks with limited annotated data. The downstream multilingual applications may benefit from such a learning setup as most of the languages across the globe are low-resource and share some structures with other languages. In this paper, we propose a novel meta-learning framework (called Meta-X$_{NLG}$) to learn shareable structures from typologically diverse languages based on meta-learning and language clustering. This is a step towards uniform cross-lingual transfer for unseen languages. We first cluster the languages based on language representations and identify the centroid language of each cluster. Then, a meta-learning algorithm is trained with all centroid languages and evaluated on the other languages in the zero-shot setting. We demonstrate the effectiveness of this modeling on two NLG tasks (Abstractive Text Summarization and Question Generation), 5 popular datasets and 30 typologically diverse languages. Consistent improvements over strong baselines demonstrate the efficacy of the proposed framework. The careful design of the model makes this end-to-end NLG setup less vulnerable to the accidental translation problem, which is a prominent concern in zero-shot cross-lingual NLG tasks.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- Contents -->
+  
+  
+  <!-- End content -->
   
   
   
@@ -229,6 +264,19 @@
         </div>
       </div>
     </div>
+  </section>
+  
+
+  <section>
+    <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered" style="text-align: center; padding:5px">
+       <a href="https://nlip-lab.github.io/nlip">
+          Go back to NLIP Lab
+       </a>
+      </div>
+    </div>
+  </div>
   </section>
   
 

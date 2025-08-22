@@ -7,10 +7,10 @@
   <title>HyperHawkes: Hypernetwork based Neural Temporal Point Process - IIT Hyderabad</title>
 
   <!-- CSS from default.html -->
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600"> -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" />
+  <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'> -->
+  <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" /> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -57,6 +57,10 @@
   <script src="/nlip/js/transition.js"></script>
 
   <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+
     /* Styles from default.html (general site styles) */
     .carousel {
       border-radius: 10px;
@@ -91,6 +95,27 @@
       margin: 30px auto;
       text-align: center;
     }
+
+    .publication-authors p {
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+    
+    a {
+      color: hsl(204, 86%, 53%) !important;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: hsl(204, 93%, 48%) !important;
+      text-decoration: underline;
+    }
+
+    .publication-affiliation {
+
+    }
+
   </style>
 </head>
 
@@ -106,11 +131,16 @@
             <p>Manisha Dubey, PK Srijith, Maunendra Sankar Desarkar</p>
 
           </div>
-          <div class="is-size-5 publication-authors" style="text-align: center;">
+          <div class="is-size-5 publication-affiliation" style="text-align: center;">
             
 
-            <br><span style="font-size:1.3rem; font-weight:700; color:#2c3e50;">arXiv preprint arXiv:2205.02309</span>
+            
           </div>
+          
+            <br>
+            <div style="font-size:1.3rem;">
+              <a class="journal-url" href="" target="_blank">arXiv preprint arXiv:2205.02309</a></div>
+            
           <div class="column has-text-centered" style="text-align: center;"></div>
           <div class="publication-links"
             style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap;">
@@ -147,18 +177,23 @@
     </div>
   </section>
   
+  
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3" style="text-align: center;">Abstract</h2>
           <div class="content has-text-justified">
-            <p>Temporal point process serves as an essential tool for modeling time-to-event data in continuous time space. Despite having massive amounts of event sequence data from various domains like social media, healthcare etc., real world application of temporal point process faces two major challenges: 1) it is not generalizable to predict events from unseen sequences in dynamic environment 2) they are not capable of thriving in continually evolving environment with minimal supervision while retaining previously learnt knowledge. To tackle these issues, we propose 	extit{HyperHawkes}, a hypernetwork based temporal point process framework which is capable of modeling time of occurrence of events for unseen sequences. Thereby, we solve the problem of zero-shot learning for time-to-event modeling. We also develop a hypernetwork based continually learning temporal point process for continuous modeling of time-to-event sequences with minimal forgetting. In this way, 	extit{HyperHawkes} augments the temporal point process with zero-shot modeling and continual learning capabilities. We demonstrate the application of the proposed framework through our experiments on two real-world datasets. Our results show the efficacy of the proposed approach in terms of predicting future events under zero-shot regime for unseen event sequences. We also show that the proposed model is able to predict sequences continually while retaining information from previous event sequences, hence mitigating catastrophic forgetting for time-to-event data.</p>
+            <p style="text-align: justify;">Temporal point process serves as an essential tool for modeling time-to-event data in continuous time space. Despite having massive amounts of event sequence data from various domains like social media, healthcare etc., real world application of temporal point process faces two major challenges: 1) it is not generalizable to predict events from unseen sequences in dynamic environment 2) they are not capable of thriving in continually evolving environment with minimal supervision while retaining previously learnt knowledge. To tackle these issues, we propose 	extit{HyperHawkes}, a hypernetwork based temporal point process framework which is capable of modeling time of occurrence of events for unseen sequences. Thereby, we solve the problem of zero-shot learning for time-to-event modeling. We also develop a hypernetwork based continually learning temporal point process for continuous modeling of time-to-event sequences with minimal forgetting. In this way, 	extit{HyperHawkes} augments the temporal point process with zero-shot modeling and continual learning capabilities. We demonstrate the application of the proposed framework through our experiments on two real-world datasets. Our results show the efficacy of the proposed approach in terms of predicting future events under zero-shot regime for unseen event sequences. We also show that the proposed model is able to predict sequences continually while retaining information from previous event sequences, hence mitigating catastrophic forgetting for time-to-event data.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- Contents -->
+  
+  
+  <!-- End content -->
   
   
   
@@ -185,6 +220,19 @@
         </div>
       </div>
     </div>
+  </section>
+  
+
+  <section>
+    <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered" style="text-align: center; padding:5px">
+       <a href="https://nlip-lab.github.io/nlip">
+          Go back to NLIP Lab
+       </a>
+      </div>
+    </div>
+  </div>
   </section>
   
 

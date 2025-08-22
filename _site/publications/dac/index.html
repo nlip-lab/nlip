@@ -7,10 +7,10 @@
   <title>DAC: Quantized Optimal Transport Reward-based Reinforcement Learning Approach to Detoxify Query Auto-Completion - IIT Hyderabad</title>
 
   <!-- CSS from default.html -->
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600"> -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" />
+  <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'> -->
+  <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" /> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -57,6 +57,10 @@
   <script src="/nlip/js/transition.js"></script>
 
   <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+
     /* Styles from default.html (general site styles) */
     .carousel {
       border-radius: 10px;
@@ -91,6 +95,27 @@
       margin: 30px auto;
       text-align: center;
     }
+
+    .publication-authors p {
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+    
+    a {
+      color: hsl(204, 86%, 53%) !important;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: hsl(204, 93%, 48%) !important;
+      text-decoration: underline;
+    }
+
+    .publication-affiliation {
+
+    }
+
   </style>
 </head>
 
@@ -106,11 +131,16 @@
             <p>Aishwarya Maheswaran, Kaushal Kumar Maurya, Manish Gupta, Maunendra Sankar Desarkar</p>
 
           </div>
-          <div class="is-size-5 publication-authors" style="text-align: center;">
+          <div class="is-size-5 publication-affiliation" style="text-align: center;">
             
 
-            <br><span style="font-size:1.3rem; font-weight:700; color:#2c3e50;">47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2024)</span>
+            
           </div>
+          
+            <br>
+            <div style="font-size:1.3rem;">
+              <a class="journal-url" href="" target="_blank">47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2024)</a></div>
+            
           <div class="column has-text-centered" style="text-align: center;"></div>
           <div class="publication-links"
             style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap;">
@@ -161,18 +191,23 @@
     </div>
   </section>
   
+  
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3" style="text-align: center;">Abstract</h2>
           <div class="content has-text-justified">
-            <p>Modern Query Auto-Completion (QAC) systems utilize natural language generation (NLG) using large language models (LLM) to achieve remarkable performance. However, these systems are prone to generating biased and toxic completions due to inherent learning biases. Existing detoxification approaches exhibit two key limitations: (1) They primarily focus on mitigating toxicity for grammatically well-formed long sentences but struggle to adapt to the QAC task, where queries are short and structurally different (include spelling errors, do not follow grammatical rules and have relatively flexible word order). (2) These approaches often view detoxification through a binary lens where all text labeled as toxic is undesirable and non-toxic is considered desirable. To address these limitations, we propose DAC, an intuitive and efficient reinforcement learning-based model to detoxify QAC. With DAC, we introduce an additional perspective of considering the third query class of addressable toxicity. These queries can encompass implicit toxicity, subjective toxicity, or non-toxic queries containing toxic words. We incorporate this three-class query behavior perspective into the proposed model through quantized optimal transport to learn distinctions and generate truly non-toxic completions. We evaluate toxicity levels in the generated completions by DAC across two real-world QAC datasets (Bing and AOL) using two classifiers: a publicly available generic classifier (Detoxify) and a search query-specific classifier, which we develop (TClassify). we find that DAC consistently outperforms all existing baselines on the Bing dataset and achieves competitive performance on the AOL dataset for query detoxification. % providing high quality and low toxicity. We make the code and models publicly available.</p>
+            <p style="text-align: justify;">Modern Query Auto-Completion (QAC) systems utilize natural language generation (NLG) using large language models (LLM) to achieve remarkable performance. However, these systems are prone to generating biased and toxic completions due to inherent learning biases. Existing detoxification approaches exhibit two key limitations: (1) They primarily focus on mitigating toxicity for grammatically well-formed long sentences but struggle to adapt to the QAC task, where queries are short and structurally different (include spelling errors, do not follow grammatical rules and have relatively flexible word order). (2) These approaches often view detoxification through a binary lens where all text labeled as toxic is undesirable and non-toxic is considered desirable. To address these limitations, we propose DAC, an intuitive and efficient reinforcement learning-based model to detoxify QAC. With DAC, we introduce an additional perspective of considering the third query class of addressable toxicity. These queries can encompass implicit toxicity, subjective toxicity, or non-toxic queries containing toxic words. We incorporate this three-class query behavior perspective into the proposed model through quantized optimal transport to learn distinctions and generate truly non-toxic completions. We evaluate toxicity levels in the generated completions by DAC across two real-world QAC datasets (Bing and AOL) using two classifiers: a publicly available generic classifier (Detoxify) and a search query-specific classifier, which we develop (TClassify). we find that DAC consistently outperforms all existing baselines on the Bing dataset and achieves competitive performance on the AOL dataset for query detoxification. % providing high quality and low toxicity. We make the code and models publicly available.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- Contents -->
+  
+  
+  <!-- End content -->
   
   
   
@@ -207,6 +242,19 @@
         </div>
       </div>
     </div>
+  </section>
+  
+
+  <section>
+    <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered" style="text-align: center; padding:5px">
+       <a href="https://nlip-lab.github.io/nlip">
+          Go back to NLIP Lab
+       </a>
+      </div>
+    </div>
+  </div>
   </section>
   
 

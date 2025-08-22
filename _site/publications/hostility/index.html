@@ -7,10 +7,10 @@
   <title>Coarse and Fine-Grained Hostility Detection in Hindi Posts using Fine Tuned Multilingual Embeddings - IIT Hyderabad</title>
 
   <!-- CSS from default.html -->
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600"> -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" />
+  <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic' rel='stylesheet' type='text/css'> -->
+  <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto" /> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -57,6 +57,10 @@
   <script src="/nlip/js/transition.js"></script>
 
   <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+
     /* Styles from default.html (general site styles) */
     .carousel {
       border-radius: 10px;
@@ -91,6 +95,27 @@
       margin: 30px auto;
       text-align: center;
     }
+
+    .publication-authors p {
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+    
+    a {
+      color: hsl(204, 86%, 53%) !important;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: hsl(204, 93%, 48%) !important;
+      text-decoration: underline;
+    }
+
+    .publication-affiliation {
+
+    }
+
   </style>
 </head>
 
@@ -106,11 +131,16 @@
             <p>Arkadipta De, Venkatesh E, Kaushal Kumar Maurya, and Maunendra Sankar Desarkar</p>
 
           </div>
-          <div class="is-size-5 publication-authors" style="text-align: center;">
+          <div class="is-size-5 publication-affiliation" style="text-align: center;">
             
 
-            <br><span style="font-size:1.3rem; font-weight:700; color:#2c3e50;">CONSTRAIN 2021 (Workshop on Combating Online Hostile Posts in Regional Languages during Emergency Situation)</span>
+            
           </div>
+          
+            <br>
+            <div style="font-size:1.3rem;">
+              <a class="journal-url" href="" target="_blank">CONSTRAIN 2021 (Workshop on Combating Online Hostile Posts in Regional Languages during Emergency Situation)</a></div>
+            
           <div class="column has-text-centered" style="text-align: center;"></div>
           <div class="publication-links"
             style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap;">
@@ -174,18 +204,23 @@
     </div>
   </section>
   
+  
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3" style="text-align: center;">Abstract</h2>
           <div class="content has-text-justified">
-            <p>Due to the wide adoption of social media platforms like Facebook, Twitter, etc., there is an emerging need of detecting online posts that can go against the community acceptance standards. The hostility detection task has been well explored for resource-rich languages like English, but is unexplored for resource-constrained languages like Hindi due to the unavailability of large suitable data. We view this hostility detection as a multi-label multi-class classification problem. We propose an effective neural network-based technique for hostility detection in Hindi posts. We leverage pre-trained multilingual Bidirectional Encoder Representations of Transformer (mBERT) to obtain the contextual representations of Hindi posts. We have performed extensive experiments including different pre-processing techniques, pre-trained models, neural architectures, hybrid strategies, etc. Our best performing neural classifier model includes One-vs-the-Rest approach where we obtained 92.60%, 81.14%, 69.59%, 75.29% and 73.01% F1 scores for hostile, fake, hate, offensive, and defamation labels respectively. The proposed model (https://​github.​com/​Arko98/​Hostility-Detection-in-Hindi-Constraint-2021) outperformed the existing baseline models and emerged as the state-of-the-art model for detecting hostility in the Hindi posts.</p>
+            <p style="text-align: justify;">Due to the wide adoption of social media platforms like Facebook, Twitter, etc., there is an emerging need of detecting online posts that can go against the community acceptance standards. The hostility detection task has been well explored for resource-rich languages like English, but is unexplored for resource-constrained languages like Hindi due to the unavailability of large suitable data. We view this hostility detection as a multi-label multi-class classification problem. We propose an effective neural network-based technique for hostility detection in Hindi posts. We leverage pre-trained multilingual Bidirectional Encoder Representations of Transformer (mBERT) to obtain the contextual representations of Hindi posts. We have performed extensive experiments including different pre-processing techniques, pre-trained models, neural architectures, hybrid strategies, etc. Our best performing neural classifier model includes One-vs-the-Rest approach where we obtained 92.60%, 81.14%, 69.59%, 75.29% and 73.01% F1 scores for hostile, fake, hate, offensive, and defamation labels respectively. The proposed model (https://​github.​com/​Arko98/​Hostility-Detection-in-Hindi-Constraint-2021) outperformed the existing baseline models and emerged as the state-of-the-art model for detecting hostility in the Hindi posts.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- Contents -->
+  
+  
+  <!-- End content -->
   
   
   
@@ -222,6 +257,19 @@
         </div>
       </div>
     </div>
+  </section>
+  
+
+  <section>
+    <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered" style="text-align: center; padding:5px">
+       <a href="https://nlip-lab.github.io/nlip">
+          Go back to NLIP Lab
+       </a>
+      </div>
+    </div>
+  </div>
   </section>
   
 
