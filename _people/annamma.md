@@ -23,7 +23,7 @@ layout: profile
 <div class="col-1" style="width:5px">
     <a href="mailto:cs25resch11006@iith.ac.in" target="_blank"><samp>cs25resch11006@iith.ac.in</samp></a>
     <span style="display: block; margin-bottom: 0.5em"></span>
-    <a href="https://github.com/devendew" target="_blank"><samp>Homepage</samp></a><br>
+    <a href="http://linkedin.com/in/annamma-t-philip-929845202" target="_blank"><samp>Homepage</samp></a><br>
     <span style="display: block; margin-bottom: 0.5em"></span>
 </div>
 </div>
