@@ -9,6 +9,9 @@ affiliation: "Natural Language and Information Processing Lab (NLIP)<br>Indian I
 tldr: "We create a novel Cultural Specific Items Dataset for 36 Indian sub-regions. Our dataset comprises ~8k culturally relevant items belonging to 17 cultural facets."
 equalcontribution: 1
 journal: "EMNLP Main 2025"
+pdf: "https://arxiv.org/pdf/2509.17399v1"
+code: "https://huggingface.co/datasets/nlip/DIWALI"
+link: "https://arxiv.org/abs/2509.17399v1"
 journal_url: "https://2025.emnlp.org/"
 abstract: "Large language models (LLMs) are used in various applications. However, despite its wide capabilities, it is shown to lack cultural alignment and produce biased generations due to a lack of cultural knowledge and competence. Evaluation of LLMs for cultural awareness and alignment is particularly challenging due to the lack of proper evaluation metrics and the unavailability of culturally grounded datasets representing the vast complexity of cultures at the regional and sub-regional levels. Existing datasets for culture-specific items (CSIs) focus primarily on concepts at regional levels and contain several inconsistencies regarding the cultural attribution of items. To address this issue, we created a novel CSI dataset for Indian culture, belonging to 17 cultural facets. The dataset comprises ~8k cultural concepts from 36 sub-regions. To measure cultural competence, we evaluate the adaptation of LLMs to cultural text using the created CSIs, LLM-based, and human evaluations. Also, we perform quantitative analysis demonstrating selective sub-regional coverage and surface-level adaptations across all considered LLMs."
 year: 2025
