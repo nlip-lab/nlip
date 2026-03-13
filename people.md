@@ -466,6 +466,7 @@ layout: default
     <div class="tabs">
       <div class="tab active" data-tab="faculty">Faculty</div>
       <div class="tab" data-tab="phd">PhD</div>
+      <div class="tab" data-tab="mtech-ra">MTech RA</div>
       <div class="tab" data-tab="mtech">MTech</div>
       <!-- <div class="tab" data-tab="interns">Interns</div> -->
     </div>
@@ -542,6 +543,35 @@ layout: default
         {% endif %} -->
         <div class="person-affiliation">{{person.affiliation}}</div>
       </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- MTech RA Tab -->
+<div id="mtech-ra-content" class="tab-content">
+  <div class="people-grid">
+    {% assign mtech_ra = site.people | where: 'position', 'mtech-ra' %}
+    {% for person in mtech_ra %}
+    <div class="person-card">
+      {% if person.avatar %}
+        <img class="person-avatar" src="{{site.baseurl}}/images/people/{{person.avatar}}" alt="{{person.name}}">
+      {% else %}
+        <img class="person-avatar" src="http://evanssheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg" alt="{{person.name}}">
+      {% endif %}
+      <div class="person-name">{{person.name}}</div>
+      {% if person.title %}
+        <div class="person-title">{{person.title}}</div>
+      {% endif %}
+      {% if person.role %}
+        <div class="person-role">{{person.role}}</div>
+      {% endif %}
+      {% if person.joining_year %}
+        <div class="person-year">Joined: {{person.joining_year}}</div>
+      {% endif %}
+      {% if person.affiliation %}
+        <div class="person-affiliation">{{person.affiliation}}</div>
+      {% endif %}
+    </div>
     {% endfor %}
   </div>
 </div>

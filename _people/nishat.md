@@ -1,6 +1,6 @@
 ---
 name: Sk Nishat Saama
-position: masters
+position: mtech-ra
 avatar: nishat.png
 twitter:
 passout: 0
