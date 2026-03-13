@@ -550,28 +550,23 @@ layout: default
 <!-- MTech RA Tab -->
 <div id="mtech-ra-content" class="tab-content">
   <div class="people-grid">
-    {% assign mtech_ra = site.people | where: 'position', 'mtech-ra' %}
-    {% for person in mtech_ra %}
-    <div class="person-card">
-      {% if person.avatar %}
-        <img class="person-avatar" src="{{site.baseurl}}/images/people/{{person.avatar}}" alt="{{person.name}}">
-      {% else %}
-        <img class="person-avatar" src="http://evanssheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg" alt="{{person.name}}">
-      {% endif %}
-      <div class="person-name">{{person.name}}</div>
-      {% if person.title %}
-        <div class="person-title">{{person.title}}</div>
-      {% endif %}
-      {% if person.role %}
-        <div class="person-role">{{person.role}}</div>
-      {% endif %}
-      {% if person.joining_year %}
-        <div class="person-year">Joined: {{person.joining_year}}</div>
-      {% endif %}
-      {% if person.affiliation %}
+    {% assign mtech_ra_current = site.people | where: 'position', 'mtech-ra' | where: 'passout', '0' | sort: 'joining_year' %}
+    {% for person in mtech_ra_current %}
+      <div class="person-card">
+        {% if person.avatar %}
+          <img class="person-avatar" src="{{site.baseurl}}/images/people/{{person.avatar}}" alt="{{person.name}}">
+        {% else %}
+          <img class="person-avatar" src="http://evanssheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg" alt="{{person.name}}">
+        {% endif %}
+        <div class="person-name">
+          <a href="{{ site.baseurl }}{{ person.url }}" style="text-decoration: none; color: inherit;">{{person.name}}</a>
+        </div>
+        <div class="person-title">MTech RA Student</div>
+        {% if person.role %}
+          <div class="person-role">M.Tech RA {{person.role}}</div>
+        {% endif %}
         <div class="person-affiliation">{{person.affiliation}}</div>
-      {% endif %}
-    </div>
+      </div>
     {% endfor %}
   </div>
 </div>
