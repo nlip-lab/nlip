@@ -37,7 +37,7 @@ designation: 'Associate Professor, <br>CSE Department, IIT Hyderabad'
 #### Bio
 
 <p style="text-align:justify">
-<a href="https://people.iith.ac.in/maunendra/" target="_blank">Dr. Maunendra Sankar Desarkar</a> is an Associate Professor at the <a href="https://cse.iith.ac.in/" target="_blank">Computer Science and Engineering Department</a> at IIT Hyderabad, India. Currently, he is also serving as the Head of the Department of the <a href="https://ai.iith.ac.in/" target="_blank">AI Department</a> at IIT Hyderabad. His main research areas are Natural Language Processing, Information Retrieval, Recommendation Systems, Machine Learning. He is a part of the Natural Language and Information Processing Group (NLIP) at IIT Hyderabad. Prior to Joining IIT Hyderabad, he has worked for Samsung Research India Bangalore and Sybase Inc. (an SAP Company) in the past. He has been involved with multiple programs and projects with Governments as well as industries. He also serves as a reviewer for multiple prestigious conferences such as AAAI, NeurIPS, EMNLP, SDM, WSDM, Social Network Analysis and Mining, IEEE Transactions of Computational Social Sciences, IEEE Transactions on Knowledge and Data Engineering, etc.
+<a href="https://people.iith.ac.in/maunendra/" target="_blank">Dr. Maunendra Sankar Desarkar</a> is an Associate Professor at the <a href="https://cse.iith.ac.in/" target="_blank">Computer Science and Engineering Department</a> at IIT Hyderabad, India. His main research areas are Natural Language Processing, Information Retrieval, Recommendation Systems, Machine Learning. He is a part of the Natural Language and Information Processing Group (NLIP) at IIT Hyderabad. Prior to Joining IIT Hyderabad, he has worked for Samsung Research India Bangalore and Sybase Inc. (an SAP Company) in the past. He has been involved with multiple programs and projects with Governments as well as industries. He also serves as a reviewer for multiple prestigious conferences such as AAAI, NeurIPS, EMNLP, SDM, WSDM, Social Network Analysis and Mining, IEEE Transactions of Computational Social Sciences, IEEE Transactions on Knowledge and Data Engineering, etc.
 </p>
 
 #### Research Interests
@@ -48,7 +48,7 @@ designation: 'Associate Professor, <br>CSE Department, IIT Hyderabad'
 - Machine Learning
 
 **Office:** <br>
-Room: B-412, Academic Block B <br>
+Room: CS-506, CSE Building <br>
 Indian Institute of Technology Hyderabad<br>
 Kandi-502284, Sangareddy<br>
 Telangana, India<br>
