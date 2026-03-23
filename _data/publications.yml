@@ -1,5 +1,18 @@
-# Year 2025
+# Year 2026
+- key: "unified-emotion"
+  authors: "Aishwarya Maheswaran, Maunendra Sankar Desarkar"
+  title: "A Unified View on Emotion Representation in Large Language Models"
+  journal: "EACL"
+  abstract: "Interest in leveraging Large Language Models (LLMs) for emotional support systems motivates the need to understand how these models comprehend and represent emotions internally. While recent works show the presence of emotion concepts in the hidden state representations, it’s unclear if the model has a robust representation that is consistent across different datasets. In this paper, we present a unified view to understand emotion representation in LLMs, experimenting with diverse datasets and prompts. We then evaluate the reasoning ability of the models on a complex emotion identification task. We find that LLMs have a common emotion representation in the later layers of the model, and the vectors capturing the direction of emotions extracted from these representations can be interchanged among datasets with minimal impact on performance. Our analysis of reasoning with Chain of Thought (CoT) prompting shows the limits of emotion comprehension. Therefore, despite LLMs implicitly having emotion representations, they are not equally skilled at reasoning with them in complex scenarios. This motivates the need for further research to find new approaches."
+  year: 2026
+  month: 3
+  highlight: 1
+  url: "https://aclanthology.org/2026.eacl-long.165/"
+  pdf: "https://aclanthology.org/2026.eacl-long.165.pdf"
+  img: "unified_emotion_eacl_26.png"
+  summary: "Interest in leveraging Large Language Models (LLMs) for emotional support systems motivates the need to understand how these models comprehend and represent emotions internally. While recent works show the presence of emotion concepts in the hidden state representations, it’s unclear if the model has a robust representation that is consistent across different datasets. In this paper, we present a unified view to understand emotion representation in LLMs, experimenting with diverse datasets and prompts. We then evaluate the reasoning ability of the models on a complex emotion identification task. We find that LLMs have a common emotion representation in the later layers of the model, and the vectors capturing the direction of emotions extracted from these representations can be interchanged among datasets with minimal impact on performance. Our analysis of reasoning with Chain of Thought (CoT) prompting shows the limits of emotion comprehension. Therefore, despite LLMs implicitly having emotion representations, they are not equally skilled at reasoning with them in complex scenarios. This motivates the need for further research to find new approaches."
 
+# Year 2025
 - key: "diwali"
   authors: "Pramit Sahoo^, Maharaj Brahma^, Maunendra Sankar Desarkar"
   title: "DIWALI - Diversity and Inclusivity aWare cuLture specific Items for India"
