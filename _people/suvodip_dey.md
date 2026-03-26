@@ -1,5 +1,5 @@
 ---
-name: Suvodip Dey
+name: Dr. Suvodip Dey
 position: phd
 avatar: suvodip.JPG
 passout: 1
