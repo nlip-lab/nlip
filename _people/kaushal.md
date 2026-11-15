@@ -5,7 +5,7 @@ avatar: kaushal.jpg
 twitter:
 passout: 1
 joining_year: 2018
-affiliation: Postdoc at MBZUAI
+affiliation: Assistant Professor at IIT Delhi (Abu Dhabi Campus)
 title: Kaushal Kumar Maurya
 layout: profile
 ---
@@ -33,7 +33,7 @@ layout: profile
 ### Bio:
 
 <p style="text-align: justify">
-Kaushal is a Ph.D. candidate in the Department of Computer Science and Engineering at the Indian Institute of Technology Hyderabad, advised by Dr. Maunendra Sankar Desarkar. He is an active collaborator at Microsoft India, working with Manish Gupta and Anoop Kunchukuttan. He has completed three internships at Microsoft (in the Translation and Auto-suggest teams) and Nvidia-AI. He loves reading, traveling, playing sports, and learning new languages.
+Dr. Kaushal was a Ph.D. student in the Department of Computer Science and Engineering at the Indian Institute of Technology Hyderabad, advised by Dr. Maunendra Sankar Desarkar. He is an active collaborator at Microsoft India, working with Manish Gupta and Anoop Kunchukuttan. He has completed three internships at Microsoft (in the Translation and Auto-suggest teams) and Nvidia-AI. He loves reading, traveling, playing sports, and learning new languages. He completed 
 </p>
 
 ### Research Interests:

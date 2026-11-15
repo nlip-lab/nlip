@@ -24,15 +24,22 @@ title: Natural Language and Information Processing Lab - NLIP
           <li data-bs-target="#myCarousel" data-bs-slide-to="6"></li>
           <li data-bs-target="#myCarousel" data-bs-slide-to="7"></li>
           <li data-bs-target="#myCarousel" data-bs-slide-to="8"></li>
+          <li data-bs-target="#myCarousel" data-bs-slide-to="9"></li>
         </ol>
     
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="{{site.baseurl}}/images/carousel/11.jpg"  style="width:100%;">
           </div>
+          
+          <div class="carousel-item">
+            <img src="{{site.baseurl}}/images/carousel/12.jpg" style="width:100%;">
+          </div>
+
           <div class="carousel-item">
             <img src="{{site.baseurl}}/images/carousel/10.jpg"  style="width:100%;">
           </div>
+
           <!-- Carousel 0 -->
           <div class="carousel-item">
             <img src="{{site.baseurl}}/images/carousel/7.JPG"  style="width:100%;">
@@ -69,9 +76,7 @@ title: Natural Language and Information Processing Lab - NLIP
           <div class="carousel-item">
             <img src="{{site.baseurl}}/images/carousel/1.jpg" style="width:100%;">
           </div>
-
           
-
           <!-- <div class="carousel-item"> -->
             <!-- <img src="{{site.baseurl}}/images/carousel/4.JPG" style="width:100%;"> -->
           <!-- </div> -->
